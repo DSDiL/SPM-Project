@@ -1,0 +1,32 @@
+
+<web-app>
+
+    <display-name>EmailSendingWebApp</display-name>
+ 
+    <!-- SMTP settings -->
+    <context-param>
+        <param-name>host</param-name>
+        <param-value>smtp.gmail.com</param-value>
+    </context-param>
+ 
+    <context-param>
+        <param-name>port</param-name>
+        <param-value>587</param-value>
+    </context-param>
+ 
+    <context-param>
+        <param-name>user</param-name>
+        <param-value>deadshotdil@gmail.com</param-value>
+    </context-param>
+ 
+    <context-param>
+        <param-name>pass</param-name>
+        <param-value>deadshot000112</param-value>
+    </context-param>
+ 
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+	
+</web-app>	
