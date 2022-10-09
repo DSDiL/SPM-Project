@@ -154,10 +154,10 @@
 							%>
 							<option value="<%=rs.getString("position")%>"
 								<%if (request.getParameter("pID") != null) {
-	if (rs.getInt("pID") == Integer.parseInt(request.getParameter("position"))) {
-		out.println("selected");
-	}
-}%>>
+	                          if (rs.getInt("pID") == Integer.parseInt(request.getParameter("position"))) {
+		                             out.println("selected");
+	                             }
+                                }%>>
 								<%=rs.getString("position")%></option>
 							<%
 							}
@@ -229,15 +229,8 @@
 					</div>
 				</div>
 
-
-
-
-
 				<button type="submit" class="btn btn-success align-items-center" style ="width: 200px; height: 50px;"
 					name="Submit">Signup</button>
-
-
-
 			</form>
 		</div>
 	</div>
