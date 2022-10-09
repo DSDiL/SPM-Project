@@ -83,6 +83,32 @@ public class employeeDB {
 
 	//for SignUp
 	
+	public static boolean insertLeavingDetails(String nic) {
+
+		int sick = 15;
+		int casual = 15;
+
+		isSuccess = false;
+
+		try {
+			con = dbconnect.getConnection();
+			stt = con.createStatement();
+
+			String sql = "insert into leaving_info values ('" + nic + "','" + sick + "','" + casual + "')";
+
+			int rs = stt.executeUpdate(sql);
+
+			if (rs > 0) {
+				isSuccess = true;
+			} else {
+				isSuccess = false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return isSuccess;
+	}
+	
 	public static boolean insertEmployeeDetails(String nic, String name, String position, String salary,
 			String password, String section, String email) {
 
@@ -168,32 +194,32 @@ public class employeeDB {
 		return isSuccess;
 	}
 
-//
-//	public static boolean previousEmployee(String nic, String name, String email, String mobile, String position,
-//			String dob, String date) {
-//
-//		isSuccess = false;
-//		int mob = Integer.parseInt(mobile);
-//
-//		try {
-//			con = dbconnect.getConnection();
-//			stt = con.createStatement();
-//
-//			String sql = "insert into pervious_employee values ('" + nic + "', '" + name + "', '" + email + "', '" + mob
-//					+ "', '" + position + "', '" + dob + "', '" + date + "')";
-//
-//			int rs = stt.executeUpdate(sql);
-//
-//			if (rs > 0) {
-//				isSuccess = true;
-//			} else {
-//				isSuccess = false;
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		return isSuccess;
-//	}
+
+	public static boolean previousEmployee(String nic, String name, String email, String mobile, String position,
+			String dob, String date) {
+
+		isSuccess = false;
+		int mob = Integer.parseInt(mobile);
+
+		try {
+			con = dbconnect.getConnection();
+			stt = con.createStatement();
+
+			String sql = "insert into pervious_employee values ('" + nic + "', '" + name + "', '" + email + "', '" + mob
+					+ "', '" + position + "', '" + dob + "', '" + date + "')";
+
+			int rs = stt.executeUpdate(sql);
+
+			if (rs > 0) {
+				isSuccess = true;
+			} else {
+				isSuccess = false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return isSuccess;
+	}
 
 	//for forgot password validation
 	
