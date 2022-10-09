@@ -73,9 +73,6 @@
 	</button>
 
 
-
-
-
 	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
 		<button type="button" class="navbar-toggler" data-toggle="collapse"
 			data-target="#myNav">
