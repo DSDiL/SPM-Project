@@ -1,14 +1,18 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<title>Employee Login</title>
-<meta charset="utf-8">
+
+
+<meta charset="UTF-8">
+<title>Select Bill</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://kit.fontawesome.com/8da1f1e093.js"
 	crossorigin="anonymous"></script>
-
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 	crossorigin="anonymous"></script>
@@ -24,8 +28,6 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
 	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="styles/styles.css">
-<link rel="stylesheet" href="styles/employeeLogin.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <link
@@ -59,6 +61,12 @@
 	href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="css/styles.css">
+
+
+<link rel="stylesheet" href="styles/styles.css">
+
+
 </head>
 <body>
 	<button type="button" class="btn btn-danger btn-floating btn-lg"
@@ -66,60 +74,93 @@
 		<i class="fas fa-arrow-up"></i>
 	</button>
 
+
+
+
+
 	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
 		<button type="button" class="navbar-toggler" data-toggle="collapse"
 			data-target="#myNav">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse">
+		<div class="collapse navbar-collapse   ">
 			<ul class="navbar-nav mr-auto  ">
-				<li class="nav-item"><a href="#service"
+				<li class="nav-item"><a href="HomePage.jsp"
 					class="nav-link h5 mr-2  "
 					style="font-family: 'Raleway', sans-serif;" id="item"><i
 						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
+				<li class="nav-item"><a href="AllbillHistory.jsp"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"><i
+						class="bi bi-clock-history pr-2"></i><b>Bill History</b> </a></li>
+				<li class="nav-item"><a href="Emp.jsp" class="nav-link h5 mr-2"
+					id="item" style="font-family: 'Raleway', sans-serif;"> <i
+						class="bi bi-cash-stack pr-2"></i><b>Employee Salary</b>
+				</a></li>
+				<li class="nav-item"><a href="EmpHistory.jsp"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"><i
+						class="bi bi-book-half pr-2"></i> <b>Salary History</b> </a></li>
 			</ul>
 		</div>
 
 	</nav>
 
-	<div class="form mx-auto" style="margin-top: 120px;">
-		<div class="global-container" style ="height: 500px;">
-			<div class="card login-form "
-				style="border: none; border-radius: 20px; width: 500px; height: 400px; margin-top: 60px;">
-				<div class="card-body">
-					<h3 class="card-title text-center text-uppercase">
-						<b>Employee login</b>
-					</h3><br>
-					<div class="card-text">
+	<div class="form mx-auto ">
+		<h2 class="text-center">
+			<b>Employee List</b>
+		</h2>
 
-						<form name="form" method="post" action="employeeLogin">
 
-							<div class="form-group">
-								<label>NIC Number</label> <input type="text" name="nic"
-									class="form-control form-control-sm" required>
-							</div>
-							<div class="form-group">
-								<label>Password</label> <a href="forgotPassword.jsp"
-									style="float: right; font-size: 12px;">Forgot password?</a> <input
-									type="password" class="form-control form-control-sm" name="pw"
-									id="pw" required>
-							</div>
-							<br>
-							<button type="submit" name="Submit" style="font-size: 16px;"
-								class="btn btn-primary btn-block">Sign in</button>
-								
-						</form>
-					</div>
-				</div>
-			</div>
+		<table class="table table-striped mt-5">
+			<thead>
+				<tr>
+					<th class="w-90">NIC</th>
+					<th scope="col">Name</th>
+					<th scope="col">Email</th>
+					<th scope="col">Position</th>
+					<th scope="col">Basic Salary</th>
+
+				</tr>
+			</thead>
+
+			<c:forEach var="emp" items="${emp}">
+
+
+
+
+
+
+				<tr>
+					<td>${emp.nic}</td>
+					<td>${emp.name}</td>
+					<td>${emp.email}</td>
+					<td>${emp.position}</td>
+					<td>${emp.basicsalary}</td>
+
+				</tr>
+
+
+			</c:forEach>
+		</table>
+
+
+		<div class="form-group text-center ">
+			<form action="EmpIDServlet" method="post">
+
+				<label for="cid"><strong>Please Enter Employee NIC</strong></label>
+				<input class="form-control" type="text" id="rid" name="empNIC">
+				<input class="btn btn-success mt-5" class="text-right" type="submit"
+					id="submit" name="Submit" value="Submit">
+
+			</form>
+
 		</div>
+
 	</div>
 
 
-
-
-
-	<footer class="page-footer font-small cyan darken-3 text-center blue " style ="margin-top: 120px;">
+	<footer class="page-footer font-small cyan darken-3 text-center blue ">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 py-5">
@@ -151,6 +192,23 @@
 			</div>
 		</div>
 	</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script>
@@ -185,4 +243,3 @@
 
 </body>
 </html>
-

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/employeeInsert")
 public class profileInsert extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		PrintWriter out =response.getWriter(); 
@@ -59,8 +59,6 @@ public class profileInsert extends HttpServlet {
 			out.println("<script type= 'text/javascript'>");   
 			out.println("alert('Please check again');");
 			out.println("location ='employeeSignup.jsp'");
-			out.println("</script>");	
-		}
+			out.println("</script>");		}
 	}
-
 }
