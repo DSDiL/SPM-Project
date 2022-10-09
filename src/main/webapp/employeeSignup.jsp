@@ -73,6 +73,9 @@
 	</button>
 
 
+
+
+
 	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
 		<button type="button" class="navbar-toggler" data-toggle="collapse"
 			data-target="#myNav">
@@ -143,7 +146,7 @@
 							try {
 								Class.forName("com.mysql.jdbc.Driver").newInstance();
 								Connection con = DriverManager
-								.getConnection("jdbc:mysql://localhost:3306/darkshop?autoReconnect=true&useSSL=false", "root", "kl654321");
+								.getConnection("jdbc:mysql://localhost:3306/darkshop?autoReconnect=true&useSSL=false", "root", "lk654321");
 								Statement stt = con.createStatement();
 								ResultSet rs = stt.executeQuery("select * from position");
 
@@ -151,10 +154,10 @@
 							%>
 							<option value="<%=rs.getString("position")%>"
 								<%if (request.getParameter("pID") != null) {
-	                          if (rs.getInt("pID") == Integer.parseInt(request.getParameter("position"))) {
-		                             out.println("selected");
-	                             }
-                                }%>>
+	if (rs.getInt("pID") == Integer.parseInt(request.getParameter("position"))) {
+		out.println("selected");
+	}
+}%>>
 								<%=rs.getString("position")%></option>
 							<%
 							}
@@ -226,8 +229,15 @@
 					</div>
 				</div>
 
+
+
+
+
 				<button type="submit" class="btn btn-success align-items-center" style ="width: 200px; height: 50px;"
 					name="Submit">Signup</button>
+
+
+
 			</form>
 		</div>
 	</div>

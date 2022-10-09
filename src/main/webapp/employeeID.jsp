@@ -1,8 +1,14 @@
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="java.sql.*"%>
+<%@ page import="java.util.*"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<title>Employee Login</title>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +31,6 @@
 	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="styles/styles.css">
-<link rel="stylesheet" href="styles/employeeLogin.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <link
@@ -66,55 +71,55 @@
 		<i class="fas fa-arrow-up"></i>
 	</button>
 
+
+
+
+
 	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
 		<button type="button" class="navbar-toggler" data-toggle="collapse"
 			data-target="#myNav">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse">
+		<div class="collapse navbar-collapse   ">
 			<ul class="navbar-nav mr-auto  ">
-				<li class="nav-item"><a href="#service"
+				<li class="nav-item"><a href="#"
 					class="nav-link h5 mr-2  "
 					style="font-family: 'Raleway', sans-serif;" id="item"><i
 						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
+				<li class="nav-item"><a href="employeeLogin.jsp"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"><i
+						class="bi bi-box-arrow-in-right pr-2"></i><b>Logout</b> </a></li>
+				<li class="nav-item"><a href="#"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"> <i
+						class="bi bi-info-circle pr-2"></i></i><b>About</b>
+				</a></li>
+				<li class="nav-item"><a href="#"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"><i
+						class="bi bi-person-lines-fill pr-2"></i></i> <b>Contact</b> </a></li>
 			</ul>
 		</div>
 
 	</nav>
 
-	<div class="form mx-auto" style="margin-top: 120px;">
-		<div class="global-container" style ="height: 500px;">
-			<div class="card login-form "
-				style="border: none; border-radius: 20px; width: 500px; height: 400px; margin-top: 60px;">
-				<div class="card-body">
-					<h3 class="card-title text-center text-uppercase">
-						<b>Employee login</b>
-					</h3><br>
-					<div class="card-text">
+	<div class="form mx-auto" style ="margin-top: 60px;">
+		<h2 style="margin-right: 50px;">
+			<b>Enter Employee's NIC Number</b>
+		</h2>
 
-						<form name="form" method="post" action="employeeLogin">
+		<form action="profileChange" method="post">
 
-							<div class="form-group">
-								<label>NIC Number</label> <input type="text" name="nic"
-									class="form-control form-control-sm" required>
-							</div>
-							<div class="form-group">
-								<label>Password</label> <a href="forgotPassword.jsp"
-									style="float: right; font-size: 12px;">Forgot password?</a> <input
-									type="password" class="form-control form-control-sm" name="pw"
-									id="pw" required>
-							</div>
-							<br>
-							<button type="submit" name="Submit" style="font-size: 16px;"
-								class="btn btn-primary btn-block">Sign in</button>
-								
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
+			<label for="cid" class="mt-5" style="font-size: 18px;">NIC Number</label> <input type="text"
+				class="form-control" id="rid" name="nic">
+			<button type="submit" class="btn btn-success mt-5">Submit</button>
+
+
+
+
+		</form>
 	</div>
-
 
 
 
@@ -151,6 +156,7 @@
 			</div>
 		</div>
 	</footer>
+
 
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script>

@@ -1,8 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="java.sql.*"%>
+<%@ page import="java.util.*"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<title>Employee Login</title>
+<title>Profile</title>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +31,7 @@
 	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="styles/styles.css">
-<link rel="stylesheet" href="styles/employeeLogin.css">
+<link rel="stylesheet" href="styles/profileChange.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <link
@@ -66,55 +72,130 @@
 		<i class="fas fa-arrow-up"></i>
 	</button>
 
+
+
+
+
 	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
 		<button type="button" class="navbar-toggler" data-toggle="collapse"
 			data-target="#myNav">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse">
+		<div class="collapse navbar-collapse   ">
 			<ul class="navbar-nav mr-auto  ">
 				<li class="nav-item"><a href="#service"
 					class="nav-link h5 mr-2  "
 					style="font-family: 'Raleway', sans-serif;" id="item"><i
 						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
+				<li class="nav-item"><a href="portfolio.html"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"> <i
+						class="bi bi-info-circle pr-2"></i></i><b>About</b>
+				</a></li>
+				<li class="nav-item"><a href="contact.html"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"><i
+						class="bi bi-person-lines-fill pr-2"></i></i> <b>Contact</b> </a></li>
 			</ul>
 		</div>
 
 	</nav>
 
-	<div class="form mx-auto" style="margin-top: 120px;">
-		<div class="global-container" style ="height: 500px;">
-			<div class="card login-form "
-				style="border: none; border-radius: 20px; width: 500px; height: 400px; margin-top: 60px;">
-				<div class="card-body">
-					<h3 class="card-title text-center text-uppercase">
-						<b>Employee login</b>
-					</h3><br>
-					<div class="card-text">
+	<div class="form mx-auto">
 
-						<form name="form" method="post" action="employeeLogin">
+		<h2 class="text-center text-white">
+			<b> Employee Details</b>
+		</h2>
+		<div class="container p-3">
 
-							<div class="form-group">
-								<label>NIC Number</label> <input type="text" name="nic"
-									class="form-control form-control-sm" required>
-							</div>
-							<div class="form-group">
-								<label>Password</label> <a href="forgotPassword.jsp"
-									style="float: right; font-size: 12px;">Forgot password?</a> <input
-									type="password" class="form-control form-control-sm" name="pw"
-									id="pw" required>
-							</div>
-							<br>
-							<button type="submit" name="Submit" style="font-size: 16px;"
-								class="btn btn-primary btn-block">Sign in</button>
-								
-						</form>
-					</div>
-				</div>
-			</div>
+
+			<table class="table table-striped">
+
+				<tbody>
+					<c:forEach var="emp" items="${empProf}">
+
+						<c:set var="nic" value="${emp.nic}" />
+						<c:set var="position" value="${emp.position}" />
+						<c:set var="basicSalary" value="${emp.basicSalary}" />
+						<c:set var="name" value="${emp.name}" />
+						<c:set var="mobile" value="${emp.mobile}" />
+						<c:set var="email" value="${emp.email}" />
+						<c:set var="dob" value="${emp.dob}" />
+						<c:set var="section" value="${emp.section}" />
+
+						<tr>
+							<td><label>Employee's name :</label></td>
+							<td><label>${emp.name}</label></td>
+						</tr>
+
+						<tr>
+							<td><label>NIC number :</label></td>
+							<td><label>${emp.nic}</label></td>
+						</tr>
+
+						<tr>
+							<td><label>Date of birth :</label></td>
+							<td><label>${emp.dob}</label></td>
+						</tr>
+
+						<tr>
+							<td><label>Mobile number :</label></td>
+							<td><label>${emp.mobile}</label></td>
+						</tr>
+
+						<tr>
+							<td><label>E-mail address :</label></td>
+							<td><label>${emp.email}</label></td>
+						</tr>
+
+						<tr>
+							<td><label>Position :</label></td>
+							<td><label>${emp.position}</label></td>
+						</tr>
+						<tr>
+							<td><label>Working on section :</label></td>
+							<td><label>${emp.section}</label></td>
+						</tr>
+
+						<tr>
+							<td><label>Basic Salary :</label></td>
+							<td><label>${emp.basicSalary}</label></td>
+						</tr>
+
+					</c:forEach>
+				</tbody>
+			</table>
+
+
+			<c:url value="profileUpdate.jsp" var="profileUpdate">
+				<c:param name="position" value="${position}" />
+				<c:param name="basicSalary" value="${basicSalary}" />
+				<c:param name="nic" value="${nic}" />
+				<c:param name="section" value="${section}" />
+			</c:url>
+
+			<a href="${profileUpdate}"> <input type="button"
+				class="btn btn-primary align-items-center" name="update" id="update"
+				value="Update Details">&nbsp&nbsp&nbsp&nbsp
+			</a>
+
+			<c:url value="profileDelete.jsp" var="profileDelete">
+				<c:param name="position" value="${position}" />
+				<c:param name="nic" value="${nic}" />
+				<c:param name="name" value="${name}" />
+				<c:param name="mobile" value="${mobile}" />
+				<c:param name="email" value="${email}" />
+				<c:param name="dob" value="${dob}" />
+			</c:url>
+       
+			<a href="${profileDelete}"> <input type="submit"
+				class="btn btn-danger align-items-center" name="delete" id="delete"
+				value="profile Delete">
+			</a>
+
+
 		</div>
 	</div>
-
 
 
 
@@ -152,6 +233,23 @@
 		</div>
 	</footer>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script>
 		AOS.init();
@@ -186,3 +284,11 @@
 </body>
 </html>
 
+
+
+<!--
+
+
+
+
+-->

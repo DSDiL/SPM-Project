@@ -1,8 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="java.sql.*"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<title>Employee Login</title>
+<title>Profile Update</title>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +30,7 @@
 	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="styles/styles.css">
-<link rel="stylesheet" href="styles/employeeLogin.css">
+<link rel="stylesheet" href="styles/profileUpdate.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <link
@@ -66,55 +71,143 @@
 		<i class="fas fa-arrow-up"></i>
 	</button>
 
+
+
+
+
 	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
 		<button type="button" class="navbar-toggler" data-toggle="collapse"
 			data-target="#myNav">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse">
+		<div class="collapse navbar-collapse   ">
 			<ul class="navbar-nav mr-auto  ">
 				<li class="nav-item"><a href="#service"
 					class="nav-link h5 mr-2  "
 					style="font-family: 'Raleway', sans-serif;" id="item"><i
 						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
+				<li class="nav-item"><a href="portfolio.html"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"> <i
+						class="bi bi-info-circle pr-2"></i></i><b>About</b>
+				</a></li>
+				<li class="nav-item"><a href="contact.html"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"><i
+						class="bi bi-person-lines-fill pr-2"></i></i> <b>Contact</b> </a></li>
 			</ul>
 		</div>
 
 	</nav>
+	<br>
 
-	<div class="form mx-auto" style="margin-top: 120px;">
-		<div class="global-container" style ="height: 500px;">
-			<div class="card login-form "
-				style="border: none; border-radius: 20px; width: 500px; height: 400px; margin-top: 60px;">
-				<div class="card-body">
-					<h3 class="card-title text-center text-uppercase">
-						<b>Employee login</b>
-					</h3><br>
-					<div class="card-text">
+	<div class="form mx-auto">
 
-						<form name="form" method="post" action="employeeLogin">
+		<h2 class="text-center text-white">
+			<b> Update Details</b>
+		</h2>
+		<div class="container p-3">
 
-							<div class="form-group">
-								<label>NIC Number</label> <input type="text" name="nic"
-									class="form-control form-control-sm" required>
-							</div>
-							<div class="form-group">
-								<label>Password</label> <a href="forgotPassword.jsp"
-									style="float: right; font-size: 12px;">Forgot password?</a> <input
-									type="password" class="form-control form-control-sm" name="pw"
-									id="pw" required>
-							</div>
-							<br>
-							<button type="submit" name="Submit" style="font-size: 16px;"
-								class="btn btn-primary btn-block">Sign in</button>
-								
-						</form>
+			<%
+			String position = request.getParameter("position");
+			String basicSalary = request.getParameter("basicSalary");
+			String nic = request.getParameter("nic");
+			String section = request.getParameter("section");
+			%>
+
+			<form name="form" id="form" class="form" action="profileUpdate"
+				method="post">
+
+
+
+				<div class="form-group row">
+					<label for="" class="col-sm-2 col-form-label">NIC Number</label>
+					<div class="col-sm-10">
+						<input class="form-control" type="text" name="nic" id="nic"
+							value="<%=nic%>" readonly />
 					</div>
 				</div>
-			</div>
+
+
+				<div class="form-group row">
+					<label for="" class="col-sm-2 col-form-label">Position</label>
+					<div class="col-sm-10">
+						<select name="position" id="position" class="form-control"
+							required>
+							<option value="<%=position%>" selected="selected"><%=position%></option>
+
+							<%
+							try {
+								Class.forName("com.mysql.jdbc.Driver").newInstance();
+								Connection con = DriverManager
+								.getConnection("jdbc:mysql://localhost:3306/darkshop?autoReconnect=true&useSSL=false", "root", "lk654321");
+								Statement stt = con.createStatement();
+								ResultSet rs = stt.executeQuery("select * from position");
+
+								while (rs.next()) {
+							%>
+							<option value="<%=rs.getString("position")%>"
+								<%if (request.getParameter("pID") != null) {
+	if (rs.getInt("pID") == Integer.parseInt(request.getParameter("position"))) {
+		out.println("selected");
+	}
+}%>>
+								<%=rs.getString("position")%></option>
+							<%
+							}
+							con.close();
+							rs.close();
+							} catch (Exception e) {
+							e.printStackTrace();
+							}
+							%>
+
+						</select> <a href="newPosition.jsp"> <input type="button" id="new"
+							value="Add new" class="btn btn-primary">
+						</a>
+					</div>
+				</div>
+
+
+				<div class="form-group row">
+					<label for="" class="col-sm-2 col-form-label">Working on
+						Section</label>
+					<div class="col-sm-10">
+						<select name="section" id="section" class="form-control" required>
+							<option value="<%=section%>" selected="selected"><%=section%></option>
+							<option value="EmployeeManagement">Employee Management</option>
+							<option value="RepairManagement">Repair Management</option>
+							<option value="FinancialManagement">Financial Management</option>
+							<option value="CustomerManagement">Customer Management</option>
+						
+						</select>
+					</div>
+
+				</div>
+
+
+
+
+
+				<div class="form-group row">
+					<label for="" class="col-sm-2 col-form-label">Basic Salary</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="basicSalary"
+							id="basicSalary" value="<%=basicSalary%>" required>
+					</div>
+				</div>
+
+
+
+
+				<button type="submit" class="btn btn-primary align-items-center"
+					name="button">Update</button>
+
+
+
+			</form>
 		</div>
 	</div>
-
 
 
 
@@ -186,3 +279,11 @@
 </body>
 </html>
 
+
+
+<!--
+
+
+
+
+-->

@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-<title>Employee Login</title>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +24,6 @@
 	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="styles/styles.css">
-<link rel="stylesheet" href="styles/employeeLogin.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <link
@@ -66,60 +64,72 @@
 		<i class="fas fa-arrow-up"></i>
 	</button>
 
+
+
+
+
 	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
 		<button type="button" class="navbar-toggler" data-toggle="collapse"
 			data-target="#myNav">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse">
+		<div class="collapse navbar-collapse   ">
 			<ul class="navbar-nav mr-auto  ">
 				<li class="nav-item"><a href="#service"
 					class="nav-link h5 mr-2  "
 					style="font-family: 'Raleway', sans-serif;" id="item"><i
 						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
+				<li class="nav-item"><a href="portfolio.html"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"> <i
+						class="bi bi-info-circle pr-2"></i></i><b>About</b>
+				</a></li>
+				<li class="nav-item"><a href="contact.html"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"><i
+						class="bi bi-person-lines-fill pr-2"></i></i> <b>Contact</b> </a></li>
 			</ul>
 		</div>
 
 	</nav>
 
-	<div class="form mx-auto" style="margin-top: 120px;">
-		<div class="global-container" style ="height: 500px;">
-			<div class="card login-form "
-				style="border: none; border-radius: 20px; width: 500px; height: 400px; margin-top: 60px;">
-				<div class="card-body">
-					<h3 class="card-title text-center text-uppercase">
-						<b>Employee login</b>
-					</h3><br>
-					<div class="card-text">
+	<div class="form mx-auto">
 
-						<form name="form" method="post" action="employeeLogin">
+		<h2 class="text-center text-white">
+			<b> Enter New Position</b>
+		</h2>
+		<div class="container p-3">
 
-							<div class="form-group">
-								<label>NIC Number</label> <input type="text" name="nic"
-									class="form-control form-control-sm" required>
-							</div>
-							<div class="form-group">
-								<label>Password</label> <a href="forgotPassword.jsp"
-									style="float: right; font-size: 12px;">Forgot password?</a> <input
-									type="password" class="form-control form-control-sm" name="pw"
-									id="pw" required>
-							</div>
-							<br>
-							<button type="submit" name="Submit" style="font-size: 16px;"
-								class="btn btn-primary btn-block">Sign in</button>
-								
-						</form>
-					</div>
-				</div>
-			</div>
+
+
+			<form name="form" class="form" method="post"
+				action="profileUpdateNew">
+
+				<h2>Enter new position</h2>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br> <input type="text" name="newposition" id="newposition"
+					required> <br>
+				<br>
+				<br>
+				<br>
+				<br>
+
+				<button type="submit" id="add" name="add" value="Add new">
+					Add new</button>
+				<br>
+				<br>
+			</form>
+
 		</div>
 	</div>
 
 
 
 
-
-	<footer class="page-footer font-small cyan darken-3 text-center blue " style ="margin-top: 120px;">
+	<footer class="page-footer font-small cyan darken-3 text-center blue ">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 py-5">
@@ -151,6 +161,23 @@
 			</div>
 		</div>
 	</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script>
@@ -186,3 +213,11 @@
 </body>
 </html>
 
+
+
+<!--
+
+
+
+
+-->

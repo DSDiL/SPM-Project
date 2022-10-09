@@ -281,9 +281,15 @@
 
 			</div>
 
+			<form action="getLeavingInfo" method="post">
+				<button type="submit" name="leave" id="leav" style ="width:200px; height: 50px; margin-top: -20px; margin-left: 10%;" class="btn btn-warning"
+					value="${emp.nic}">Apply for Leave of Absence</button>
+			</form>
 		</c:forEach>
 
 	</div>
+
+
 
 
 	<footer class="page-footer font-small cyan darken-3 text-center blue " style ="margin-top: 120px;">
@@ -318,6 +324,21 @@
 			</div>
 		</div>
 	</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -95,7 +95,7 @@
 
 	</nav>
 
-
+    <br><br>
 	<div class="form mx-auto">
 		<h2 class="text-center text-white">
 			<b> Edit Profile</b>
@@ -153,7 +153,15 @@
 	</div>
 
 
-	<footer class="page-footer font-small cyan darken-3 text-center blue ">
+
+
+
+
+
+
+
+
+	<footer class="page-footer font-small cyan darken-3 text-center blue " style ="margin-top: 120px;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 py-5">
@@ -185,21 +193,6 @@
 			</div>
 		</div>
 	</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

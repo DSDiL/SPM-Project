@@ -1,8 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="java.sql.*"%>
+<%@ page import="java.util.*"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<title>Employee Login</title>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +30,6 @@
 	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="styles/styles.css">
-<link rel="stylesheet" href="styles/employeeLogin.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <link
@@ -60,66 +64,121 @@
 	rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
+
 <body>
 	<button type="button" class="btn btn-danger btn-floating btn-lg"
 		id="btn-back-to-top">
 		<i class="fas fa-arrow-up"></i>
 	</button>
 
+
+
+
+
 	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
 		<button type="button" class="navbar-toggler" data-toggle="collapse"
 			data-target="#myNav">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse">
+		<div class="collapse navbar-collapse   ">
 			<ul class="navbar-nav mr-auto  ">
 				<li class="nav-item"><a href="#service"
 					class="nav-link h5 mr-2  "
 					style="font-family: 'Raleway', sans-serif;" id="item"><i
 						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
+				<li class="nav-item"><a href="portfolio.html"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"> <i
+						class="bi bi-info-circle pr-2"></i></i><b>About</b>
+				</a></li>
+				<li class="nav-item"><a href="contact.html"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"><i
+						class="bi bi-person-lines-fill pr-2"></i></i> <b>Contact</b> </a></li>
 			</ul>
 		</div>
 
 	</nav>
 
-	<div class="form mx-auto" style="margin-top: 120px;">
-		<div class="global-container" style ="height: 500px;">
-			<div class="card login-form "
-				style="border: none; border-radius: 20px; width: 500px; height: 400px; margin-top: 60px;">
-				<div class="card-body">
-					<h3 class="card-title text-center text-uppercase">
-						<b>Employee login</b>
-					</h3><br>
-					<div class="card-text">
+	<!--Open Content Area-->
+	<div class="form mx-auto" style ="margin-top: 100px;" >
 
-						<form name="form" method="post" action="employeeLogin">
+		<h2>Approving leaving applications</h2>
+		<br>
+		<br>
+		<br>
+		<br> <br>
+		<form action="leavingApproval" class="form mx-auto" method="post"  style ="margin-top: 30px;">
+			<table>
+			<thead class="thead-dark">
+				<tr>
+					<th>Application ID</th>
+					<th>NIC Number</th>
+					<th>Reason for Absence</th>
+					<th>Date of Absence</th>
+					<th>Time Period (Days)</th>
+					<th>Medical leaves left</th>
+					<th>Casual leaves left</th>
+					<th>More details</th>
+					<th>Status</th>
+					<th>Submit</th>
+				</tr>
+				</thead>
+				<tbody>
+				<c:forEach var="leave" items="${leave}">
+					<tr>
+						<td><input style="width: 50%;" class="form-control"
+							type="text" name="id" value="${leave.id}" readonly></td>
+						<br>
+						<td><input class="form-control" type="text" name="nic"
+							value="${leave.nic}" readonly></td>
+						<td><input class="form-control" type="text" name="reason"
+							value="${leave.reason}" readonly></td>
+						<td><input class="form-control" type="text" name="period"
+							value="${leave.period}" readonly></td>
+						<td><input class="form-control" type="text" name="date"
+							value="${leave.date}" readonly></td>
+						<td><input class="form-control" type="text" name="sick"
+							value="${leave.sick}" readonly></td>
+						<td><input class="form-control" type="text" name="casual"
+							value="${leave.casual}" readonly></td>
 
-							<div class="form-group">
-								<label>NIC Number</label> <input type="text" name="nic"
-									class="form-control form-control-sm" required>
-							</div>
-							<div class="form-group">
-								<label>Password</label> <a href="forgotPassword.jsp"
-									style="float: right; font-size: 12px;">Forgot password?</a> <input
-									type="password" class="form-control form-control-sm" name="pw"
-									id="pw" required>
-							</div>
-							<br>
-							<button type="submit" name="Submit" style="font-size: 16px;"
-								class="btn btn-primary btn-block">Sign in</button>
-								
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
+						<td><textarea class="form-control" readonly>${leave.more}</textarea></td>
+
+						<td><select name="status" class="form-control">
+								<option value="" selected>Pending</option>
+								<option value="Approved">Approved</option>
+								<option value="Denied">Denied</option>
+						</select></td>
+						<td>
+							<button type="submit" class="btn btn-success align-items-center"
+								name="Approve" value="${leave.id}">Approve</button>
+						</td>
+					</tr>
+				</c:forEach>
+				</tbody>
+			</table>
+
+			<br>
+			<br>
+			<br> <label class="col-sm-2 col-form-label" style ="">Reason to
+				deny</label>
+			<textarea class="col-sm-10" name="more" class="more"></textarea>
+
+		</form>
 	</div>
+	<!--Close Content Area-->
 
-
-
-
-
-	<footer class="page-footer font-small cyan darken-3 text-center blue " style ="margin-top: 120px;">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	</div>
+	<footer class="page-footer font-small cyan darken-3 text-center blue "  style ="margin-top: 10px;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 py-5">
@@ -151,6 +210,23 @@
 			</div>
 		</div>
 	</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script>
@@ -186,3 +262,11 @@
 </body>
 </html>
 
+
+
+<!--
+
+
+
+
+-->

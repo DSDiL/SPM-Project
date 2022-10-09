@@ -8,7 +8,7 @@
 <html lang="en">
 
 <head>
-<title>New Position</title>
+<title>Report</title>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -99,104 +99,18 @@
 		</div>
 
 	</nav>
+<body>
 
-	<!--Open Content Area-->
 
-    <br><br>
-	<form name="form" class="form mx-auto" method="post"
-		action="newPosition">
 
-		<h2>Enter new position</h2>
-		<br> <br> <input type="text" class="form-control"
-			name="newposition" id="newposition" required> <br> <input
-			type="submit" class="btn btn-success align-items-center" id="add"
-			name="add" value="Add new"> <br> <br>
-	</form>
+	<div class="form mx-auto">
 
-	<!--Close Content Area-->
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	</div>
-
-	<footer class="page-footer font-small cyan darken-3 text-center blue " style ="margin-top: 20px;">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 py-5">
-					<h4 class="text-uppercase text-white"
-						style="font-family: 'Quicksand', sans-serif;">Follow Us out
-						there</h4>
-					<div class="mb-5 flex-center mt-5">
-						<ul
-							class="social-icons icon-circle icon-rotate list-unstyled list-inline">
-							<li class="list-inline-item"><a href="#"><i
-									class="fa fa-facebook mr-md-5 mr-3 fa-2x"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i
-									class="fa fa-twitter mr-md-5 mr-3 fa-2x"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i
-									class="fa fa-youtube mr-md-5 mr-3 fa-2x"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i
-									class="fa fa-google-plus mr-md-5 mr-3 fa-2x"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i
-									class="fa fa-instagram mr-md-5 mr-3 fa-2x"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i
-									class="fa fa-linkedin mr-md-5 mr-3 fa-2x"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i
-									class="fa fa-pinterest mr-md-5 mr-3 fa-2x"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i
-									class="fa fa-github mr-md-5 mr-3 fa-2x"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-	<script>
-		AOS.init();
-	</script>
-
-	<script>
-		//Get the button
-		let mybutton = document.getElementById("btn-back-to-top");
-
-		// When the user scrolls down 20px from the top of the document, show the button
-		window.onscroll = function() {
-			scrollFunction();
-		};
-
-		function scrollFunction() {
-			if (document.body.scrollTop > 20
-					|| document.documentElement.scrollTop > 20) {
-				mybutton.style.display = "block";
-			} else {
-				mybutton.style.display = "none";
-			}
-		}
-		// When the user clicks on the button, scroll to the top of the document
-		mybutton.addEventListener("click", backToTop);
-
-		function backToTop() {
-			document.body.scrollTop = 0;
-			document.documentElement.scrollTop = 0;
-		}
-	</script>
-
+		<label class="form mx-auto"><strong>Report</strong></label><br>
+		<br> <br> <br> <a onclick="window.print();"> <input
+			type="button" id="submit" class="btn btn-success align-items-center"
+			name="Submit" value="Print">
+		</a>
 </body>
+</div>
 </html>
-
-
-
-<!--
-
-
-
-
--->
