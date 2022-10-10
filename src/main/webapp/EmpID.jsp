@@ -125,10 +125,6 @@
 			<c:forEach var="emp" items="${emp}">
 
 
-
-
-
-
 				<tr>
 					<td>${emp.nic}</td>
 					<td>${emp.name}</td>
@@ -190,21 +186,6 @@
 			</div>
 		</div>
 	</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
