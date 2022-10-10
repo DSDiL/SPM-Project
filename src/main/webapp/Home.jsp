@@ -83,7 +83,7 @@
 					<div class="collapse navbar-collapse   ">
 						<ul class="navbar-nav mr-auto  ">
 							<li class="nav-item">
-								<a href="#service" class="nav-link h5 mr-2" style="font-family: 'Raleway', sans-serif;" id="item">
+								<a href="#" class="nav-link h5 mr-2" style="font-family: 'Raleway', sans-serif;" id="item">
 									<i class="bi bi-house pr-2"></i><b>Home</b>
 								</a>
 							</li>
