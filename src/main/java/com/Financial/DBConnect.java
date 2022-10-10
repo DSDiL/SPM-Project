@@ -7,7 +7,7 @@ public class DBConnect {
 	
 	private static String url = "jdbc:mysql://localhost:3306/techscope";
 	private static String userNmae = "root";
-	private static String password = "ishank99";
+	private static String password = "Ishank99";
 	private static Connection con;
 	
 	public static Connection getConnection() {
