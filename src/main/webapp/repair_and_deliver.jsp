@@ -46,11 +46,27 @@
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNav"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse   ">
           <ul class="navbar-nav mr-auto  ">
-               <li class="nav-item"><a href="HomePage.jsp" class="nav-link h5 mr-2  " style="font-family: 'Raleway', sans-serif;" id="item" ><i class="bi bi-house pr-2"></i><b>Home</b>  </a></li>
-              <li class="nav-item"><a href="AllbillHistory.jsp" class="nav-link h5 mr-2" id="item" style="font-family: 'Raleway', sans-serif;"><i class="bi bi-clock-history pr-2"></i><b>Bill History</b> </a></li>
-              <li class="nav-item"><a href="Emp.jsp" class="nav-link h5 mr-2"id="item" style="font-family: 'Raleway', sans-serif;"> <i class="bi bi-cash-stack pr-2"></i><b>Employee Salary</b> </a></li>
-              <li class="nav-item"><a href="EmpHistory.jsp" class="nav-link h5 mr-2"id="item" style="font-family: 'Raleway', sans-serif;"><i class="bi bi-book-half pr-2"></i> <b>Salary History</b> </a></li>
-          </ul>
+				<li class="nav-item"><a href="HomePage.jsp"
+					class="nav-link h5 mr-2  "
+					style="font-family: 'Raleway', sans-serif;" id="item"><i
+						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
+				<li class="nav-item"><a href="repair_and_deliver.jsp"
+					class="nav-link h5 mr-2  "
+					style="font-family: 'Raleway', sans-serif;" id="item"><i
+						class="bi bi-layout-text-sidebar pr-2"></i><b>Bills</b> </a></li>		
+				<li class="nav-item"><a href="AllbillHistory.jsp"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"><i
+						class="bi bi-clock-history pr-2"></i><b>Bill History</b> </a></li>
+				<li class="nav-item"><a href="Emp.jsp" class="nav-link h5 mr-2"
+					id="item" style="font-family: 'Raleway', sans-serif;"> <i
+						class="bi bi-cash-stack pr-2"></i><b>Employee Salary</b>
+				</a></li>
+				<li class="nav-item"><a href="EmpHistory.jsp"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"><i
+						class="bi bi-book-half pr-2"></i> <b>Salary History</b> </a></li>
+			</ul>
       </div>
 
   </nav>

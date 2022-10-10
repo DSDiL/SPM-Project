@@ -89,6 +89,10 @@
 					class="nav-link h5 mr-2  "
 					style="font-family: 'Raleway', sans-serif;" id="item"><i
 						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
+				<li class="nav-item"><a href="repair_and_deliver.jsp"
+					class="nav-link h5 mr-2  "
+					style="font-family: 'Raleway', sans-serif;" id="item"><i
+						class="bi bi-layout-text-sidebar pr-2"></i><b>Bills</b> </a></li>		
 				<li class="nav-item"><a href="AllbillHistory.jsp"
 					class="nav-link h5 mr-2" id="item"
 					style="font-family: 'Raleway', sans-serif;"><i
