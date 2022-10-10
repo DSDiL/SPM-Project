@@ -77,7 +77,7 @@ public class finacialDButill {
 	}
 
 	public static boolean insertrepairbill(String rcID, String company, String comdate, String deliver,
-			String description, String spare, String qty, String sparepart, String date, String service) {
+			String description, String spare, String qty, String cost, String sparepart, String date, String service) {
 
 		isSuccess = false;
 
@@ -94,7 +94,7 @@ public class finacialDButill {
 			stmt = con.createStatement();
 
 			String sql = "insert into repair_computer_bills values (0, '" + rcID + "', '" + company + "', '" + comdate
-					+ "', '" + deliver + "','" + description + "','" + spare + "','" + qty + "','" + sparepart + "','"
+					+ "', '" + deliver + "','" + description + "','" + spare + "','" + qty + "','" + cost + "','" + sparepart + "','"
 					+ date + "','" + service + "','" + Total + "')";
 
 			int rs = stmt.executeUpdate(sql);
@@ -872,12 +872,13 @@ public class finacialDButill {
 				String deliver = rs.getString(5);
 				String spare = rs.getString(7);
 				int qty = rs.getInt(8);
-				float spareprice = rs.getFloat(9);
-				Date billdate = rs.getDate(10);
-				float serviceCharges = rs.getFloat(11);
-				float total = rs.getFloat(12);
+				float cost = rs.getFloat(9);
+				float spareprice = rs.getFloat(10);
+				Date billdate = rs.getDate(11);
+				float serviceCharges = rs.getFloat(12);
+				float total = rs.getFloat(13);
 
-				computerBillHistory c = new computerBillHistory(billID, rcID, name, Date, deliver, spare, qty,
+				computerBillHistory c = new computerBillHistory(billID, rcID, name, Date, deliver, spare, qty,cost,
 						spareprice, billdate, serviceCharges, total);
 				computerBillHistory.add(c);
 
@@ -969,13 +970,13 @@ public class finacialDButill {
 				int roID = rs.getInt(2);
 				String name = rs.getString(3);
 				Date Date = rs.getDate(4);
-				String spare = rs.getString(6);
-				int qty = rs.getInt(7);
-				float cost = rs.getFloat(8);
-				float spareprice = rs.getFloat(9);
-				Date billdate = rs.getDate(10);
-				float serviceCharges = rs.getFloat(11);
-				float total = rs.getFloat(12);
+				String spare = rs.getString(7);
+				int qty = rs.getInt(8);
+				float cost = rs.getFloat(9);
+				float spareprice = rs.getFloat(10);
+				Date billdate = rs.getDate(11);
+				float serviceCharges = rs.getFloat(12);
+				float total = rs.getFloat(13);
 
 				otherBillHistroy c = new otherBillHistroy(billID, roID, name, Date, spare, qty, cost, spareprice,
 						billdate, serviceCharges, total);
@@ -1010,12 +1011,13 @@ public class finacialDButill {
 				int cID = rs.getInt(2);
 				String company = rs.getString(3);
 				Date date = rs.getDate(4);
-				String description = rs.getString(5);
-				String spare = rs.getString(6);
-				int qty = rs.getInt(7);
-				float cost = rs.getFloat(8);
+				String devices = rs.getString(5);
+				String description = rs.getString(6);
+				String spare = rs.getString(7);
+				int qty = rs.getInt(8);
+				float cost = rs.getFloat(9);
 
-				repairOther c = new repairOther(roID, cID, company, date, description, spare, qty, cost);
+				repairOther c = new repairOther(roID, cID, company, date, devices, description, spare, qty, cost);
 				repairOther.add(c);
 
 			}
@@ -1028,7 +1030,7 @@ public class finacialDButill {
 		return repairOther;
 	}
 
-	public static boolean insert_other_bill(String roID, String cID, String company, String date, String description,
+	public static boolean insert_other_bill(String roID, String cID, String company, String date, String devices, String description,
 			String spare, String qty, String cost, String sparepart, String billdate, String service) {
 
 		isSuccess = false;
@@ -1046,7 +1048,7 @@ public class finacialDButill {
 			stmt = con.createStatement();
 
 			String sql = "insert into repair_other_bills values (0, '" + roID + "', '" + company + "', '" + date
-					+ "', '" + description + "','" + spare + "','" + Qty + "','" + cost + "','" + Sparepart + "','"
+					+ "','" + devices + "', '" + description + "','" + spare + "','" + Qty + "','" + cost + "','" + Sparepart + "','"
 					+ billdate + "','" + Service + "','" + Total + "')";
 
 			int rs = stmt.executeUpdate(sql);

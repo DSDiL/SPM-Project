@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<link rel="stylesheet" href="css/styles.css">
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -126,7 +126,8 @@
 					<th>Over Time</th>
 					<th>Bonus</th>
 					<th>Total</th>
-
+					<th>Update</th>
+					<th>Delete</th>
 				</tr>
 
 

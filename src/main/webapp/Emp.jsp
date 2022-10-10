@@ -111,7 +111,7 @@
 			<b>View Employee Salary History</b>
 		</h2>
 
-		<form action="EmpListServlet" method="post">
+		<form action="EmplistServlet" method="post">
 			<div class="form-group text-center">
 				<input type="submit" class="btn btn-success mt-5 " id="submit"
 					name="Submit" value="Show Employee List"><br>

@@ -116,6 +116,7 @@
 		String date = request.getParameter("Comdate");
 		String spare = request.getParameter("Comspare");
 		String qty = request.getParameter("Comqty");
+		String cost = request.getParameter("Comcost");
 		String spareprice = request.getParameter("Comspareprice");
 		String billdate = request.getParameter("Combilldate");
 		String service = request.getParameter("Comservice");
@@ -132,6 +133,7 @@
 					<th>Date</th>
 					<th>Spare Parts</th>
 					<th>Quantity</th>
+					<th>Cost</th>
 					<th>Spare Part Price</th>
 					<th>Bill Date</th>
 					<th>Service Charges</th>
@@ -168,6 +170,10 @@
 					<td><input
 						style="outline: none; width: 15%; background-color: transparent; border: none;"
 						type="text" class="inputt" name="qty" value="<%=qty%>" readonly>
+					</td>
+					<td><input
+						style="outline: none; width: 15%; background-color: transparent; border: none;"
+						type="text" class="inputt" name="cost" value="<%=cost%>" readonly>
 					</td>
 					<td><input
 						style="outline: none; width: 100%; background-color: transparent; border: none;"

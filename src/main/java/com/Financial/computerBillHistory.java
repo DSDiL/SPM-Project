@@ -12,6 +12,7 @@ public class computerBillHistory {
 	private Date date;
 	private String spare;
 	private int qty;
+	private float cost;
 	private float spareprice;
 	private Date billdate;
 	private float service;
@@ -20,7 +21,7 @@ public class computerBillHistory {
 	
 	
 	
-	public computerBillHistory(int billID, int cusID, String name, Date date, String deliver, String spare, int qty, float spareprice,
+	public computerBillHistory(int billID, int cusID, String name, Date date, String deliver, String spare, int qty, float cost, float spareprice,
 			Date billdate, float service, float total) {
 		super();
 		this.billID = billID;
@@ -30,6 +31,7 @@ public class computerBillHistory {
 		this.date = date;
 		this.spare = spare;
 		this.qty = qty;
+		this.cost = cost;
 		this.spareprice = spareprice;
 		this.billdate = billdate;
 		this.service = service;
@@ -81,7 +83,9 @@ public class computerBillHistory {
 		return qty;
 	}
 
-
+	public float getCost() {
+		return cost;
+	}
 
 
 	public float getSpareprice() {

@@ -127,6 +127,7 @@
 					<c:set var="description" value="${repaircomputer.description}" />
 					<c:set var="spare" value="${repaircomputer.spare}" />
 					<c:set var="qty" value="${repaircomputer.qty}" />
+					<c:set var="cost" value="${repaircomputer.cost}" />
 
 
 
@@ -156,7 +157,7 @@
 
 						<tr>
 							<td>Deliver</td>
-							<td><input type="date" class="inputt"
+							<td><input type="text" class="inputt"
 								style="outline: none; border: none; background-color: transparent"
 								name="deliver" value="${repaircomputer.deliver}" readonly></td>
 						</tr>
@@ -184,6 +185,13 @@
 							<td><input type="text" class="inputt"
 								style="outline: none; border: none; background-color: transparent"
 								name="qty" value="${repaircomputer.qty}" readonly></td>
+						</tr>
+						
+						<tr>
+							<td>Cost</td>
+							<td><input type="text" class="inputt"
+								style="outline: none; border: none; background-color: transparent"
+								name="cost" value="${repaircomputer.cost}" readonly></td>
 						</tr>
 				</c:forEach>
 

@@ -108,7 +108,7 @@
 					</ol>
 					<div class="carousel-inner ">
 						<div class="carousel-item active">
-							<img class="w-100 d-block rounded " src="images/slide1.jpg">
+							<img class="w-100 d-block rounded " src="images/slide1.png">
 						</div>
 						<div class="carousel-item">
 							<img class="w-100 d-block rounded" src="images/computer4.jpg">
@@ -124,7 +124,7 @@
 				<div class="h2 text-uppercase"
 					style="border: 3px solid; border-radius: 20px; padding: 5px;">Our
 					Mission</div>
-				<p data-aos="fade-left" data-aos-duration="1000"
+				<p class="text-dark" data-aos="fade-left" data-aos-duration="1000"
 					style="font-family: 'Montserrat', sans-serif; border: 1px solid; border-radius: 25px; padding: 5px;">We
 					are JC-Electronics, a purchasing and sales organization trading in
 					industrial electronics on a global level. Our services include
@@ -177,7 +177,7 @@
 					</ol>
 					<div class="carousel-inner ">
 						<div class="carousel-item active">
-							<img class="w-100 d-block rounded " src="images/slide1.jpg">
+							<img class="w-100 d-block rounded " src="images/slide1.png">
 						</div>
 						<div class="carousel-item">
 							<img class="w-100 d-block rounded" src="images/computer4.jpg">

@@ -101,7 +101,7 @@
 
 	</nav>
 
-	<div class="form mx-auto w-90">
+	<div class="form mx-auto w-auto" style="width: 85%;">
 		<h2 class="text-center">
 			<b>Bill History</b>
 		</h2>
@@ -122,6 +122,8 @@
 				<th>Bill Date</th>
 				<th>Service Charges</th>
 				<th>Total</th>
+				<th>Update</th>
+				<th>Delete</th>
 			</tr>
 
 
@@ -206,7 +208,7 @@
 
 			</c:forEach>
 		</table>
-		<br> <br> <br>
+		
 
 
 		<form action="OtherBillReportServlet" method="post">

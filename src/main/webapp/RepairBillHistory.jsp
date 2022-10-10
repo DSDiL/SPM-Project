@@ -105,7 +105,7 @@
 
 	</nav>
 
-	<div class="form mx-auto w-90">
+	<div class="form mx-auto w-auto" style="width: 80%;">
 		<h2 class="text-center">
 			<b>Bill History</b>
 		</h2>
@@ -121,10 +121,13 @@
 				<th>Date</th>
 				<th>Spare Parts</th>
 				<th>Quantity</th>
+				<th>Cost</th>
 				<th>Spare Part Price</th>
 				<th>Bill Date</th>
 				<th>Service Charges</th>
 				<th>Total</th>
+				<th>Update</th>
+				<th>Delete</th>
 			</tr>
 
 
@@ -135,6 +138,7 @@
 				<c:set var="date" value="${ computerBillHistory.date }" />
 				<c:set var="spare" value="${ computerBillHistory.spare }" />
 				<c:set var="qty" value="${ computerBillHistory.qty }" />
+				<c:set var="cost" value="${ computerBillHistory.cost }" />
 				<c:set var="spareprice" value="${ computerBillHistory.spareprice }" />
 				<c:set var="billdate" value="${ computerBillHistory.billdate }" />
 				<c:set var="service" value="${ computerBillHistory.service }" />
@@ -148,6 +152,7 @@
 					<td>${ computerBillHistory.date }</td>
 					<td>${ computerBillHistory.spare }</td>
 					<td>${ computerBillHistory.qty }</td>
+					<td>${ computerBillHistory.cost }</td>
 					<td>${ computerBillHistory.spareprice }</td>
 					<td>${ computerBillHistory.billdate }</td>
 					<td>${ computerBillHistory.service }</td>
@@ -167,6 +172,7 @@
 						<c:param name="Comdate" value="${date}" />
 						<c:param name="Comspare" value="${spare}" />
 						<c:param name="Comqty" value="${qty}" />
+						<c:param name="Comcost" value="${cost}" />
 						<c:param name="Comspareprice" value="${spareprice}" />
 						<c:param name="Combilldate" value="${billdate}" />
 						<c:param name="Comservice" value="${service}" />
@@ -192,6 +198,7 @@
 						<c:param name="Comdate" value="${date}" />
 						<c:param name="Comspare" value="${spare}" />
 						<c:param name="Comqty" value="${qty}" />
+						<c:param name="Comcost" value="${cost}" />
 						<c:param name="Comspareprice" value="${spareprice}" />
 						<c:param name="Combilldate" value="${billdate}" />
 						<c:param name="Comservice" value="${service}" />
@@ -216,7 +223,7 @@
 
 			</c:forEach>
 		</table>
-		<br> <br> <br>
+		
 
 
 		<form action="RepairBillReportServlet" method="post">

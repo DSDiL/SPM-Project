@@ -77,7 +77,7 @@
 
     <div class="list-group">
       <button type="button" style="width:20%; height:60px;" onclick="document.location = 'RepairID.jsp'" class="btn btn-info mt-5 mx-auto">Computer Repair Bills</button>
-      <button type="button" style="width:20%; height:60px;" onclick="document.location = 'AirID.jsp'" class="btn btn-info mt-5 mx-auto">Air Condition Repair Bills</button>
+      
       <button type="button" style="width:20%; height:60px;" onclick="document.location = 'OtherID.jsp'" class="btn btn-info mt-5 mx-auto">Other Electronic Bills</button>
     </div>
     
