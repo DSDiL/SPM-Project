@@ -82,23 +82,26 @@
 		</button>
 		<div class="collapse navbar-collapse   ">
 			<ul class="navbar-nav mr-auto  ">
-				<li class="nav-item"><a href="#service"
+				<li class="nav-item"><a href="HomePage.jsp"
 					class="nav-link h5 mr-2  "
 					style="font-family: 'Raleway', sans-serif;" id="item"><i
 						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
-				<li class="nav-item"><a href="about.html"
+				<li class="nav-item"><a href="repair_and_deliver.jsp"
+					class="nav-link h5 mr-2  "
+					style="font-family: 'Raleway', sans-serif;" id="item"><i
+						class="bi bi-layout-text-sidebar pr-2"></i><b>Bills</b> </a></li>		
+				<li class="nav-item"><a href="AllbillHistory.jsp"
 					class="nav-link h5 mr-2" id="item"
 					style="font-family: 'Raleway', sans-serif;"><i
-						class="bi bi-box-arrow-in-right pr-2"></i><b>Login/Logout</b> </a></li>
-				<li class="nav-item"><a href="portfolio.html"
-					class="nav-link h5 mr-2" id="item"
-					style="font-family: 'Raleway', sans-serif;"> <i
-						class="bi bi-info-circle pr-2"></i></i><b>About</b>
+						class="bi bi-clock-history pr-2"></i><b>Bill History</b> </a></li>
+				<li class="nav-item"><a href="Emp.jsp" class="nav-link h5 mr-2"
+					id="item" style="font-family: 'Raleway', sans-serif;"> <i
+						class="bi bi-cash-stack pr-2"></i><b>Employee Salary</b>
 				</a></li>
-				<li class="nav-item"><a href="contact.html"
+				<li class="nav-item"><a href="EmpHistory.jsp"
 					class="nav-link h5 mr-2" id="item"
 					style="font-family: 'Raleway', sans-serif;"><i
-						class="bi bi-person-lines-fill pr-2"></i></i> <b>Contact</b> </a></li>
+						class="bi bi-book-half pr-2"></i> <b>Salary History</b> </a></li>
 			</ul>
 		</div>
 
