@@ -8,6 +8,7 @@
 <html lang="en">
 
 <head>
+<title>Home</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -32,7 +33,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
 	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="styles/styles.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <link
@@ -140,7 +141,7 @@
 
 		<div class="container mt-5 ">
 			<div class="h1 text-uppercase text-center mt-5"
-				style="border: 2px solid #000; color: #000; border-radius: 15px; padding: 5px;">Our services</div>
+				style="border: 2px solid #000; color: #000; border-radius: 15px; padding: 5px;">Our services</div><br><br>
 			<div class="row text-center text-white">
 				<div class="card-deck">
 
@@ -202,7 +203,7 @@
 
 
 	</div>
-	<footer class="page-footer font-small cyan darken-3 text-center blue ">
+	<footer class="page-footer font-small cyan darken-3 text-center blue " style ="margin-top: 120px;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 py-5">
@@ -269,11 +270,3 @@
 </body>
 </html>
 
-
-
-<!--
-
-
-
-
--->
