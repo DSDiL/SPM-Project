@@ -102,7 +102,7 @@
 				</nav>
 			</div>
 		</header>
-
+        <br>
 		<div class="container mt-5">
 			<div class="row">
 				<div class="col-md-8 ">
@@ -114,7 +114,7 @@
 						</div>
 					</div>
 				</div>
-
+                  
 				<div class="col-md-4  text-center " style="color: #000;">
 					<div class="h2 text-uppercase" style="border: 3px solid; border-radius: 20px; padding: 5px;">Our Mission</div>
 					<div style="font-family: 'Montserrat', sans-serif; border: 1px solid; border-radius: 25px; padding: 5px;">
