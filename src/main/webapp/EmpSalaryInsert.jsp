@@ -115,7 +115,7 @@
 			<b>Salary Details</b>
 		</h2>
 
-		<form method="post" action="Empsalaryinsert">
+		<form method="post" action="EmpSalaryInsertServlet">
 			<table class="table table-striped">
 				<c:forEach var="emp" items="${emp}">
 

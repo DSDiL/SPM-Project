@@ -11,13 +11,6 @@ public class deliver {
 	private Date date;
 	private int cusid;
 	private int qty;
-	
-	
-
-
-
-	
-
 
 	public deliver(String deliverID, String adress, String itemNO, int qty, float unitprice, Date date, int cusid) {
 		
@@ -32,30 +25,16 @@ public class deliver {
 	}
 
 
-
-
-
-
-
-
-
-
 	public int getQty() {
 		return qty;
 	}
-
-
-
 
 
 	public String getOderID() {
 		return oderID;
 	}
 
-
-
-
-
+	
 	public String getAddress() {
 		return address;
 	}

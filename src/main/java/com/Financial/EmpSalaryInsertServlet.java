@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/Empsalaryinsert")
-public class Empsalaryinsert extends HttpServlet {
+@WebServlet("/EmpSalaryInsertServlet")
+public class EmpSalaryInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
@@ -29,14 +29,6 @@ public class Empsalaryinsert extends HttpServlet {
 		String ot = request.getParameter("ot");
 		String bonus = request.getParameter("bonus");
 		String basicsalary = request.getParameter("basicsalary");
-	
-
-
-		
-
-
-		
-		
 	
 
 		boolean isTrue;

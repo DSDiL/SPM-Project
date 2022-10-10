@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/RepairBillUpdate")
-public class RepairBillUpdate extends HttpServlet {
+@WebServlet("/RepairBillUpdateServlet")
+public class RepairBillUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
@@ -56,7 +56,7 @@ public class RepairBillUpdate extends HttpServlet {
 			dis1.forward(request, response);
 			}
 			else {
-			RequestDispatcher dis2 = request.getRequestDispatcher("RepairBillUpdate.jsp");
+			RequestDispatcher dis2 = request.getRequestDispatcher("RepairBillUpdateServlet.jsp");
 			dis2.forward(request, response);
 			}
 			

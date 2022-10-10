@@ -122,7 +122,7 @@
 		String total = request.getParameter("othertotal");
 		%>
 
-		<form action="otherBillDelete" method="post">
+		<form action="OtherBillDeleteServlet" method="post">
 			<table class="table table-striped">
 				<tr>
 					<th>Other Electronics Repair Bill ID</th>

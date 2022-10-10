@@ -115,7 +115,7 @@
 			<b>Employee Salary Details</b>
 		</h2>
 
-		<form action="EmpSalaryDelete" method="post">
+		<form action="EmpSalaryDeleteServlet" method="post">
 			<table class="table table-striped">
 
 				<tr>

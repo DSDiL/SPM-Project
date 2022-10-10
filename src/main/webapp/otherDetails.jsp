@@ -114,7 +114,7 @@
 			<b>Other Electronics Repair Details</b>
 		</h2>
 
-		<form class="" method="post" action="OtherInsert">
+		<form class="" method="post" action="OtherInsertServlet">
 
 			<table class="table table-striped">
 				<c:forEach var="repairOther" items="${repairOther}">

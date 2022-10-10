@@ -10,35 +10,49 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/otherBillDelete")
-public class otherBillDelete extends HttpServlet {
+
+@WebServlet("/RepairBillDeleteServlet")
+public class RepairBillDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		
 		String billID = request.getParameter("billID");
 		String date = request.getParameter("billdate");
+	
+		
+		
+		
+	
+
 		
 		boolean IsTrue;
+		
+		
 
-		IsTrue = finacialDButill.deleteotherbills(billID);
+		IsTrue = finacialDButill.deletecomputerbills(billID);
 		
 		
 		if ( IsTrue == true) {
-			List<otherBillHistroy> otherBill = finacialDButill.getotherbillhistory(date); 
+			List<computerBillHistory> computerBillHistory = finacialDButill.getcomputerhistory(date); 
+			request.setAttribute("computerBillHistory", computerBillHistory);
 			
-			request.setAttribute("otherBill", otherBill);
-			
-			
-		RequestDispatcher dis1 = request.getRequestDispatcher("OtherBillHistory.jsp");
+		RequestDispatcher dis1 = request.getRequestDispatcher("RepairBillHistory.jsp");
 		dis1.forward(request, response);
 		}
 		
 		
 		else {
-		RequestDispatcher dis2 = request.getRequestDispatcher("otherBillDelete.jsp");
+		RequestDispatcher dis2 = request.getRequestDispatcher("RepairBillDeleteServlet.jsp");
 		dis2.forward(request, response);
 		}
+		
+		
+		
+		
+		
 	}
 
 }

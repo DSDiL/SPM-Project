@@ -130,7 +130,7 @@
 
 
 
-		<form action="EmpSalaryUpdate" method="post">
+		<form action="EmpSalaryUpdateServlet" method="post">
 			<table class="table table-striped">
 
 				<tr>
