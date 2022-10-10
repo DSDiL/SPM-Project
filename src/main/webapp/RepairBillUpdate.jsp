@@ -130,7 +130,7 @@
 		%>
 
 
-		<form action="RepairBillUpdate" method="post">
+		<form action="RepairBillUpdateServlet" method="post">
 			<table class="table table-striped">
 				<tr>
 					<th>Computer Repair Bill ID</th>

@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/EmpSalaryDelete")
-public class EmpSalaryDelete extends HttpServlet {
+@WebServlet("/EmpSalaryDeleteServlet")
+public class EmpSalaryDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	

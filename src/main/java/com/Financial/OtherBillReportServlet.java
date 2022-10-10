@@ -12,25 +12,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/RepairBillReport")
-public class RepairBillReport extends HttpServlet {
+@WebServlet("/OtherBillReportServlet")
+public class OtherBillReportServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		PrintWriter out =response.getWriter();
 		response.setContentType("text/html");
 		
 		String date = request.getParameter("date");
 		Boolean isTrue;
 		
-		isTrue = finacialDButill.repairbillreport(date);
+		isTrue = finacialDButill.otherbillreport(date);
 		
 		if(isTrue==true) {
 			
 			
-			List<computerBillHistory>report = finacialDButill.getrepairbillreport(date);
+			List<otherBillHistroy>report = finacialDButill.getotherbillreport(date);
 			
 			request.setAttribute("report", report);
 			
@@ -39,7 +38,7 @@ public class RepairBillReport extends HttpServlet {
 		try {
 			
 			
-			RequestDispatcher rs = request.getRequestDispatcher("ReportComputer.jsp");
+			RequestDispatcher rs = request.getRequestDispatcher("ReportOther.jsp");
 			
 			rs.forward(request, response);
 			
@@ -62,9 +61,6 @@ public class RepairBillReport extends HttpServlet {
 
 			
 		}
-		
-		
-		
 	}
 
 }

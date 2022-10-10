@@ -209,7 +209,7 @@
 		<br> <br> <br>
 
 
-		<form action="OtherBillReport" method="post">
+		<form action="OtherBillReportServlet" method="post">
 
 			<div class="form-group">
 				<label class="mt-5">Generate Report</label> <input type="date"

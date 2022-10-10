@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/EmplistServlet")
-public class EmplistServlet extends HttpServlet {
+@WebServlet("/EmpListServlet")
+public class EmpListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 

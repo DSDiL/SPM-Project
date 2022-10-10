@@ -124,7 +124,7 @@
 		%>
 
 
-		<form action="otherBillUpdate" method="post">
+		<form action="OtherBillUpdateServlet" method="post">
 
 			<table class="table table-striped">
 				<tr>

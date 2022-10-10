@@ -219,7 +219,7 @@
 		<br> <br> <br>
 
 
-		<form action="RepairBillReport" method="post">
+		<form action="RepairBillReportServlet" method="post">
 
 			<div class="form-group">
 				<label class="mt-5">Generate Report</label> <input type="date"

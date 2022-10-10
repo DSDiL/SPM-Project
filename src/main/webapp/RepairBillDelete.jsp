@@ -123,7 +123,7 @@
 		%>
 
 
-		<form action="RepairBillDelete" method="post">
+		<form action="RepairBillDeleteServlet" method="post">
 			<table class="table table-striped">
 				<tr>
 					<th>Computer Repair Bill ID</th>
