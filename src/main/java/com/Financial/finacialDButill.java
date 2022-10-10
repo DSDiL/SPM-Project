@@ -594,7 +594,7 @@ public class finacialDButill {
 		float Bonus = Float.parseFloat(bonus);
 		float Basicsalary = Float.parseFloat(basicsalary);
 
-		float total = Basicsalary + OT + EPF + ETF + Bonus;
+		float total = Basicsalary + OT - (EPF + ETF )+ Bonus;
 
 		try {
 			con = DBConnect.getConnection();
