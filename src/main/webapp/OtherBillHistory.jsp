@@ -1,14 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
 <meta charset="UTF-8">
-<title>Select Bill</title>
+<title>Bill History</title>
+
+
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://kit.fontawesome.com/8da1f1e093.js"
@@ -61,11 +57,10 @@
 	href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href="css/styles.css">
-
-
-<link rel="stylesheet" href="css/styles.css">
-
 
 </head>
 <body>
@@ -73,10 +68,6 @@
 		id="btn-back-to-top">
 		<i class="fas fa-arrow-up"></i>
 	</button>
-
-
-
-
 
 	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
 		<button type="button" class="navbar-toggler" data-toggle="collapse"
@@ -106,58 +97,137 @@
 
 	</nav>
 
-	<div class="form mx-auto ">
+	<div class="form mx-auto w-90">
 		<h2 class="text-center">
-			<b>Employee List</b>
+			<b>Bill History</b>
 		</h2>
 
 
-		<table class="table table-striped mt-5">
-			<thead>
+
+		<table class="table table-striped">
+
+			<tr>
+				<th>Other Electronic Repair Bill ID</th>
+				<th>Repair ID</th>
+				<th>Customer Name</th>
+				<th>Date</th>
+				<th>Spare Parts</th>
+				<th>Quantity</th>
+				<th>Cost</th>
+				<th>Spare Part Price</th>
+				<th>Bill Date</th>
+				<th>Service Charges</th>
+				<th>Total</th>
+			</tr>
+
+
+			<c:forEach var="otherBill" items="${otherBill}">
+				<c:set var="billID" value="${ otherBill.billID }" />
+				<c:set var="roID" value="${otherBill.roID}" />
+				<c:set var="name" value="${otherBill.name}" />
+				<c:set var="date" value="${ otherBill.date }" />
+				<c:set var="spare" value="${ otherBill.spare }" />
+				<c:set var="qty" value="${ otherBill.qty }" />
+				<c:set var="cost" value="${ otherBill.cost }" />
+				<c:set var="spareprice" value="${ otherBill.spareprice }" />
+				<c:set var="billdate" value="${ otherBill.billdate }" />
+				<c:set var="service" value="${ otherBill.service }" />
+				<c:set var="total" value="${ otherBill.total }" />
+
+
 				<tr>
-					<th class="w-90">NIC</th>
-					<th scope="col">Name</th>
-					<th scope="col">Email</th>
-					<th scope="col">Position</th>
-					<th scope="col">Basic Salary</th>
-
-				</tr>
-			</thead>
-
-			<c:forEach var="emp" items="${emp}">
-
-
-
+					<td>${ otherBill.billID }</td>
+					<td>${ otherBill.roID }</td>
+					<td>${ otherBill.name }</td>
+					<td>${ otherBill.date }</td>
+					<td>${ otherBill.spare }</td>
+					<td>${ otherBill.qty }</td>
+					<td>${ otherBill.cost }</td>
+					<td>${ otherBill.spareprice }</td>
+					<td>${ otherBill.billdate }</td>
+					<td>${ otherBill.service }</td>
+					<td>${ otherBill.total }</td>
 
 
+					<c:url value="otherBillUpdate.jsp" var="otherBillUpdate">
 
-				<tr>
-					<td>${emp.nic}</td>
-					<td>${emp.name}</td>
-					<td>${emp.email}</td>
-					<td>${emp.position}</td>
-					<td>${emp.basicsalary}</td>
+						<c:param name="otherbillID" value="${billID}" />
+						<c:param name="otherroID" value="${roID}" />
+						<c:param name="othername" value="${name}" />
+						<c:param name="otherdate" value="${date}" />
+						<c:param name="otherspare" value="${spare}" />
+						<c:param name="otherqty" value="${qty}" />
+						<c:param name="othercost" value="${cost}" />
+						<c:param name="otherspareprice" value="${spareprice}" />
+						<c:param name="otherbilldate" value="${billdate}" />
+						<c:param name="otherservice" value="${service}" />
+						<c:param name="othertotal" value="${total}" />
+
+
+					</c:url>
+
+
+
+					<td><a href="${otherBillUpdate}"> <input type="button"
+							class="btn btn-primary" name="Submit" id="update" value="Update">
+					</a></td>
+
+
+
+					<c:url value="otherBillDelete.jsp" var="otherBillDelete">
+
+						<c:param name="otherbillID" value="${billID}" />
+						<c:param name="otherroID" value="${roID}" />
+						<c:param name="othername" value="${name}" />
+						<c:param name="otherdate" value="${date}" />
+						<c:param name="otherspare" value="${spare}" />
+						<c:param name="otherqty" value="${qty}" />
+						<c:param name="othercost" value="${cost}" />
+						<c:param name="otherspareprice" value="${spareprice}" />
+						<c:param name="otherbilldate" value="${billdate}" />
+						<c:param name="otherservice" value="${service}" />
+						<c:param name="othertotal" value="${total}" />
+
+
+					</c:url>
+
+					<td><a href="${otherBillDelete}"> <input type="button"
+							id="delete" class="btn btn-danger" name="delete" value="Delete"></a>
+
+					</td>
+
 
 				</tr>
 
 
 			</c:forEach>
 		</table>
+		<br> <br> <br>
 
 
-		<div class="form-group text-center ">
-			<form action="EmpIDServlet" method="post">
+		<form action="OtherBillReport" method="post">
 
-				<label for="cid"><strong>Please Enter Employee NIC</strong></label>
-				<input class="form-control" type="text" id="rid" name="empNIC">
-				<input class="btn btn-success mt-5" class="text-right" type="submit"
-					id="submit" name="Submit" value="Submit">
+			<div class="form-group">
+				<label class="mt-5">Generate Report</label> <input type="date"
+					class="form-control" id="rid" name="date">
+				<button type="submit" class="btn btn-success mt-5" name="Submit"
+					value="Submit">Print Report</button>
+			</div>
 
-			</form>
+		</form>
 
-		</div>
+
+
+
+
+
+
+
+
 
 	</div>
+
+
 
 
 	<footer class="page-footer font-small cyan darken-3 text-center blue ">

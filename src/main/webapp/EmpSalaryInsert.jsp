@@ -108,54 +108,97 @@
 
 	<div class="form mx-auto ">
 		<h2 class="text-center">
-			<b>Employee List</b>
+			<b>Salary Details</b>
 		</h2>
 
+		<form method="post" action="Empsalaryinsert">
+			<table class="table table-striped">
+				<c:forEach var="emp" items="${emp}">
 
-		<table class="table table-striped mt-5">
-			<thead>
+
+					<c:set var="nic" value="${emp.nic}" />
+					<c:set var="name" value="${emp.name}" />
+					<c:set var="email" value="${emp.email}" />
+					<c:set var="position" value="${emp.position}" />
+					<c:set var="basicsalary" value="${emp.basicsalary}" />
+
+
+
+
+
+
+
+					<tr>
+						<td>NIC</td>
+						<td><input type="text" class="form-control w-50" name="nic"
+							value="${emp.nic}" readonly></td>
+					</tr>
+
+
+					<tr>
+						<td>Name</td>
+						<td><input type="text" class="form-control w-50" name="name"
+							value="${emp.name}" readonly></td>
+					</tr>
+
+
+					<tr>
+						<td>Email</td>
+						<td><input type="text" name="email" class="form-control w-50"
+							value="${emp.email}" readonly></td>
+					</tr>
+
+					<tr>
+						<td>Position</td>
+						<td><input type="text" name="position"
+							class="form-control w-50" value="${emp.position}" readonly></td>
+					</tr>
+
+					<tr>
+						<td>Basic Salary</td>
+						<td><input type="text" name="basicsalary"
+							class="form-control w-50" value="${emp.basicsalary}" readonly></td>
+					</tr>
+
+
+				</c:forEach>
+
+
+
+
 				<tr>
-					<th class="w-90">NIC</th>
-					<th scope="col">Name</th>
-					<th scope="col">Email</th>
-					<th scope="col">Position</th>
-					<th scope="col">Basic Salary</th>
 
+					<td>EPF</td>
+					<td><input type="text" name="epf" class="form-control w-50"
+						pattern="[0-9]+" required></td>
 				</tr>
-			</thead>
-
-			<c:forEach var="emp" items="${emp}">
-
-
-
-
-
 
 				<tr>
-					<td>${emp.nic}</td>
-					<td>${emp.name}</td>
-					<td>${emp.email}</td>
-					<td>${emp.position}</td>
-					<td>${emp.basicsalary}</td>
+					<td>ETF</td>
+					<td><input type="text" name="etf" class="form-control w-50"
+						pattern="[0-9]+" required></td>
+				</tr>
 
+				<tr>
+					<td>Over Time</td>
+					<td><input type="text" name="ot" class="form-control w-50"
+						pattern="[0-9]+" required></td>
+				</tr>
+				<tr>
+					<td>Bonus</td>
+					<td><input type="text" name="bonus" class="form-control w-50"
+						pattern="[0-9]+" required></td>
 				</tr>
 
 
-			</c:forEach>
-		</table>
+			</table>
+			<center>
+				<input type="submit" class="btn btn-primary" id="submit"
+					name="Submit" value="Submit">
+			</center>
+		</form>
 
 
-		<div class="form-group text-center ">
-			<form action="EmpIDServlet" method="post">
-
-				<label for="cid"><strong>Please Enter Employee NIC</strong></label>
-				<input class="form-control" type="text" id="rid" name="empNIC">
-				<input class="btn btn-success mt-5" class="text-right" type="submit"
-					id="submit" name="Submit" value="Submit">
-
-			</form>
-
-		</div>
 
 	</div>
 

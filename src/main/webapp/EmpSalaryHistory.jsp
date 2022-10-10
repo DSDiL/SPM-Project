@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<link rel="stylesheet" href="css/styles.css">
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,6 +63,7 @@
 <link rel="stylesheet" href="css/styles.css">
 
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href="css/styles.css">
 
 
@@ -106,58 +106,84 @@
 
 	</nav>
 
-	<div class="form mx-auto ">
+	<div class="form mx-auto">
 		<h2 class="text-center">
-			<b>Employee List</b>
+			<b>Employee Salary Details</b>
 		</h2>
 
-
-		<table class="table table-striped mt-5">
-			<thead>
-				<tr>
-					<th class="w-90">NIC</th>
-					<th scope="col">Name</th>
-					<th scope="col">Email</th>
-					<th scope="col">Position</th>
-					<th scope="col">Basic Salary</th>
-
-				</tr>
-			</thead>
-
-			<c:forEach var="emp" items="${emp}">
-
-
-
-
-
+		<form action="EmpSalaryDelete" method="post">
+			<table class="table table-striped">
 
 				<tr>
-					<td>${emp.nic}</td>
-					<td>${emp.name}</td>
-					<td>${emp.email}</td>
-					<td>${emp.position}</td>
-					<td>${emp.basicsalary}</td>
+					<th>Salary ID</th>
+					<th>NIC</th>
+					<th>ETF</th>
+					<th>EPF</th>
+					<th>Over Time</th>
+					<th>Bonus</th>
+					<th>Total</th>
 
 				</tr>
 
 
-			</c:forEach>
-		</table>
+				<c:forEach var="emp" items="${emp}">
 
 
-		<div class="form-group text-center ">
-			<form action="EmpIDServlet" method="post">
+					<c:set var="salID" value="${emp.salID}" />
+					<c:set var="nic" value="${emp.nic}" />
+					<c:set var="etf" value="${emp.etf}" />
+					<c:set var="epf" value="${emp.epf}" />
+					<c:set var="ot" value="${emp.ot}" />
+					<c:set var="bonus" value="${emp.bonus}" />
+					<c:set var="total" value="${emp.total}" />
 
-				<label for="cid"><strong>Please Enter Employee NIC</strong></label>
-				<input class="form-control" type="text" id="rid" name="empNIC">
-				<input class="btn btn-success mt-5" class="text-right" type="submit"
-					id="submit" name="Submit" value="Submit">
 
-			</form>
 
-		</div>
+
+					<tr>
+						<td><input
+							style="outline: none; border: none; background-color: transparent; width: 10%;"
+							type="text" name="salID" value="${emp.salID}" readonly></td>
+						<td><input
+							style="outline: none; border: none; background-color: transparent;"
+							type="text" name="nic" value="${emp.nic}" readonly></td>
+						<td>${emp.etf}</td>
+						<td>${emp.epf}</td>
+						<td>${emp.ot}</td>
+						<td>${emp.bonus}</td>
+						<td>${emp.total}</td>
+
+
+						<c:url value="EmpSalaryUpdate.jsp" var="EmpSalaryUpdate">
+
+							<c:param name="salID" value="${salID}" />
+							<c:param name="nic" value="${nic}" />
+							<c:param name="etf" value="${etf}" />
+							<c:param name="epf" value="${epf}" />
+							<c:param name="ot" value="${ot}" />
+							<c:param name="bonus" value="${bonus}" />
+							<c:param name="total" value="${total}" />
+
+
+						</c:url>
+
+						<td><a href="${EmpSalaryUpdate}"><input type="button"
+								name="Submit" id="update" class="btn btn-primary" value="Update"></a>
+						</td>
+						<td>
+							<button type="submit" id="delete" name="Submit"
+								class="btn btn-danger" onclick="check()">Delete</button>
+						</td>
+					</tr>
+				</c:forEach>
+
+			</table>
+
+		</form>
 
 	</div>
+
+
 
 
 	<footer class="page-footer font-small cyan darken-3 text-center blue ">
@@ -207,7 +233,16 @@
 
 
 
+	<script type="text/javascript">
+		function check() {
 
+			var result = confirm('Are you sure you want to delete this Bill ?');
+
+			if (result == false) {
+				event.preventDefault();
+			}
+		}
+	</script>
 
 
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>

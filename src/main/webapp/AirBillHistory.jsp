@@ -1,14 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
 <meta charset="UTF-8">
-<title>Select Bill</title>
+<title>Bill History</title>
+
+
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://kit.fontawesome.com/8da1f1e093.js"
@@ -61,11 +57,10 @@
 	href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href="css/styles.css">
-
-
-<link rel="stylesheet" href="css/styles.css">
-
 
 </head>
 <body>
@@ -106,58 +101,135 @@
 
 	</nav>
 
-	<div class="form mx-auto ">
+	<div class="form mx-auto w-90">
 		<h2 class="text-center">
-			<b>Employee List</b>
+			<b>Bill History</b>
 		</h2>
 
 
-		<table class="table table-striped mt-5">
-			<thead>
+
+		<table class="table table-striped">
+
+			<tr>
+				<th>Air Condition Repair Bill ID</th>
+				<th>Repair ID</th>
+				<th>Customer Name</th>
+				<th>Date</th>
+				<th>Spare Parts</th>
+				<th>Quantity</th>
+				<th>Spare Part Price</th>
+				<th>Bill Date</th>
+				<th>Service Charges</th>
+				<th>Total</th>
+			</tr>
+
+
+			<c:forEach var="airBill" items="${airBill}">
+				<c:set var="billID" value="${ airBill.billID }" />
+				<c:set var="raID" value="${airBill.raID}" />
+				<c:set var="name" value="${airBill.name}" />
+				<c:set var="date" value="${ airBill.date }" />
+				<c:set var="spare" value="${ airBill.spare }" />
+				<c:set var="qty" value="${ airBill.qty }" />
+				<c:set var="spareprice" value="${ airBill.spareprice }" />
+				<c:set var="billdate" value="${ airBill.billdate }" />
+				<c:set var="service" value="${ airBill.service }" />
+				<c:set var="total" value="${ airBill.total }" />
+
 				<tr>
-					<th class="w-90">NIC</th>
-					<th scope="col">Name</th>
-					<th scope="col">Email</th>
-					<th scope="col">Position</th>
-					<th scope="col">Basic Salary</th>
+					<td>${ airBill.billID }</td>
+					<td>${ airBill.raID }</td>
+					<td>${ airBill.name }</td>
+					<td>${ airBill.date }</td>
+					<td>${ airBill.spare }</td>
+					<td>${ airBill.qty }</td>
+					<td>${ airBill.spareprice }</td>
+					<td>${ airBill.billdate }</td>
+					<td>${ airBill.service }</td>
+					<td>${ airBill.total }</td>
 
-				</tr>
-			</thead>
+					<c:url value="airBillUpdate.jsp" var="airBillUpdate">
 
-			<c:forEach var="emp" items="${emp}">
+						<c:param name="airbillID" value="${billID}" />
+						<c:param name="airraID" value="${raID}" />
+						<c:param name="airname" value="${name}" />
+						<c:param name="airdate" value="${date}" />
+						<c:param name="airspare" value="${spare}" />
+						<c:param name="airqty" value="${qty}" />
+						<c:param name="airspareprice" value="${spareprice}" />
+						<c:param name="airbilldate" value="${billdate}" />
+						<c:param name="airservice" value="${service}" />
+						<c:param name="airtotal" value="${total}" />
+
+
+					</c:url>
+
+
+
+					<td><a href="${airBillUpdate}"> <input type="button"
+							class="btn btn-primary" name="Submit" id="update" value="Update">
+					</a></td>
+
+
+
+					<c:url value="airBillDelete.jsp" var="airBillDelete">
+
+						<c:param name="airbillID" value="${billID}" />
+						<c:param name="airraID" value="${raID}" />
+						<c:param name="airname" value="${name}" />
+						<c:param name="airdate" value="${date}" />
+						<c:param name="airspare" value="${spare}" />
+						<c:param name="airqty" value="${qty}" />
+						<c:param name="airspareprice" value="${spareprice}" />
+						<c:param name="airbilldate" value="${billdate}" />
+						<c:param name="airservice" value="${service}" />
+						<c:param name="airtotal" value="${total}" />
+
+
+					</c:url>
 
 
 
 
 
 
-				<tr>
-					<td>${emp.nic}</td>
-					<td>${emp.name}</td>
-					<td>${emp.email}</td>
-					<td>${emp.position}</td>
-					<td>${emp.basicsalary}</td>
+					<td><a href="${airBillDelete}"> <input type="button"
+							id="delete" class="btn btn-danger" name="delete" value="Delete"></a>
+
+					</td>
+
 
 				</tr>
 
 
 			</c:forEach>
 		</table>
+		<br> <br> <br>
 
 
-		<div class="form-group text-center ">
-			<form action="EmpIDServlet" method="post">
+		<form action="AirBillReport" method="post">
 
-				<label for="cid"><strong>Please Enter Employee NIC</strong></label>
-				<input class="form-control" type="text" id="rid" name="empNIC">
-				<input class="btn btn-success mt-5" class="text-right" type="submit"
-					id="submit" name="Submit" value="Submit">
+			<div class="form-group">
+				<label class="mt-5">Generate Report</label> <input type="date"
+					class="form-control" id="rid" name="date">
+				<button type="submit" class="btn btn-success mt-5" name="Submit"
+					value="Submit">Print Report</button>
+			</div>
 
-			</form>
+		</form>
 
-		</div>
+
+
+
+
+
+
+
+
 
 	</div>
+
+
 
 
 	<footer class="page-footer font-small cyan darken-3 text-center blue ">

@@ -1,20 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@page import="java.sql.*"%>
-<%@ page import="java.util.*"%>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<title>Sign up</title>
-<meta charset="utf-8">
+
+
+<meta charset="UTF-8">
+<title>Select Bill</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://kit.fontawesome.com/8da1f1e093.js"
 	crossorigin="anonymous"></script>
-
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 	crossorigin="anonymous"></script>
@@ -30,7 +24,6 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
 	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <link
@@ -64,6 +57,12 @@
 	href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="css/styles.css">
+
+
+<link rel="stylesheet" href="css/styles.css">
+
+
 </head>
 <body>
 	<button type="button" class="btn btn-danger btn-floating btn-lg"
@@ -82,39 +81,130 @@
 		</button>
 		<div class="collapse navbar-collapse   ">
 			<ul class="navbar-nav mr-auto  ">
-				<li class="nav-item"><a href="#service"
+				<li class="nav-item"><a href="HomePage.jsp"
 					class="nav-link h5 mr-2  "
 					style="font-family: 'Raleway', sans-serif;" id="item"><i
 						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
-				<li class="nav-item"><a href="about.html"
+				<li class="nav-item"><a href="AllbillHistory.jsp"
 					class="nav-link h5 mr-2" id="item"
 					style="font-family: 'Raleway', sans-serif;"><i
-						class="bi bi-box-arrow-in-right pr-2"></i><b>Login/Logout</b> </a></li>
-				<li class="nav-item"><a href="portfolio.html"
-					class="nav-link h5 mr-2" id="item"
-					style="font-family: 'Raleway', sans-serif;"> <i
-						class="bi bi-info-circle pr-2"></i></i><b>About</b>
+						class="bi bi-clock-history pr-2"></i><b>Bill History</b> </a></li>
+				<li class="nav-item"><a href="Emp.jsp" class="nav-link h5 mr-2"
+					id="item" style="font-family: 'Raleway', sans-serif;"> <i
+						class="bi bi-cash-stack pr-2"></i><b>Employee Salary</b>
 				</a></li>
-				<li class="nav-item"><a href="contact.html"
+				<li class="nav-item"><a href="EmpHistory.jsp"
 					class="nav-link h5 mr-2" id="item"
 					style="font-family: 'Raleway', sans-serif;"><i
-						class="bi bi-person-lines-fill pr-2"></i></i> <b>Contact</b> </a></li>
+						class="bi bi-book-half pr-2"></i> <b>Salary History</b> </a></li>
 			</ul>
 		</div>
 
 	</nav>
-<body>
-
-
 
 	<div class="form mx-auto">
+		<h2 class="text-center">
+			<b>Employee Salary Details</b>
+		</h2>
+
+		<form action="EmpSalaryServlet" method="post">
 
 
-		<label class="form mx-auto"><strong>Report</strong></label><br>
-		<br> <br> <br> <a onclick="window.print();"> <input
-			type="button" id="submit" class="btn btn-success align-items-center"
-			name="Submit" value="Print">
-		</a>
+
+			<div class="form-group text-center">
+
+				<input type="text" class="form-control mt-5" name="nic"
+					pattern="[0-9]{9}[V-v]{1}" required><br> <input
+					type="submit" id="submit" class="btn btn-success mt-5"
+					name="Submit" value="Show Employee Salary Details">
+			</div>
+		</form>
+
+	</div>
+
+
+
+
+	<footer class="page-footer font-small cyan darken-3 text-center blue ">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 py-5">
+					<h4 class="text-uppercase text-white"
+						style="font-family: 'Quicksand', sans-serif;">Follow Us out
+						there</h4>
+					<div class="mb-5 flex-center mt-5">
+						<ul
+							class="social-icons icon-circle icon-rotate list-unstyled list-inline">
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-facebook mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-twitter mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-youtube mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-google-plus mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-instagram mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-linkedin mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-pinterest mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-github mr-md-5 mr-3 fa-2x"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
+
+	<script>
+		//Get the button
+		let mybutton = document.getElementById("btn-back-to-top");
+
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function() {
+			scrollFunction();
+		};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 20
+					|| document.documentElement.scrollTop > 20) {
+				mybutton.style.display = "block";
+			} else {
+				mybutton.style.display = "none";
+			}
+		}
+		// When the user clicks on the button, scroll to the top of the document
+		mybutton.addEventListener("click", backToTop);
+
+		function backToTop() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
+
 </body>
-</div>
 </html>

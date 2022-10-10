@@ -1,12 +1,6 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
 <meta charset="UTF-8">
 <title>Select Bill</title>
 <meta name="viewport"
@@ -64,9 +58,6 @@
 <link rel="stylesheet" href="css/styles.css">
 
 
-<link rel="stylesheet" href="css/styles.css">
-
-
 </head>
 <body>
 	<button type="button" class="btn btn-danger btn-floating btn-lg"
@@ -106,58 +97,32 @@
 
 	</nav>
 
-	<div class="form mx-auto ">
+	<div class="form mx-auto">
 		<h2 class="text-center">
-			<b>Employee List</b>
+			<b>Bill History</b>
 		</h2>
 
 
-		<table class="table table-striped mt-5">
-			<thead>
-				<tr>
-					<th class="w-90">NIC</th>
-					<th scope="col">Name</th>
-					<th scope="col">Email</th>
-					<th scope="col">Position</th>
-					<th scope="col">Basic Salary</th>
-
-				</tr>
-			</thead>
-
-			<c:forEach var="emp" items="${emp}">
+		<div class="list-group">
 
 
 
-
-
-
-				<tr>
-					<td>${emp.nic}</td>
-					<td>${emp.name}</td>
-					<td>${emp.email}</td>
-					<td>${emp.position}</td>
-					<td>${emp.basicsalary}</td>
-
-				</tr>
-
-
-			</c:forEach>
-		</table>
-
-
-		<div class="form-group text-center ">
-			<form action="EmpIDServlet" method="post">
-
-				<label for="cid"><strong>Please Enter Employee NIC</strong></label>
-				<input class="form-control" type="text" id="rid" name="empNIC">
-				<input class="btn btn-success mt-5" class="text-right" type="submit"
-					id="submit" name="Submit" value="Submit">
-
-			</form>
-
+			<button type="button" style="width: 20%; height: 60px;"
+				onclick="document.location = 'RepairDate.jsp'"
+				class="btn btn-info mt-5 mx-auto">Computer Repair Bills</button>
+			<button type="button" style="width: 20%; height: 60px;"
+				onclick="document.location = 'airDate.jsp'"
+				class="btn btn-info mt-5 mx-auto">Air Condition Repair
+				Bills</button>
+			<button type="button" style="width: 20%; height: 60px;"
+				onclick="document.location = 'otherDate.jsp'"
+				class="btn btn-info mt-5 mx-auto">Other Electronic Bills</button>
 		</div>
 
+
 	</div>
+
+
 
 
 	<footer class="page-footer font-small cyan darken-3 text-center blue ">

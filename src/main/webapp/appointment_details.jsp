@@ -1,14 +1,14 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+<meta charset="ISO-8859-1">
+<title>Submitted Appointments</title>
 
-
-<meta charset="UTF-8">
-<title>Select Bill</title>
+<meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://kit.fontawesome.com/8da1f1e093.js"
@@ -61,10 +61,7 @@
 	href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<link rel="stylesheet" href="css/styles.css">
-
-
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="web/css/styles.css">
 
 
 </head>
@@ -85,79 +82,91 @@
 		</button>
 		<div class="collapse navbar-collapse   ">
 			<ul class="navbar-nav mr-auto  ">
-				<li class="nav-item"><a href="HomePage.jsp"
+				<li class="nav-item"><a href="Home.jsp"
 					class="nav-link h5 mr-2  "
 					style="font-family: 'Raleway', sans-serif;" id="item"><i
 						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
-				<li class="nav-item"><a href="AllbillHistory.jsp"
+				<li class="nav-item"><a href="customerLogin.jsp"
 					class="nav-link h5 mr-2" id="item"
-					style="font-family: 'Raleway', sans-serif;"><i
-						class="bi bi-clock-history pr-2"></i><b>Bill History</b> </a></li>
-				<li class="nav-item"><a href="Emp.jsp" class="nav-link h5 mr-2"
-					id="item" style="font-family: 'Raleway', sans-serif;"> <i
-						class="bi bi-cash-stack pr-2"></i><b>Employee Salary</b>
+					style="font-family: 'Raleway', sans-serif;"> <i
+						class="bi bi-info-circle pr-2"></i></i><b>Login</b>
 				</a></li>
-				<li class="nav-item"><a href="EmpHistory.jsp"
-					class="nav-link h5 mr-2" id="item"
-					style="font-family: 'Raleway', sans-serif;"><i
-						class="bi bi-book-half pr-2"></i> <b>Salary History</b> </a></li>
 			</ul>
 		</div>
 
 	</nav>
 
-	<div class="form mx-auto ">
-		<h2 class="text-center">
-			<b>Employee List</b>
-		</h2>
+	<div class="form mx-auto">
 
+		<h2 class="text-center">Submitted Appointment</h2>
 
-		<table class="table table-striped mt-5">
-			<thead>
+		<c:forEach var="app" items="${apoid}">
+
+			<c:set var="apoid" value="${app.apoid}" />
+			<c:set var="servicetype" value="${app.servicetype}" />
+			<c:set var="description" value="${app.description}" />
+			<c:set var="timeslot" value="${app.timeslot}" />
+			<c:set var="requireddate" value="${app.requireddate}" />
+			<c:set var="cid" value="${app.cid}" />
+			<table class="table table-striped mt-5">
 				<tr>
-					<th class="w-90">NIC</th>
-					<th scope="col">Name</th>
-					<th scope="col">Email</th>
-					<th scope="col">Position</th>
-					<th scope="col">Basic Salary</th>
-
+					<td>Appointment ID</td>
+					<td>${app.apoid}</td>
 				</tr>
-			</thead>
-
-			<c:forEach var="emp" items="${emp}">
-
-
-
-
-
-
 				<tr>
-					<td>${emp.nic}</td>
-					<td>${emp.name}</td>
-					<td>${emp.email}</td>
-					<td>${emp.position}</td>
-					<td>${emp.basicsalary}</td>
-
+					<td>Service</td>
+					<td>${app.servicetype}</td>
+				</tr>
+				<tr>
+					<td>Reserved Time</td>
+					<td>${app.timeslot}</td>
+				</tr>
+				<tr>
+					<td>Reserved Date</td>
+					<td>${app.requireddate}</td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td>${app.description}</td>
 				</tr>
 
-
-			</c:forEach>
-		</table>
+			</table>
 
 
-		<div class="form-group text-center ">
-			<form action="EmpIDServlet" method="post">
+			<c:url value="update_appointment_details.jsp" var="appointmentUpdate">
+				<c:param name="apoid" value="${apoid}" />
+				<c:param name="servicetype" value="${servicetype}" />
+				<c:param name="description" value="${description}" />
+				<c:param name="timeslot" value="${timeslot}" />
+				<c:param name="requireddate" value="${requireddate}" />
+				<c:param name="cid" value="${cid}" />
+			</c:url>
 
-				<label for="cid"><strong>Please Enter Employee NIC</strong></label>
-				<input class="form-control" type="text" id="rid" name="empNIC">
-				<input class="btn btn-success mt-5" class="text-right" type="submit"
-					id="submit" name="Submit" value="Submit">
+			<center>
+				<a href="${appointmentUpdate}"> <input type="button"
+					name="update" id="update" style="width: 25%"
+					class="btn btn-primary" value="Change Details">
+				</a>
+			</center>
+		</c:forEach>
 
-			</form>
+		<c:url value="userAcc.jsp" var="app">
 
-		</div>
+			<c:param name="id" value="${cid}" />
+
+		</c:url>
+
+		<center>
+			<a href="${app}">
+				<button type="button" class="btn btn-info mt-2" style="width: 25%"
+					name="id">Back To Home</button>
+			</a>
+		</center>
+
 
 	</div>
+
+
 
 
 	<footer class="page-footer font-small cyan darken-3 text-center blue ">
@@ -194,52 +203,78 @@
 	</footer>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script>
-		AOS.init();
-	</script>
+      AOS.init();
+    </script>
 
 	<script>
-		//Get the button
-		let mybutton = document.getElementById("btn-back-to-top");
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
 
-		// When the user scrolls down 20px from the top of the document, show the button
-		window.onscroll = function() {
-			scrollFunction();
-		};
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+      scrollFunction();
+    };
 
-		function scrollFunction() {
-			if (document.body.scrollTop > 20
-					|| document.documentElement.scrollTop > 20) {
-				mybutton.style.display = "block";
-			} else {
-				mybutton.style.display = "none";
-			}
-		}
-		// When the user clicks on the button, scroll to the top of the document
-		mybutton.addEventListener("click", backToTop);
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    // When the user clicks on the button, scroll to the top of the document
+    mybutton.addEventListener("click", backToTop);
 
-		function backToTop() {
-			document.body.scrollTop = 0;
-			document.documentElement.scrollTop = 0;
-		}
-	</script>
+    function backToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+
+	<script>
+
+function validateForm(){
+
+	var name=document.myform.name.value;
+	var email=document.myform.email.value;
+	var phone=document.myform.phone.value;
+	var add=document.myform.add.value;
+	var pw=document.myform.pw.value;
+
+	var pw=document.myform.pw.value;
+	var pw2=document.myform.pw2.value;
+
+
+ if(name==""){
+		alert("Name can't be empty!");
+		return false;
+	}else if(email==""){
+		alert("email can't be empty!");
+		return false;
+	}else if(phone==""){
+		alert("Phone can't be empty!");
+		return false;
+	else if(add==""){
+		alert("Address number can't be empty!");
+		return false;
+	}
+	else if(pw.length<6){
+		alert("Password must be at least 6 characters long!");
+		return false;
+	}else if(pw != pw2){
+		alert("Password did not match! Try again!");
+		return false;
+	}
+}
+
+</script>
+
 
 </body>
 </html>

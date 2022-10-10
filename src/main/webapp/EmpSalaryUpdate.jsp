@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<link rel="stylesheet" href="css/styles.css">
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,6 +63,7 @@
 <link rel="stylesheet" href="css/styles.css">
 
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href="css/styles.css">
 
 
@@ -106,58 +106,79 @@
 
 	</nav>
 
-	<div class="form mx-auto ">
+	<div class="form mx-auto">
 		<h2 class="text-center">
-			<b>Employee List</b>
+			<b>Update Employee Salary Details</b>
 		</h2>
 
 
-		<table class="table table-striped mt-5">
-			<thead>
-				<tr>
-					<th class="w-90">NIC</th>
-					<th scope="col">Name</th>
-					<th scope="col">Email</th>
-					<th scope="col">Position</th>
-					<th scope="col">Basic Salary</th>
 
-				</tr>
-			</thead>
-
-			<c:forEach var="emp" items="${emp}">
+		<%
+		String salID = request.getParameter("salID");
+		String nic = request.getParameter("nic");
+		String etf = request.getParameter("etf");
+		String epf = request.getParameter("epf");
+		String ot = request.getParameter("ot");
+		String bonus = request.getParameter("bonus");
+		String total = request.getParameter("total");
+		%>
 
 
 
 
-
+		<form action="EmpSalaryUpdate" method="post">
+			<table class="table table-striped">
 
 				<tr>
-					<td>${emp.nic}</td>
-					<td>${emp.name}</td>
-					<td>${emp.email}</td>
-					<td>${emp.position}</td>
-					<td>${emp.basicsalary}</td>
+					<th>Salary ID</th>
+					<th>NIC</th>
+					<th>ETF</th>
+					<th>EPF</th>
+					<th>Over Time</th>
+					<th>Bonus</th>
+					<th>Total</th>
 
 				</tr>
 
 
-			</c:forEach>
-		</table>
+
+				<tr>
+					<td><input type="text" name="salID"
+						style="outline: none; border: none; background-color: transparent;"
+						class="w-50" value="<%=salID%>" readonly></td>
+					<td><input type="text" name="nic"
+						style="outline: none; border: none; background-color: transparent; width: 90%;"
+						value="<%=nic%>" readonly></td>
+					<td><input type="text" name="etf"
+						style="border-radius: 5px; background-color: transparent; width: 90%;"
+						value="<%=etf%>"></td>
+					<td><input type="text" name="epf"
+						style="border-radius: 5px; background-color: transparent; width: 90%;"
+						value="<%=epf%>"></td>
+					<td><input type="text" name="ot"
+						style="border-radius: 5px; background-color: transparent; width: 90%;"
+						value="<%=ot%>"></td>
+					<td><input type="text" name="bonus"
+						style="border-radius: 5px; background-color: transparent; width: 90%;"
+						value="<%=bonus%>"></td>
+					<td><input type="text" name="total"
+						style="width: 75%; border-radius: 5px; background-color: transparent;"
+						value="<%=total%>"></td>
+
+				</tr>
 
 
-		<div class="form-group text-center ">
-			<form action="EmpIDServlet" method="post">
+			</table>
 
-				<label for="cid"><strong>Please Enter Employee NIC</strong></label>
-				<input class="form-control" type="text" id="rid" name="empNIC">
-				<input class="btn btn-success mt-5" class="text-right" type="submit"
-					id="submit" name="Submit" value="Submit">
+			<div class="text-center">
+				<input type="submit" class="btn btn-primary" id="update"
+					name="Submit" value="Update">
+			</div>
 
-			</form>
-
-		</div>
-
+		</form>
 	</div>
+
+
 
 
 	<footer class="page-footer font-small cyan darken-3 text-center blue ">
