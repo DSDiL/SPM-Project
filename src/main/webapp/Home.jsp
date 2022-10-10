@@ -201,9 +201,8 @@
 		</div>
 
 
-
 	</div>
-	<footer class="page-footer font-small cyan darken-3 text-center blue " style ="margin-top: 120px;">
+	<footer class="page-footer font-small cyan darken-3 text-center blue " style ="margin-top: 110px;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 py-5">

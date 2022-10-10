@@ -117,8 +117,6 @@
 
 
 
-
-
 	<footer class="page-footer font-small cyan darken-3 text-center blue " style ="margin-top: 120px;">
 		<div class="container">
 			<div class="row">
