@@ -360,44 +360,7 @@ public class finacialDButill {
 
 	}
 
-	public static List<inserted_deliver_info> getdeliverbillhistory(String deliverydate) {
-
-		ArrayList<inserted_deliver_info> inserted_deliver_info = new ArrayList<>();
-		// Validate
-		try {
-
-			con = DBConnect.getConnection();
-			stmt = con.createStatement();
-
-			String sql = "select * from repair_air_bills where billdate = '" + deliverydate + "'";
-
-			rs = stmt.executeQuery(sql);
-
-			while (rs.next()) {
-
-				int deliverbillID = rs.getInt(1);
-				Date orderdate = rs.getDate(2);
-				float Total = rs.getFloat(3);
-				String orderID = rs.getString(4);
-				float Tax = rs.getFloat(5);
-				float deliverycost = rs.getFloat(6);
-				Date billdate = rs.getDate(7);
-				int cid = rs.getInt(8);
-
-				inserted_deliver_info c = new inserted_deliver_info(deliverbillID, orderdate, Total, orderID, Tax,
-						deliverycost, billdate, cid);
-				inserted_deliver_info.add(c);
-
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("rrrr");
-		}
-
-		return inserted_deliver_info;
-
-	}
+	
 
 	public static boolean validationdelivery(String bid) {
 
@@ -847,40 +810,7 @@ public class finacialDButill {
 
 	}
 
-	public static boolean insert_air_bill(String raID, String cID, String company, String date, String description,
-			String spare, String qty, String cost, String sparepart, String billdate, String service) {
-
-		isSuccess = false;
-
-		float Qty = Float.parseFloat(qty);
-		float Sparepart = Float.parseFloat(sparepart);
-		float Service = Float.parseFloat(service);
-
-		float Total;
-
-		Total = Qty * Sparepart + Service;
-
-		try {
-			con = DBConnect.getConnection();
-			stmt = con.createStatement();
-
-			String sql = "insert into repair_air_bills values (0, '" + raID + "', '" + company + "', '" + date + "', '"
-					+ description + "','" + spare + "','" + Qty + "','" + cost + "','" + Sparepart + "','" + billdate
-					+ "','" + Service + "','" + Total + "')";
-
-			int rs = stmt.executeUpdate(sql);
-
-			if (rs > 0) {
-				isSuccess = true;
-			} else {
-				isSuccess = false;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return isSuccess;
-
-	}
+	
 
 	public static List<repairAir> getAirdetails(String did) {
 
@@ -1014,98 +944,11 @@ public class finacialDButill {
 
 	}
 
-	public static List<airBillHistroy> getairbillhistory(String airdate) {
+	
 
-		ArrayList<airBillHistroy> airBillHistroy = new ArrayList<>();
+	
 
-		try {
-
-			con = DBConnect.getConnection();
-			stmt = con.createStatement();
-
-			String sql = "select * from techscope.repair_air_bills where billdate = '" + airdate + "'";
-
-			rs = stmt.executeQuery(sql);
-
-			while (rs.next()) {
-
-				int billID = rs.getInt(1);
-				int raID = rs.getInt(2);
-				String name = rs.getString(3);
-				Date Date = rs.getDate(4);
-				String spare = rs.getString(7);
-				int qty = rs.getInt(8);
-				float spareprice = rs.getFloat(9);
-				Date billdate = rs.getDate(10);
-				float serviceCharges = rs.getFloat(11);
-				float total = rs.getFloat(12);
-
-				airBillHistroy c = new airBillHistroy(billID, raID, name, Date, spare, qty, spareprice, billdate,
-						serviceCharges, total);
-				airBillHistroy.add(c);
-
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("rrrr");
-		}
-
-		return airBillHistroy;
-	}
-
-	public static boolean updateairrepairbill(String billID, String date, String spareprice, String service,
-			String total) {
-
-		int billid = Integer.parseInt(billID);
-		float Spare = Float.parseFloat(spareprice);
-		float Service = Float.parseFloat(service);
-		float Total = Float.parseFloat(total);
-
-		try {
-			con = DBConnect.getConnection();
-			stmt = con.createStatement();
-
-			String sql = "update repair_air_bills set sparepart='" + Spare + "', service='" + Service + "',total='"
-					+ Total + "' where billID='" + billid + "'";
-
-			int rs = stmt.executeUpdate(sql);
-
-			if (rs > 0) {
-				isSuccess = true;
-			} else {
-				isSuccess = false;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return isSuccess;
-
-	}
-
-	public static boolean deleteairbills(String billID) {
-
-		int BillID = Integer.parseInt(billID);
-
-		try {
-			con = DBConnect.getConnection();
-			stmt = con.createStatement();
-
-			String sql = "delete from repair_air_bills where billID='" + BillID + "'";
-
-			int rs = stmt.executeUpdate(sql);
-
-			if (rs > 0) {
-				isSuccess = true;
-			} else {
-				isSuccess = false;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return isSuccess;
-	}
+	
 
 	public static List<otherBillHistroy> getotherbillhistory(String otherdate) {
 
@@ -1271,68 +1114,9 @@ public class finacialDButill {
 		return isSuccess;
 	}
 
-	public static List<airBillHistroy> AirBillReport(String date) {
+	
 
-		ArrayList<airBillHistroy> airBillHistroy = new ArrayList<>();
-
-		try {
-
-			con = DBConnect.getConnection();
-			stmt = con.createStatement();
-
-			String sql = "select * from techscope.repair_air_bills where billdate = '" + date + "'";
-
-			rs = stmt.executeQuery(sql);
-
-			while (rs.next()) {
-
-				int billID = rs.getInt(1);
-				int raID = rs.getInt(2);
-				String name = rs.getString(3);
-				Date Date = rs.getDate(4);
-				String spare = rs.getString(7);
-				int qty = rs.getInt(8);
-				float spareprice = rs.getFloat(9);
-				Date billdate = rs.getDate(10);
-				float serviceCharges = rs.getFloat(11);
-				float total = rs.getFloat(12);
-
-				airBillHistroy c = new airBillHistroy(billID, raID, name, Date, spare, qty, spareprice, billdate,
-						serviceCharges, total);
-				airBillHistroy.add(c);
-
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("rrrr");
-		}
-
-		return airBillHistroy;
-
-	}
-
-	public static Boolean reportair(String date) {
-		try {
-			con = DBConnect.getConnection();
-			stmt = con.createStatement();
-
-			String sql = "select * from automart.repair_air_bills where billdate = '" + date + "'";
-			rs = stmt.executeQuery(sql);
-
-			if (rs.next()) {
-				isSuccess = true;
-			} else {
-				isSuccess = false;
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return isSuccess;
-
-	}
+	
 
 	public static List<otherBillHistroy> getotherbillreport(String date) {
 		ArrayList<otherBillHistroy> otherBillHistroy = new ArrayList<>();
