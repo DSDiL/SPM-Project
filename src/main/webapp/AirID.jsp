@@ -1,14 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@page import="java.sql.*"%>
-<%@ page import="java.util.*"%>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<title>Sign up</title>
+
+<title>Enter Airconditoner Repair ID</title>
+
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,7 +25,6 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
 	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <link
@@ -64,6 +58,12 @@
 	href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+<link rel="stylesheet" href="css/styles.css">
+
+
 </head>
 <body>
 	<button type="button" class="btn btn-danger btn-floating btn-lg"
@@ -103,18 +103,108 @@
 		</div>
 
 	</nav>
-<body>
-
-
 
 	<div class="form mx-auto">
+		<h2 style="margin-right: 50px;">
+			<b>Enter Air Conditioner Repair ID</b>
+		</h2>
+		<form action="DeliveryIDServlet" method="post">
+
+			<div class="form-group">
+				<label class="mt-5">Repair ID</label> <input type="text"
+					class="form-control" id="rid" name="rid">
+				<button type="submit" class="btn btn-success mt-5" name="Submit"
+					value="Submit">Submit</button>
+			</div>
 
 
-		<label class="form mx-auto"><strong>Report</strong></label><br>
-		<br> <br> <br> <a onclick="window.print();"> <input
-			type="button" id="submit" class="btn btn-success align-items-center"
-			name="Submit" value="Print">
-		</a>
+
+		</form>
+	</div>
+
+
+
+
+	<footer class="page-footer font-small cyan darken-3 text-center blue ">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 py-5">
+					<h4 class="text-uppercase text-white"
+						style="font-family: 'Quicksand', sans-serif;">Follow Us out
+						there</h4>
+					<div class="mb-5 flex-center mt-5">
+						<ul
+							class="social-icons icon-circle icon-rotate list-unstyled list-inline">
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-facebook mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-twitter mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-youtube mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-google-plus mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-instagram mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-linkedin mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-pinterest mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-github mr-md-5 mr-3 fa-2x"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
+
+	<script>
+		//Get the button
+		let mybutton = document.getElementById("btn-back-to-top");
+
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function() {
+			scrollFunction();
+		};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 20
+					|| document.documentElement.scrollTop > 20) {
+				mybutton.style.display = "block";
+			} else {
+				mybutton.style.display = "none";
+			}
+		}
+		// When the user clicks on the button, scroll to the top of the document
+		mybutton.addEventListener("click", backToTop);
+
+		function backToTop() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
+
 </body>
-</div>
 </html>

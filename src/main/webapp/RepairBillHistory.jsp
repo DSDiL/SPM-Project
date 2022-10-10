@@ -1,14 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
 <meta charset="UTF-8">
-<title>Select Bill</title>
+<title>Bill History</title>
+
+
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://kit.fontawesome.com/8da1f1e093.js"
@@ -61,11 +57,10 @@
 	href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href="css/styles.css">
-
-
-<link rel="stylesheet" href="css/styles.css">
-
 
 </head>
 <body>
@@ -106,58 +101,143 @@
 
 	</nav>
 
-	<div class="form mx-auto ">
+	<div class="form mx-auto w-90">
 		<h2 class="text-center">
-			<b>Employee List</b>
+			<b>Bill History</b>
 		</h2>
 
 
-		<table class="table table-striped mt-5">
-			<thead>
+
+		<table class="table table-striped">
+
+			<tr>
+				<th>Computer Repair Bill ID</th>
+				<th>Repair ID</th>
+				<th>Customer Name</th>
+				<th>Date</th>
+				<th>Spare Parts</th>
+				<th>Quantity</th>
+				<th>Spare Part Price</th>
+				<th>Bill Date</th>
+				<th>Service Charges</th>
+				<th>Total</th>
+			</tr>
+
+
+			<c:forEach var="computerBillHistory" items="${computerBillHistory}">
+				<c:set var="billID" value="${ computerBillHistory.billID }" />
+				<c:set var="cusID" value="${computerBillHistory.cusID}" />
+				<c:set var="name" value="${computerBillHistory.name}" />
+				<c:set var="date" value="${ computerBillHistory.date }" />
+				<c:set var="spare" value="${ computerBillHistory.spare }" />
+				<c:set var="qty" value="${ computerBillHistory.qty }" />
+				<c:set var="spareprice" value="${ computerBillHistory.spareprice }" />
+				<c:set var="billdate" value="${ computerBillHistory.billdate }" />
+				<c:set var="service" value="${ computerBillHistory.service }" />
+				<c:set var="total" value="${ computerBillHistory.total }" />
+
+
 				<tr>
-					<th class="w-90">NIC</th>
-					<th scope="col">Name</th>
-					<th scope="col">Email</th>
-					<th scope="col">Position</th>
-					<th scope="col">Basic Salary</th>
-
-				</tr>
-			</thead>
-
-			<c:forEach var="emp" items="${emp}">
-
-
+					<td>${ computerBillHistory.billID }</td>
+					<td>${ computerBillHistory.cusID }</td>
+					<td>${ computerBillHistory.name }</td>
+					<td>${ computerBillHistory.date }</td>
+					<td>${ computerBillHistory.spare }</td>
+					<td>${ computerBillHistory.qty }</td>
+					<td>${ computerBillHistory.spareprice }</td>
+					<td>${ computerBillHistory.billdate }</td>
+					<td>${ computerBillHistory.service }</td>
+					<td>${ computerBillHistory.total }</td>
 
 
 
 
-				<tr>
-					<td>${emp.nic}</td>
-					<td>${emp.name}</td>
-					<td>${emp.email}</td>
-					<td>${emp.position}</td>
-					<td>${emp.basicsalary}</td>
+
+
+
+					<c:url value="RepairBillUpdate.jsp" var="ComputerRepairBillUpdate">
+
+						<c:param name="CombillID" value="${billID}" />
+						<c:param name="ComcusID" value="${cusID}" />
+						<c:param name="Comname" value="${name}" />
+						<c:param name="Comdate" value="${date}" />
+						<c:param name="Comspare" value="${spare}" />
+						<c:param name="Comqty" value="${qty}" />
+						<c:param name="Comspareprice" value="${spareprice}" />
+						<c:param name="Combilldate" value="${billdate}" />
+						<c:param name="Comservice" value="${service}" />
+						<c:param name="Comtotal" value="${total}" />
+
+
+					</c:url>
+
+
+
+					<td><a href="${ComputerRepairBillUpdate}"> <input
+							type="button" class="btn btn-primary" name="Submit" id="update"
+							value="Update">
+					</a></td>
+
+
+
+					<c:url value="RepairBillDelete.jsp" var="RepairBillDelete">
+
+						<c:param name="CombillID" value="${billID}" />
+						<c:param name="ComcusID" value="${cusID}" />
+						<c:param name="Comname" value="${name}" />
+						<c:param name="Comdate" value="${date}" />
+						<c:param name="Comspare" value="${spare}" />
+						<c:param name="Comqty" value="${qty}" />
+						<c:param name="Comspareprice" value="${spareprice}" />
+						<c:param name="Combilldate" value="${billdate}" />
+						<c:param name="Comservice" value="${service}" />
+						<c:param name="Comtotal" value="${total}" />
+
+
+					</c:url>
+
+
+
+
+
+
+					<td><a href="${RepairBillDelete}"> <input type="button"
+							id="delete" class="btn btn-danger" name="delete" value="Delete"></a>
+
+					</td>
+
 
 				</tr>
 
 
 			</c:forEach>
 		</table>
+		<br> <br> <br>
 
 
-		<div class="form-group text-center ">
-			<form action="EmpIDServlet" method="post">
+		<form action="RepairBillReport" method="post">
 
-				<label for="cid"><strong>Please Enter Employee NIC</strong></label>
-				<input class="form-control" type="text" id="rid" name="empNIC">
-				<input class="btn btn-success mt-5" class="text-right" type="submit"
-					id="submit" name="Submit" value="Submit">
+			<div class="form-group">
+				<label class="mt-5">Generate Report</label> <input type="date"
+					class="form-control" id="rid" name="date">
+				<button type="submit" class="btn btn-success mt-5" name="Submit"
+					value="Submit">Print Report</button>
+			</div>
 
-			</form>
+		</form>
 
-		</div>
+
+
+
+
+
+
+
+
 
 	</div>
+
+
 
 
 	<footer class="page-footer font-small cyan darken-3 text-center blue ">

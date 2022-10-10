@@ -1,20 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@page import="java.sql.*"%>
-<%@ page import="java.util.*"%>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<title>Sign up</title>
-<meta charset="utf-8">
+
+
+<meta charset="UTF-8">
+<title>Select Bill</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://kit.fontawesome.com/8da1f1e093.js"
 	crossorigin="anonymous"></script>
-
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 	crossorigin="anonymous"></script>
@@ -30,7 +27,6 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
 	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <link
@@ -64,57 +60,78 @@
 	href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="css/styles.css">
+
+
+<link rel="stylesheet" href="css/styles.css">
+
+
 </head>
 <body>
-	<button type="button" class="btn btn-danger btn-floating btn-lg"
-		id="btn-back-to-top">
-		<i class="fas fa-arrow-up"></i>
-	</button>
+
+
+
+	<div class="form mx-auto" style="margin-bottom: 100%;">
+
+		<form action="#" method="post">
+			<table class="table table-stiprd">
+				<tr>
+					<th>Bill Id</th>
+					<th>Repair Id</th>
+					<th>Company Name</th>
+					<th>Date</th>
+					<th>Sparepart Name</th>
+					<th>Qty</th>
+					<th>Estimated Cost</th>
+					<th>Sparepart Price</th>
+					<th>Bill Date</th>
+					<th>Service Charges</th>
+					<th>Total</th>
+				</tr>
+				<c:forEach var="report" items="${report}">
+					<tr>
+						<td>${report.billID}</td>
+						<td>${report.roID}</td>
+						<td>${report.name}</td>
+						<td>${report.date}</td>
+						<td>${report.spare}</td>
+						<td>${report.qty}</td>
+						<td>${report.cost}</td>
+						<td>${report.spareprice}</td>
+						<td>${report.billdate}</td>
+						<td>${report.service}</td>
+						<td>${report.total}</td>
+					</tr>
+				</c:forEach>
+			</table>
+
+			<input class="btn btn-success" type="submit" id="submit"
+				name="Submit" value="Print" onclick="window.print();">
+
+		</form>
+
+	</div>
 
 
 
 
 
-	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
-		<button type="button" class="navbar-toggler" data-toggle="collapse"
-			data-target="#myNav">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse   ">
-			<ul class="navbar-nav mr-auto  ">
-				<li class="nav-item"><a href="#service"
-					class="nav-link h5 mr-2  "
-					style="font-family: 'Raleway', sans-serif;" id="item"><i
-						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
-				<li class="nav-item"><a href="about.html"
-					class="nav-link h5 mr-2" id="item"
-					style="font-family: 'Raleway', sans-serif;"><i
-						class="bi bi-box-arrow-in-right pr-2"></i><b>Login/Logout</b> </a></li>
-				<li class="nav-item"><a href="portfolio.html"
-					class="nav-link h5 mr-2" id="item"
-					style="font-family: 'Raleway', sans-serif;"> <i
-						class="bi bi-info-circle pr-2"></i></i><b>About</b>
-				</a></li>
-				<li class="nav-item"><a href="contact.html"
-					class="nav-link h5 mr-2" id="item"
-					style="font-family: 'Raleway', sans-serif;"><i
-						class="bi bi-person-lines-fill pr-2"></i></i> <b>Contact</b> </a></li>
-			</ul>
-		</div>
-
-	</nav>
-<body>
 
 
 
-	<div class="form mx-auto">
 
 
-		<label class="form mx-auto"><strong>Report</strong></label><br>
-		<br> <br> <br> <a onclick="window.print();"> <input
-			type="button" id="submit" class="btn btn-success align-items-center"
-			name="Submit" value="Print">
-		</a>
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
-</div>
 </html>

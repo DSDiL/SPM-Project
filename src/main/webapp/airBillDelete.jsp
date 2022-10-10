@@ -1,14 +1,7 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
 <meta charset="UTF-8">
-<title>Select Bill</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://kit.fontawesome.com/8da1f1e093.js"
@@ -63,10 +56,6 @@
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link rel="stylesheet" href="css/styles.css">
 
-
-<link rel="stylesheet" href="css/styles.css">
-
-
 </head>
 <body>
 	<button type="button" class="btn btn-danger btn-floating btn-lg"
@@ -106,58 +95,98 @@
 
 	</nav>
 
-	<div class="form mx-auto ">
+	<div class="form mx-auto w-100">
 		<h2 class="text-center">
-			<b>Employee List</b>
+			<b>Bill Delete</b>
 		</h2>
 
 
-		<table class="table table-striped mt-5">
-			<thead>
+
+
+
+		<%
+		String billID = request.getParameter("airbillID");
+		String cusID = request.getParameter("airraID");
+		String name = request.getParameter("airname");
+		String date = request.getParameter("airdate");
+		String spare = request.getParameter("airspare");
+		String qty = request.getParameter("airqty");
+		String spareprice = request.getParameter("airspareprice");
+		String billdate = request.getParameter("airbilldate");
+		String service = request.getParameter("airservice");
+		String total = request.getParameter("airtotal");
+		%>
+
+		<form action="AirBillDelete" method="post">
+			<table class="table table-striped">
 				<tr>
-					<th class="w-90">NIC</th>
-					<th scope="col">Name</th>
-					<th scope="col">Email</th>
-					<th scope="col">Position</th>
-					<th scope="col">Basic Salary</th>
-
+					<th>Air Condition Repair Bill ID</th>
+					<th>Customer ID</th>
+					<th>Customer Name</th>
+					<th>Date</th>
+					<th>Spare Parts</th>
+					<th>Quantity</th>
+					<th>Spare Part Price</th>
+					<th>Bill Date</th>
+					<th>Service Charges</th>
+					<th>Total</th>
 				</tr>
-			</thead>
-
-			<c:forEach var="emp" items="${emp}">
-
-
-
-
 
 
 				<tr>
-					<td>${emp.nic}</td>
-					<td>${emp.name}</td>
-					<td>${emp.email}</td>
-					<td>${emp.position}</td>
-					<td>${emp.basicsalary}</td>
-
+					<td><input
+						style="outline: none; width: 15%; background-color: transparent; border: none;"
+						type="text" class="inputt" name="billID" value="<%=billID%>"
+						readonly></td>
+					<td><input
+						style="outline: none; width: 15%; background-color: transparent; border: none;"
+						type="text" class="inputt" name="cusID" value="<%=cusID%>"
+						readonly></td>
+					<td><input
+						style="outline: none; width: 100%; background-color: transparent; border: none;"
+						type="text" class="inputt" name="name" value="<%=name%>" readonly></td>
+					<td><input
+						style="outline: none; width: 100%; background-color: transparent; border: none;"
+						type="text" class="inputt" name="date" value="<%=date%>" readonly></td>
+					<td><input
+						style="outline: none; width: 100%; background-color: transparent; border: none;"
+						type="text" class="inputt" name="spare" value="<%=spare%>"
+						readonly></td>
+					<td><input
+						style="outline: none; width: 15%; background-color: transparent; border: none;"
+						type="text" class="inputt" name="qty" value="<%=qty%>" readonly>
+					</td>
+					<td><input
+						style="outline: none; width: 100%; background-color: transparent; border: none;"
+						type="text" class="inputt" name="spareprice"
+						value="<%=spareprice%>" readonly></td>
+					<td><input
+						style="outline: none; width: 100%; background-color: transparent; border: none;"
+						type="text" class="inputt" name="billdate" value="<%=billdate%>"
+						readonly></td>
+					<td><input
+						style="outline: none; width: 100%; background-color: transparent; border: none;"
+						type="text" class="inputt" name="service" value="<%=service%>"
+						readonly></td>
+					<td><input
+						style="outline: none; width: 100%; background-color: transparent; border: none;"
+						type="text" class="inputt" name="total" value="<%=total%>"
+						readonly></td>
 				</tr>
 
+			</table>
+			<br> <br> <br>
+			<div class=text-center>
+				<input type="submit" class="btn btn-danger" id="update"
+					value="Delete" onclick="check()">
 
-			</c:forEach>
-		</table>
+			</div>
+		</form>
 
-
-		<div class="form-group text-center ">
-			<form action="EmpIDServlet" method="post">
-
-				<label for="cid"><strong>Please Enter Employee NIC</strong></label>
-				<input class="form-control" type="text" id="rid" name="empNIC">
-				<input class="btn btn-success mt-5" class="text-right" type="submit"
-					id="submit" name="Submit" value="Submit">
-
-			</form>
-
-		</div>
 
 	</div>
+
+
 
 
 	<footer class="page-footer font-small cyan darken-3 text-center blue ">
@@ -205,7 +234,16 @@
 
 
 
+	<script type="text/javascript">
+		function check() {
 
+			var result = confirm('Are you sure you want to delete this Bill ?');
+
+			if (result == false) {
+				event.preventDefault();
+			}
+		}
+	</script>
 
 
 

@@ -1,14 +1,16 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
 <meta charset="UTF-8">
-<title>Select Bill</title>
+
+<title>Bill Details</title>
+
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://kit.fontawesome.com/8da1f1e093.js"
@@ -64,9 +66,6 @@
 <link rel="stylesheet" href="css/styles.css">
 
 
-<link rel="stylesheet" href="css/styles.css">
-
-
 </head>
 <body>
 	<button type="button" class="btn btn-danger btn-floating btn-lg"
@@ -106,58 +105,131 @@
 
 	</nav>
 
-	<div class="form mx-auto ">
+	<div class="form mx-auto">
 		<h2 class="text-center">
-			<b>Employee List</b>
+			<b>Other Electronics Repair Details</b>
 		</h2>
 
+		<form class="" method="post" action="OtherInsert">
 
-		<table class="table table-striped mt-5">
-			<thead>
+			<table class="table table-striped">
+				<c:forEach var="repairOther" items="${repairOther}">
+
+
+					<c:set var="roID" value="${repairOther.roID}" />
+					<c:set var="cID" value="${repairOther.cID}" />
+					<c:set var="company" value="${repairOther.company}" />
+					<c:set var="date" value="${repairOther.date}" />
+					<c:set var="description" value="${repairOther.description}" />
+					<c:set var="spare" value="${repairOther.spare}" />
+					<c:set var="qty" value="${repairOther.qty}" />
+					<c:set var="cost" value="${repairOther.cost}" />
+
+
+					<tbody>
+						<tr>
+							<td>Repair ID</td>
+							<td><input type="text" class="inputt"
+								style="outline: none; border: none; background-color: transparent"
+								name="roID" value="${repairOther.roID}" readonly></td>
+						</tr>
+
+						<tr>
+							<td>Customer ID</td>
+							<td><input type="text" class="inputt"
+								style="outline: none; border: none; background-color: transparent"
+								name="cID" value="${repairOther.cID}" readonly></td>
+						</tr>
+
+
+						<tr>
+							<td>Company</td>
+							<td><input type="text" class="inputt"
+								style="outline: none; border: none; background-color: transparent"
+								name="company" value="${repairOther.company}" readonly></td>
+						</tr>
+
+						<tr>
+							<td>Date</td>
+							<td><input type="date" class="inputt"
+								style="outline: none; border: none; background-color: transparent"
+								name="date" value="${repairOther.date}" readonly></td>
+						</tr>
+
+
+						<tr>
+							<td>Description</td>
+							<td><input type="text" class="inputt"
+								style="outline: none; border: none; background-color: transparent"
+								name="description" value="${repairOther.description}" readonly></td>
+						</tr>
+
+
+						<tr>
+							<td>spare</td>
+							<td><input type="text" name="spare"
+								style="outline: none; border: none; background-color: transparent"
+								class="inputt" value="${repairOther.spare}" readonly></td>
+						</tr>
+
+
+						<tr>
+							<td>Qty</td>
+							<td><input type="text" class="inputt"
+								style="outline: none; border: none; background-color: transparent"
+								name="qty" value="${repairOther.qty}" readonly></td>
+						</tr>
+
+						<tr>
+							<td>Cost</td>
+							<td><input type="text" class="inputt"
+								style="outline: none; border: none; background-color: transparent"
+								name="cost" value="${repairOther.cost}" readonly></td>
+						</tr>
+				</c:forEach>
+
+
 				<tr>
-					<th class="w-90">NIC</th>
-					<th scope="col">Name</th>
-					<th scope="col">Email</th>
-					<th scope="col">Position</th>
-					<th scope="col">Basic Salary</th>
-
+					<td>Spare Part Price</td>
+					<td><input type="text" name="sparepart"
+						class="form-control w-50" pattern="[0-9]+" required></td>
 				</tr>
-			</thead>
 
-			<c:forEach var="emp" items="${emp}">
+				<tr>
 
-
-
+					<td>Date</td>
+					<td><input type="date" name="billdate"
+						class="form-control w-50" pattern="[0-9]+" required></td>
+				</tr>
 
 
 
 				<tr>
-					<td>${emp.nic}</td>
-					<td>${emp.name}</td>
-					<td>${emp.email}</td>
-					<td>${emp.position}</td>
-					<td>${emp.basicsalary}</td>
-
+					<td>Service Charges</td>
+					<td><input type="text" name="service"
+						class="form-control w-50" pattern="[0-9]+" required></td>
 				</tr>
 
 
-			</c:forEach>
-		</table>
 
 
-		<div class="form-group text-center ">
-			<form action="EmpIDServlet" method="post">
+				</tbody>
+			</table>
+			<div class="text-center">
+				<button onclick="insert()" type="submit" id="submit" name="Submit"
+					value="Submit" style="width: 20%; height: 60px;"
+					class="btn btn-success mt-5 text-center" >Submit</button>
+			</div>
 
-				<label for="cid"><strong>Please Enter Employee NIC</strong></label>
-				<input class="form-control" type="text" id="rid" name="empNIC">
-				<input class="btn btn-success mt-5" class="text-right" type="submit"
-					id="submit" name="Submit" value="Submit">
 
-			</form>
 
-		</div>
+		</form>
+
+
 
 	</div>
+
+
 
 
 	<footer class="page-footer font-small cyan darken-3 text-center blue ">
@@ -238,6 +310,11 @@
 		function backToTop() {
 			document.body.scrollTop = 0;
 			document.documentElement.scrollTop = 0;
+		}
+	</script>
+	<script>
+		function insert() {
+			alert("Data Inserted to the Database");
 		}
 	</script>
 
