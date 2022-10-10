@@ -239,7 +239,7 @@
 
 					<c:when test="${emp.section=='CustomerManagement'}">
 						<button type="button"
-							onclick="document.location.href='#'"
+							onclick="document.location.href='customerManagement.jsp'"
 							name="em" id="submit" style="box-shadow: none;"
 							class="btn btn-info" disabled>Employee Management</button>
 						<br>
@@ -263,7 +263,7 @@
 						<br>
 						<br>
 
-						<button type="button" onclick="document.location.href='#'"
+						<button type="button" onclick="document.location.href='customerManagement.jsp'"
 							name="em" id="submit" class="btn btn-info">Customer
 							Management</button>
 						<br>
