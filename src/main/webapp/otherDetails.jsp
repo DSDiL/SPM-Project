@@ -124,6 +124,7 @@
 					<c:set var="cID" value="${repairOther.cID}" />
 					<c:set var="company" value="${repairOther.company}" />
 					<c:set var="date" value="${repairOther.date}" />
+					<c:set var="devices" value="${repairOther.devices}" />
 					<c:set var="description" value="${repairOther.description}" />
 					<c:set var="spare" value="${repairOther.spare}" />
 					<c:set var="qty" value="${repairOther.qty}" />
@@ -160,6 +161,12 @@
 								name="date" value="${repairOther.date}" readonly></td>
 						</tr>
 
+						<tr>
+							<td>Devices</td>
+							<td><input type="text" class="inputt"
+								style="outline: none; border: none; background-color: transparent"
+								name="devices" value="${repairOther.devices}" readonly></td>
+						</tr>
 
 						<tr>
 							<td>Description</td>
@@ -170,7 +177,7 @@
 
 
 						<tr>
-							<td>spare</td>
+							<td>spare part name</td>
 							<td><input type="text" name="spare"
 								style="outline: none; border: none; background-color: transparent"
 								class="inputt" value="${repairOther.spare}" readonly></td>

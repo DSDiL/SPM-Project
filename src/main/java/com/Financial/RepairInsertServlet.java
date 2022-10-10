@@ -25,6 +25,7 @@ public class RepairInsertServlet extends HttpServlet {
 		String description = request.getParameter("description");
 		String spare = request.getParameter("spare");
 		String qty = request.getParameter("qty");
+		String cost = request.getParameter("cost");
 		String sparepart = request.getParameter("sparepart");
 		String date = request.getParameter("date");
 		String service = request.getParameter("service");
@@ -34,7 +35,7 @@ public class RepairInsertServlet extends HttpServlet {
 
 		boolean isTrue;
 
-		isTrue = finacialDButill.insertrepairbill(rcID,company,comdate,deliver,description,spare,qty,sparepart,date,service);
+		isTrue = finacialDButill.insertrepairbill(rcID,company,comdate,deliver,description,spare,qty,cost,sparepart,date,service);
 
 		if (isTrue == true) {
 		RequestDispatcher dis1 = request.getRequestDispatcher("repair_and_deliver.jsp");

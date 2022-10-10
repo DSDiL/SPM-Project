@@ -8,17 +8,19 @@ public class repairOther {
 	private int cID;
 	private String company;
 	private Date date;
+	private String devices;
 	private String description;
 	private String spare;
 	private int qty;
 	private float cost;
 	
-	public repairOther(int roID, int cID, String company, Date date, String description, String spare, int qty, float cost) {
+	public repairOther(int roID, int cID, String company, Date date, String devices, String description, String spare, int qty, float cost) {
 		super();
 		this.roID = roID;
 		this.cID = cID;
 		this.company = company;
 		this.date = date;
+		this.devices = devices;
 		this.description = description;
 		this.spare = spare;
 		this.qty = qty;
@@ -41,6 +43,10 @@ public class repairOther {
 		return date;
 	}
 
+	public String getDevices() {
+		return devices;
+	}
+	
 	public String getDescription() {
 		return description;
 	}

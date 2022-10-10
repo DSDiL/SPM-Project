@@ -114,10 +114,7 @@
 			<button type="button" style="width: 20%; height: 60px;"
 				onclick="document.location = 'RepairDate.jsp'"
 				class="btn btn-info mt-5 mx-auto">Computer Repair Bills</button>
-			<button type="button" style="width: 20%; height: 60px;"
-				onclick="document.location = 'airDate.jsp'"
-				class="btn btn-info mt-5 mx-auto">Air Condition Repair
-				Bills</button>
+
 			<button type="button" style="width: 20%; height: 60px;"
 				onclick="document.location = 'otherDate.jsp'"
 				class="btn btn-info mt-5 mx-auto">Other Electronic Bills</button>

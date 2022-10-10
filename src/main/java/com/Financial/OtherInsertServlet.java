@@ -19,6 +19,7 @@ public class OtherInsertServlet extends HttpServlet {
 		String cID = request.getParameter("cID");
 		String company = request.getParameter("company");
 		String date = request.getParameter("date");
+		String devices = request.getParameter("devices");
 		String description = request.getParameter("description");
 		String spare = request.getParameter("spare");
 		String qty = request.getParameter("qty");
@@ -31,7 +32,7 @@ public class OtherInsertServlet extends HttpServlet {
 		
 		boolean isTrue;
 
-		isTrue = finacialDButill.insert_other_bill(roID,cID,company,date,description,spare,qty,cost,sparepart,billdate,service);
+		isTrue = finacialDButill.insert_other_bill(roID,cID,company,date,devices,description,spare,qty,cost,sparepart,billdate,service);
 
 		if (isTrue == true) {
 		RequestDispatcher dis1 = request.getRequestDispatcher("repair_and_deliver.jsp");
