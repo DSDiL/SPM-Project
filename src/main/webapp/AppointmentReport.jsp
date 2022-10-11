@@ -71,6 +71,10 @@
 		<i class="fas fa-arrow-up"></i>
 	</button>
 
+
+
+
+
 	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
 		<button type="button" class="navbar-toggler" data-toggle="collapse"
 			data-target="#myNav">
@@ -82,10 +86,15 @@
 					class="nav-link h5 mr-2  "
 					style="font-family: 'Raleway', sans-serif;" id="item"><i
 						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
+				<li class="nav-item"><a href="customerRegister.jsp.html"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"><i
+						class="bi bi-box-arrow-in-right pr-2"></i><b>Promotion and
+							Offers</b> </a></li>
 				<li class="nav-item"><a href="customerLogin.jsp"
 					class="nav-link h5 mr-2" id="item"
 					style="font-family: 'Raleway', sans-serif;"> <i
-						class="bi bi-info-circle pr-2"></i><b>Login</b>
+						class="bi bi-info-circle pr-2"></i></i><b>Login</b>
 				</a></li>
 			</ul>
 		</div>
@@ -94,16 +103,57 @@
 
 	<div class="form mx-auto">
 
-		<h2 class="text-center">Required Date</h2>
 
-		<form action="reportprintServlet" method="post">
 
-			<input type="date" id="date" name="date"class="form-control" required>
-			<div class="text-center">
-				<input type="submit" id="submit" name="Submit" value="View Details" class="btn btn-success">
-			</div>
-		</form>
+
+		<h2 class="text-center">Daily Report</h2>
+		<br> <br>
+
+		<table class="table table-striped">
+
+			<tr>
+				<th>Appointment ID</th>
+				<th>Service Type</th>
+				<th>Descrption</th>
+				<th>Reserved Time</th>
+				<th>Reserved Date</th>
+				<th>Customer ID</th>
+			</tr>
+
+			<c:forEach var="app" items="${apoid}">
+
+				<c:set var="Apo_id" value="${app.apoid}" />
+				<c:set var="Service_type" value="${app.servicetype}" />
+				<c:set var="description" value="${app.description}" />
+				<c:set var="Time_slot" value="${app.timeslot}" />
+				<c:set var="Required_date" value="${app.requireddate}" />
+				<c:set var="cid" value="${app.cid}" />
+
+				<tr>
+					<td>${app.apoid}</td>
+					<td>${app.servicetype}</td>
+					<td>${app.description}</td>
+					<td>${app.timeslot}</td>
+					<td>${app.requireddate}</td>
+					<td>${app.cid}</td>
+				</tr>
+
+
+			</c:forEach>
+		</table>
+
+		<br> <br>
+		<div class="text-center">
+			<input type="submit" id="submit" name="Submit" value="Print Report"
+				class="btn btn-info mx-auto" onclick="window.print();"><br>
+			<br>
+		</div>
+
 	</div>
+
+
+
+
 
 	<footer class="page-footer font-small cyan darken-3 text-center blue ">
 		<div class="container">
@@ -139,38 +189,78 @@
 	</footer>
 
 
-
-
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script>
-		AOS.init();
-	</script>
+      AOS.init();
+    </script>
 
 	<script>
-		//Get the button
-		let mybutton = document.getElementById("btn-back-to-top");
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
 
-		// When the user scrolls down 20px from the top of the document, show the button
-		window.onscroll = function() {
-			scrollFunction();
-		};
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+      scrollFunction();
+    };
 
-		function scrollFunction() {
-			if (document.body.scrollTop > 20
-					|| document.documentElement.scrollTop > 20) {
-				mybutton.style.display = "block";
-			} else {
-				mybutton.style.display = "none";
-			}
-		}
-		// When the user clicks on the button, scroll to the top of the document
-		mybutton.addEventListener("click", backToTop);
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    // When the user clicks on the button, scroll to the top of the document
+    mybutton.addEventListener("click", backToTop);
 
-		function backToTop() {
-			document.body.scrollTop = 0;
-			document.documentElement.scrollTop = 0;
-		}
-	</script>
+    function backToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+
+	<script>
+
+function validateForm(){
+
+	var name=document.myform.name.value;
+	var email=document.myform.email.value;
+	var phone=document.myform.phone.value;
+	var add=document.myform.add.value;
+	var pw=document.myform.pw.value;
+
+	var pw=document.myform.pw.value;
+	var pw2=document.myform.pw2.value;
+
+
+ if(name==""){
+		alert("Name can't be empty!");
+		return false;
+	}else if(email==""){
+		alert("email can't be empty!");
+		return false;
+	}else if(phone==""){
+		alert("Phone can't be empty!");
+		return false;
+	else if(add==""){
+		alert("Address number can't be empty!");
+		return false;
+	}
+	else if(pw.length<6){
+		alert("Password must be at least 6 characters long!");
+		return false;
+	}else if(pw != pw2){
+		alert("Password did not match! Try again!");
+		return false;
+	}
+}
+
+</script>
+
 
 </body>
 </html>

@@ -84,7 +84,7 @@
 					class="nav-link h5 mr-2  "
 					style="font-family: 'Raleway', sans-serif;" id="item"><i
 						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
-				<li class="nav-item"><a href="customerRegister.jsp.html"
+				<li class="nav-item"><a href="customerRegister.jsp"
 					class="nav-link h5 mr-2" id="item"
 					style="font-family: 'Raleway', sans-serif;"><i
 						class="bi bi-box-arrow-in-right pr-2"></i><b>Registration</b> </a></li>
