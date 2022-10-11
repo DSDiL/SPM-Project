@@ -184,7 +184,7 @@
 
 					<form action="leaveChange" method="post">
 						<button type="submit" class="btn btn-primary" name="nic"
-							id="change" style="width: 200px; height: 50px;" value="${emp.nic}">Check
+							id="change" style="width: 400px; height: 50px; position:absolute; top: 1284px; left: 55%" value="${emp.nic}">Check
 							previous application</button>
 						<br>
 						<br>
