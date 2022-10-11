@@ -82,10 +82,10 @@
 					class="nav-link h5 mr-2  "
 					style="font-family: 'Raleway', sans-serif;" id="item"><i
 						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
-				<li class="nav-item"><a href="customerLogin.jsp"
+				<li class="nav-item"><a href="employeeLogin.jsp"
 					class="nav-link h5 mr-2" id="item"
 					style="font-family: 'Raleway', sans-serif;"> <i
-						class="bi bi-info-circle pr-2"></i><b>Login</b>
+						class="bi bi-info-circle pr-2"></i><b>Log out</b>
 				</a></li>
 			</ul>
 		</div>

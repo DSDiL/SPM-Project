@@ -71,10 +71,6 @@
 		<i class="fas fa-arrow-up"></i>
 	</button>
 
-
-
-
-
 	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
 		<button type="button" class="navbar-toggler" data-toggle="collapse"
 			data-target="#myNav">
@@ -86,15 +82,11 @@
 					class="nav-link h5 mr-2  "
 					style="font-family: 'Raleway', sans-serif;" id="item"><i
 						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
-				<li class="nav-item"><a href="customerRegister.jsp.html"
-					class="nav-link h5 mr-2" id="item"
-					style="font-family: 'Raleway', sans-serif;"><i
-						class="bi bi-box-arrow-in-right pr-2"></i><b>Promotion and
-							Offers</b> </a></li>
-				<li class="nav-item"><a href="customerLogin.jsp"
+
+				<li class="nav-item"><a href="employeeLogin.jsp"
 					class="nav-link h5 mr-2" id="item"
 					style="font-family: 'Raleway', sans-serif;"> <i
-						class="bi bi-info-circle pr-2"></i></i><b>Login</b>
+						class="bi bi-info-circle pr-2"></i></i><b>Log out</b>
 				</a></li>
 			</ul>
 		</div>
@@ -102,9 +94,6 @@
 	</nav>
 
 	<div class="form mx-auto">
-
-
-
 
 		<h2 class="text-center">Daily Report</h2>
 		<br> <br>
@@ -150,10 +139,6 @@
 		</div>
 
 	</div>
-
-
-
-
 
 	<footer class="page-footer font-small cyan darken-3 text-center blue ">
 		<div class="container">
