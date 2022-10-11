@@ -634,8 +634,8 @@ public class finacialDButill {
 
 				int SalaryID = rs.getInt(1);
 				float Basicsalary = rs.getFloat(2);
-				float ETF = rs.getFloat(3);
-				float EPF = rs.getFloat(4);
+				float ETF = rs.getFloat(4);
+				float EPF = rs.getFloat(3);
 				float OT = rs.getFloat(5);
 				float Bonus = rs.getFloat(6);
 				String Nic = rs.getString(7);
@@ -703,7 +703,7 @@ public class finacialDButill {
 		float Ot = Float.parseFloat(ot);
 		float Bonus = Float.parseFloat(bonus);
 //		float Total = Float.parseFloat(total);
-		float Total = Basicsalary + Ot - (Epf + Etf )+ Bonus;
+		float Total = Basicsalary + Ot - (Etf + Epf )+ Bonus;
 
 		try {
 			con = DBConnect.getConnection();

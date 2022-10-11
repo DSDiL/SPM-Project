@@ -68,10 +68,54 @@
 
 </head>
 <body>
+	<button type="button" class="btn btn-danger btn-floating btn-lg"
+		id="btn-back-to-top">
+		<i class="fas fa-arrow-up"></i>
+	</button>
 
 
 
-	<div class="form mx-auto" style="margin-bottom: 100%; width: 95%;">
+
+
+	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
+		<button type="button" class="navbar-toggler" data-toggle="collapse"
+			data-target="#myNav">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse   ">
+			<ul class="navbar-nav mr-auto  ">
+				<li class="nav-item"><a href="HomePage.jsp"
+					class="nav-link h5 mr-2  "
+					style="font-family: 'Raleway', sans-serif;" id="item"><i
+						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
+				<li class="nav-item"><a href="repair_and_deliver.jsp"
+					class="nav-link h5 mr-2  "
+					style="font-family: 'Raleway', sans-serif;" id="item"><i
+						class="bi bi-layout-text-sidebar pr-2"></i><b>Bills</b> </a></li>		
+				<li class="nav-item"><a href="AllbillHistory.jsp"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"><i
+						class="bi bi-clock-history pr-2"></i><b>Bill History</b> </a></li>
+				<li class="nav-item"><a href="Emp.jsp" class="nav-link h5 mr-2"
+					id="item" style="font-family: 'Raleway', sans-serif;"> <i
+						class="bi bi-cash-stack pr-2"></i><b>Employee Salary</b>
+				</a></li>
+				<li class="nav-item"><a href="EmpHistory.jsp"
+					class="nav-link h5 mr-2" id="item"
+					style="font-family: 'Raleway', sans-serif;"><i
+						class="bi bi-book-half pr-2"></i> <b>Salary History</b> </a></li>
+			</ul>
+		</div>
+
+	</nav>
+
+
+
+
+
+
+
+	<div class="form mx-auto" style="width: 95%;">
 
 		<form action="#" method="post">
 
@@ -115,6 +159,38 @@
 	</div>
 
 
+	<footer class="page-footer font-small cyan darken-3 text-center blue ">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 py-5">
+					<h4 class="text-uppercase text-white"
+						style="font-family: 'Quicksand', sans-serif;">Follow Us out
+						there</h4>
+					<div class="mb-5 flex-center mt-5">
+						<ul
+							class="social-icons icon-circle icon-rotate list-unstyled list-inline">
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-facebook mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-twitter mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-youtube mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-google-plus mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-instagram mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-linkedin mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-pinterest mr-md-5 mr-3 fa-2x"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i
+									class="fa fa-github mr-md-5 mr-3 fa-2x"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 
 
@@ -133,6 +209,36 @@
 
 
 
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
+
+	<script>
+		//Get the button
+		let mybutton = document.getElementById("btn-back-to-top");
+
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function() {
+			scrollFunction();
+		};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 20
+					|| document.documentElement.scrollTop > 20) {
+				mybutton.style.display = "block";
+			} else {
+				mybutton.style.display = "none";
+			}
+		}
+		// When the user clicks on the button, scroll to the top of the document
+		mybutton.addEventListener("click", backToTop);
+
+		function backToTop() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
 
 
 </body>
