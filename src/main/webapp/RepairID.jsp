@@ -108,7 +108,7 @@
 	</nav>
 
 	<div class="form mx-auto">
-		<h2 style="margin-right: 50px;">
+		<h2 class="text-center">
 			<b>Enter Computer Repair ID</b>
 		</h2>
 		<form action="RepairIDServlet" method="post">
