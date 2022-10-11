@@ -71,10 +71,6 @@
 		<i class="fas fa-arrow-up"></i>
 	</button>
 
-
-
-
-
 	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
 		<button type="button" class="navbar-toggler" data-toggle="collapse"
 			data-target="#myNav">
@@ -89,7 +85,7 @@
 				<li class="nav-item"><a href="customerLogin.jsp"
 					class="nav-link h5 mr-2" id="item"
 					style="font-family: 'Raleway', sans-serif;"> <i
-						class="bi bi-info-circle pr-2"></i></i><b>Login</b>
+						class="bi bi-info-circle pr-2"></i></i><b>Log out</b>
 				</a></li>
 			</ul>
 		</div>

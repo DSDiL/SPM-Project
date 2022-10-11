@@ -82,21 +82,11 @@
 					class="nav-link h5 mr-2  "
 					style="font-family: 'Raleway', sans-serif;" id="item"><i
 						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
-				<li class="nav-item"><a href="customerRegister.jsp.html"
-					class="nav-link h5 mr-2" id="item"
-					style="font-family: 'Raleway', sans-serif;"><i
-						class="bi bi-box-arrow-in-right pr-2"></i><b>Registration</b> </a></li>
 				<li class="nav-item"><a href="customerLogin.jsp"
 					class="nav-link h5 mr-2" id="item"
 					style="font-family: 'Raleway', sans-serif;"> <i
-						class="bi bi-info-circle pr-2"></i></i><b>Login</b>
+						class="bi bi-info-circle pr-2"></i></i><b>Log out</b>
 				</a></li>
-				<li class="nav-item"><a href="Customerprofile.jsp"
-					class="nav-link h5 mr-2" id="item"
-					style="font-family: 'Raleway', sans-serif;"> <i
-						class="bi bi-info-circle pr-2"></i></i><b>Profile</b>
-				</a></li>
-
 			</ul>
 		</div>
 	</nav>

@@ -82,14 +82,11 @@
 					class="nav-link h5 mr-2  "
 					style="font-family: 'Raleway', sans-serif;" id="item"><i
 						class="bi bi-house pr-2"></i><b>Home</b> </a></li>
-				<li class="nav-item"><a href="customerRegister.jsp.html"
-					class="nav-link h5 mr-2" id="item"
-					style="font-family: 'Raleway', sans-serif;"><i
-						class="bi bi-box-arrow-in-right pr-2"></i><b>Registration</b> </a></li>
+				
 				<li class="nav-item"><a href="customerLogin.jsp"
 					class="nav-link h5 mr-2" id="item"
 					style="font-family: 'Raleway', sans-serif;"> <i
-						class="bi bi-info-circle pr-2"></i></i><b>Login</b>
+						class="bi bi-info-circle pr-2"></i></i><b>Log out</b>
 				</a></li>
 			</ul>
 		</div>
@@ -119,7 +116,14 @@
 							style="width: 57%;" readonly />
 					</div>
 				</div>
-
+				
+				<div class="form-group row">
+					<label for="" class="col-sm-2 col-form-label">Email</label>
+					<div class="col-sm-10">
+						<input type="text" name="email" value="<%=email%>"
+							style="width: 57%;" class="form-control"/>
+					</div>
+				</div>
 
 				<div class="form-group row ">
 					<label for="" class="col-sm-2 col-form-label">Full Name</label>
@@ -129,17 +133,6 @@
 					</div>
 				</div>
 
-
-				<div class="form-group row">
-					<label for="" class="col-sm-2 col-form-label">Email</label>
-					<div class="col-sm-10">
-						<input type="text" name="email" value="<%=email%>"
-							style="width: 57%;" class="form-control" />
-					</div>
-				</div>
-
-
-
 				<div class="form-group row">
 					<label for="" class="col-sm-2 col-form-label">Phone No</label>
 					<div class="col-sm-10">
@@ -148,7 +141,6 @@
 					</div>
 				</div>
 
-
 				<div class="form-group row">
 					<label for="" class="col-sm-2 col-form-label">Address</label>
 					<div class="col-sm-10">
@@ -156,8 +148,6 @@
 							class="form-control" />
 					</div>
 				</div>
-
-
 
 				<div class="text-center">
 					<button type="submit" value="<%=email%>"
@@ -168,9 +158,6 @@
 			</form>
 		</div>
 	</div>
-
-
-
 
 	<footer class="page-footer font-small cyan darken-3 text-center blue ">
 		<div class="container">
@@ -204,8 +191,6 @@
 			</div>
 		</div>
 	</footer>
-
-
 
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script>
