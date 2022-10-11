@@ -22,11 +22,17 @@ public class deleteLeaving extends HttpServlet {
 		String days = request.getParameter("period");
 		String sick = request.getParameter("sick");
 		String casual = request.getParameter("casual");
+		String status = request.getParameter("status");
 		
 		boolean isTrue, isTrue1;
 		
-		isTrue1 = employeeDB.updateLeavingInfo2(nic, reason, days, sick, casual);
-
+		if(status.equals("Approved")) {
+			
+			isTrue1 = employeeDB.updateLeavingInfo2(nic, reason, days, sick, casual);
+		}
+		else{
+			isTrue1 =true;
+		}
 		if (isTrue1 == true) {
 			
 			isTrue = employeeDB.deleteLeave(id);

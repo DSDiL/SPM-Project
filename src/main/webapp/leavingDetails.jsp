@@ -164,7 +164,7 @@
 			<br>
 
 			<label class="mt-5">Status</label>
-			<input class="form-control" type="text" name="date" id="date"
+			<input class="form-control" type="text" name="status" id="date"
 				value="${app.status}" readonly>
 			<br>
 
