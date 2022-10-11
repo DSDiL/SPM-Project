@@ -92,7 +92,7 @@
 				<li class="nav-item"><a href="customerLogin.jsp"
 					class="nav-link h5 mr-2" id="item"
 					style="font-family: 'Raleway', sans-serif;"> <i
-						class="bi bi-info-circle pr-2"></i></i><b>Login</b>
+						class="bi bi-info-circle pr-2"></i></i><b>Log out</b>
 				</a></li>
 			</ul>
 		</div>
@@ -109,48 +109,15 @@
 			<form action="CustomerDeleteservlet" method="post" >
 
 				<div class="form-group row">
-					<label for="" class="col-sm-2 col-form-label">ID</label>
+					<label for="" class="col-sm-2 col-form-label">Customer ID</label>
 					<div class="col-sm-10">
 						<input type="text" name="id" class="form-control" value="<%=id%>"
 							readonly />
 					</div>
 				</div>
-
-
-				<div class="form-group row ">
-					<label for="" class="col-sm-2 col-form-label">Full Name</label>
-					<div class="col-sm-10">
-						<input type="text" name="name" value="<%=name%>"
-							class="form-control" />
-					</div>
-				</div>
-
-
-				<div class="form-group row">
-					<label for="" class="col-sm-2 col-form-label">Email</label>
-					<div class="col-sm-10">
-						<input type="text" name="email" value="<%=email%>"
-							class="form-control" />
-					</div>
-				</div>
-
-
-
-				<div class="form-group row">
-					<label for="" class="col-sm-2 col-form-label">Phone No</label>
-					<div class="col-sm-10">
-						<input type="text" name="phone" class="form-control"
-							value="<%=phone%>" />
-					</div>
-				</div>
-
-
-				<div class="form-group row">
-					<label for="" class="col-sm-2 col-form-label">Address</label>
-					<div class="col-sm-10">
-						<input type="text" value="<%=add%>" name="add"
-							class="form-control" />
-					</div>
+				
+				<div class="text-center">
+					<h5>Do you really want to remove your account?</h5>
 				</div>
 
 				<div class="text-center">
@@ -161,9 +128,6 @@
 			</form>
 		</div>
 	</div>
-
-
-
 
 	<footer class="page-footer font-small cyan darken-3 text-center blue ">
 		<div class="container">

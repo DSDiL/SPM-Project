@@ -71,8 +71,6 @@
 		<i class="fas fa-arrow-up"></i>
 	</button>
 
-
-
 	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
 		<button type="button" class="navbar-toggler" data-toggle="collapse"
 			data-target="#myNav">
@@ -87,13 +85,11 @@
 				<li class="nav-item"><a href="customerLogin.jsp"
 					class="nav-link h5 mr-2" id="item"
 					style="font-family: 'Raleway', sans-serif;"> <i
-						class="bi bi-info-circle pr-2"></i></i><b>Login</b>
+						class="bi bi-info-circle pr-2"></i></i><b>Log out</b>
 				</a></li>
 			</ul>
 		</div>
-
 	</nav>
-
 
 	<div class="form mx-auto">
 
@@ -102,9 +98,6 @@
 		<%
 		String id = request.getParameter("id");
 		%>
-
-
-
 
 		<form action="Appointmentinsert" method="post" class="mt-5">
 
@@ -116,7 +109,6 @@
 						value="<%=id%>" style="width: 57%;" readonly>
 				</div>
 			</div>
-
 
 			<div class="form-group row">
 				<label for="" class="col-sm-2 col-form-label">Repair
@@ -132,8 +124,6 @@
 				</div>
 			</div>
 
-
-
 			<div class="form-group row">
 				<label for="" class="col-sm-2 col-form-label">Required Time</label>
 				<div class="col-sm-10">
@@ -148,7 +138,6 @@
 					</select>
 				</div>
 			</div>
-
 
 			<div class="form-group row">
 				<label for="" class="col-sm-2 col-form-label">Required Date</label>
@@ -167,19 +156,13 @@
 				</div>
 			</div>
 
-
-
 			<div class="text-center">
 				<input type="submit" class="btn btn-success mt-5"
 					style="height: 50px; width: 20%;" name="Submit" id="submit"
 					value="Confirm">
 			</div>
-
 		</form>
 	</div>
-
-
-
 
 	<footer class="page-footer font-small cyan darken-3 text-center blue ">
 		<div class="container">

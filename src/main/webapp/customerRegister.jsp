@@ -71,8 +71,6 @@
 		<i class="fas fa-arrow-up"></i>
 	</button>
 
-
-
 	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
 		<button type="button" class="navbar-toggler" data-toggle="collapse"
 			data-target="#myNav">
@@ -124,8 +122,6 @@
 					</div>
 				</div>
 
-
-
 				<div class="form-group row">
 					<label for="" class="col-sm-2 col-form-label">Phone No</label>
 					<div class="col-sm-10">
@@ -134,7 +130,6 @@
 							maxlength="10" required />
 					</div>
 				</div>
-
 
 				<div class="form-group row">
 					<label for="" class="col-sm-2 col-form-label">Address</label>
@@ -153,8 +148,7 @@
 				</div>
 
 				<div class="form-group row">
-					<label for="" class="col-sm-2 col-form-label">Confirm
-						Password</label>
+					<label for="" class="col-sm-2 col-form-label">Confirm Password</label>
 					<div class="col-sm-10">
 						<input type="password" name="pw2" id="pw2" class="form-control"
 							style="width: 70%;" required />
