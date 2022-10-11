@@ -8,7 +8,6 @@
 <html lang="en">
 
 <head>
-<title>Home</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -33,7 +32,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
 	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <link
@@ -83,7 +82,7 @@
 					<div class="collapse navbar-collapse   ">
 						<ul class="navbar-nav mr-auto  ">
 							<li class="nav-item">
-								<a href="#" class="nav-link h5 mr-2" style="font-family: 'Raleway', sans-serif;" id="item">
+								<a href="#service" class="nav-link h5 mr-2" style="font-family: 'Raleway', sans-serif;" id="item">
 									<i class="bi bi-house pr-2"></i><b>Home</b>
 								</a>
 							</li>
@@ -102,7 +101,7 @@
 				</nav>
 			</div>
 		</header>
-        <br>
+
 		<div class="container mt-5">
 			<div class="row">
 				<div class="col-md-8 ">
@@ -114,23 +113,13 @@
 						</div>
 					</div>
 				</div>
-                  
+
 				<div class="col-md-4  text-center " style="color: #000;">
 					<div class="h2 text-uppercase" style="border: 3px solid; border-radius: 20px; padding: 5px;">Our Mission</div>
 					<div style="font-family: 'Montserrat', sans-serif; border: 1px solid; border-radius: 25px; padding: 5px;">
 						<p data-aos="fade-left" data-aos-duration="1000" >
-							We are JC-Electronics, a purchasing and sales organization trading in
-			 				industrial electronics on a global level. Our services include
-							providing items for use in production processes and other
-							automated environments. In the world of industrial automation, new
-							technologies are rolled out in quick succession, resulting in a
-							reduction in service and availability of existing technologies.
-							This is where JC-Electronics comes into play. If it has worked
-							before, it can certainly work again! There is no need to buy
-							something new, when you already have something reliable that does
-							the trick! Which is why we offer knowledge, expertise and
-							continuity, We do this through purchase, sale, repair, testing and
-							many more high-quality services.
+							We are DarkShop Pvt Ltd., a computer service company dedicated to
+							help customers on software and hardware related problems. 
 						</p>
 					</div>
 				</div>
@@ -141,7 +130,7 @@
 
 		<div class="container mt-5 ">
 			<div class="h1 text-uppercase text-center mt-5"
-				style="border: 2px solid #000; color: #000; border-radius: 15px; padding: 5px;">Our services</div><br><br>
+				style="border: 2px solid #000; color: #000; border-radius: 15px; padding: 5px;">Our services</div>
 			<div class="row text-center text-white">
 				<div class="card-deck">
 
@@ -152,13 +141,11 @@
 						<img src="images/computer5.jpg" alt="image"
 							class="card-img-top shadow bg-white rounded">
 						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
+							<h5 class="card-title">Software solutions</h5>
 							<p class="card-text"></p>
 						</div>
 						<div class="card-footer bg-transparent text-center ">
-							<button type="button" class="mybuttonoverlap btn btn-info ">
-								<i class="bi bi-pc-display"></i>Read More
-							</button>
+							
 						</div>
 					</div>
 
@@ -169,31 +156,11 @@
 						<img src="images/ac1.jpg" alt="image"
 							class="card-img-top shadow bg-white rounded">
 						<div class="card-body">
-							<h5>Air Conditioner</h5>
+							<h5 class="card-title">Hardware solutions</h5>
 							<p class="card-text"></p>
 						</div>
 						<div class="card-footer bg-transparent text-center ">
-							<button type="button" class="mybuttonoverlap btn btn-info ">
-								<i class="bi bi-wind"></i>Read More
-							</button>
-						</div>
-					</div>
-
-
-
-					<div class="card p-3 mx-5" data-aos="fade-right"
-						data-aos-duration="700"
-						style="width: 18rem; box-shadow: -30px 30px 20px rgba(0, 0, 0, 0.6);">
-						<img src="images/other2.jpg" alt="image"
-							class="card-img-top shadow bg-white rounded">
-						<div class="card-body">
-							<h5>Air Conditioner</h5>
-							<p class="card-text"></p>
-						</div>
-						<div class="card-footer bg-transparent text-center ">
-							<button type="button" class="mybuttonoverlap btn btn-info ">
-								<i class="bi bi-tools"></i>Read More
-							</button>
+							
 						</div>
 					</div>
 				</div>
@@ -201,8 +168,9 @@
 		</div>
 
 
+
 	</div>
-	<footer class="page-footer font-small cyan darken-3 text-center blue " style ="margin-top: 110px;">
+	<footer class="page-footer font-small cyan darken-3 text-center blue ">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 py-5">
@@ -269,3 +237,11 @@
 </body>
 </html>
 
+
+
+<!--
+
+
+
+
+-->
