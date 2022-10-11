@@ -263,7 +263,7 @@
 						<br>
 						<br>
 
-						<button type="button" onclick="document.location.href='customerManagement.jsp'"
+						<button type="button" onclick="document.location.href='reportnav.jsp'"
 							name="em" id="submit" class="btn btn-info">Customer
 							Management</button>
 						<br>
@@ -323,21 +323,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script>
 		AOS.init();
@@ -372,11 +357,3 @@
 </body>
 </html>
 
-
-
-<!--
-
-
-
-
--->

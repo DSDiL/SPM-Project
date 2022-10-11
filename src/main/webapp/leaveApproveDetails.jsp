@@ -146,7 +146,7 @@
 
 						<td><textarea class="form-control" readonly>${leave.more}</textarea></td>
 
-						<td><select name="status" class="form-control">
+						<td><select name="status" class="form-control" required>
 								<option value="" selected>Pending</option>
 								<option value="Approved">Approved</option>
 								<option value="Denied">Denied</option>
