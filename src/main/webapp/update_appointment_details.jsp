@@ -127,17 +127,17 @@
 
 						<c:set var="type" value="<%=type%>"></c:set>
 
-						<c:if test="${type=='Air Conditioners'}">
-							<option value="Computers">Computers</option>
+						<c:if test="${type=='Software'}">
+							<option value="Hardware">Hardware</option>
 							<option value="Others">Others</option>
 						</c:if>
-						<c:if test="${type=='Computers'}">
-							<option value="Air Conditioners">Air Conditioners</option>
+						<c:if test="${type=='Hardware'}">
+							<option value="Software">Software</option>
 							<option value="Others">Others</option>
 						</c:if>
 						<c:if test="${type=='Others'}">
-							<option value="Air Conditioners">Air Conditioners</option>
-							<option value="Computers">Computers</option>
+							<option value="Software">Software</option>
+							<option value="Hardware">Hardware</option>
 						</c:if>
 					</select>
 				</div>

@@ -125,8 +125,8 @@
 					<select id="type" name="type" style="width: 57%;"
 						class="form-control" required>
 						<option selected></option>
-						<option value="Air Conditioners">Air Conditioners</option>
-						<option value="Computers">Computers</option>
+						<option value="Software">Software</option>
+						<option value="Hardware">Hardware</option>
 						<option value="Others">Others</option>
 					</select>
 				</div>
