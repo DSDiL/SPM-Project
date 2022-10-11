@@ -3,15 +3,17 @@ package com.Financial;
 public class EmpSalaryDetails {
 	
 	int salID;
-	float epf;
+	float basicsalary;
 	float etf;
+	float epf;
 	float ot;
 	float bonus;
 	String nic;
 	float total;
-	public EmpSalaryDetails(int salID, float epf, float etf, float ot, float bonus, String nic, float total) {
+	public EmpSalaryDetails(int salID, float basicsalary, float epf, float etf, float ot, float bonus, String nic, float total) {
 		super();
 		this.salID = salID;
+		this.basicsalary = basicsalary;
 		this.epf = epf;
 		this.etf = etf;
 		this.ot = ot;
@@ -21,6 +23,9 @@ public class EmpSalaryDetails {
 	}
 	public int getSalID() {
 		return salID;
+	}
+	public float getBasicsalary() {
+		return basicsalary;
 	}
 	public float getEpf() {
 		return epf;

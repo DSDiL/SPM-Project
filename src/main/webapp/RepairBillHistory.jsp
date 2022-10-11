@@ -105,16 +105,16 @@
 
 	</nav>
 
-	<div class="form mx-auto w-auto" style="width: 80%;">
+	<div class="form mx-auto w-auto" style="width: 85%;">
 		<h2 class="text-center">
 			<b>Bill History</b>
 		</h2>
 
 
 
-		<table class="table table-striped">
+		<table class="table table-striped table-sm" >
 
-			<tr>
+			<tr >
 				<th>Computer Repair Bill ID</th>
 				<th>Repair ID</th>
 				<th>Customer Name</th>

@@ -120,6 +120,7 @@
 		<%
 		String salID = request.getParameter("salID");
 		String nic = request.getParameter("nic");
+		String basicsalary = request.getParameter("basicsalary");
 		String etf = request.getParameter("etf");
 		String epf = request.getParameter("epf");
 		String ot = request.getParameter("ot");
@@ -136,6 +137,7 @@
 				<tr>
 					<th>Salary ID</th>
 					<th>NIC</th>
+					<th>Basic Salary</th>
 					<th>ETF</th>
 					<th>EPF</th>
 					<th>Over Time</th>
@@ -151,8 +153,11 @@
 						style="outline: none; border: none; background-color: transparent;"
 						class="w-50" value="<%=salID%>" readonly></td>
 					<td><input type="text" name="nic"
-						style="outline: none; border: none; background-color: transparent; width: 90%;"
+						style="outline: none; border: none; background-color: transparent; width: 120%;"
 						value="<%=nic%>" readonly></td>
+					<td><input type="text" name="basicsalary"
+						style="outline: none; border: none; background-color: transparent; width: 90%;"
+						value="<%=basicsalary%>" readonly></td>	
 					<td><input type="text" name="etf"
 						style="border-radius: 5px; background-color: transparent; width: 90%;"
 						value="<%=etf%>"></td>
@@ -166,8 +171,8 @@
 						style="border-radius: 5px; background-color: transparent; width: 90%;"
 						value="<%=bonus%>"></td>
 					<td><input type="text" name="total"
-						style="width: 75%; border-radius: 5px; background-color: transparent;"
-						value="<%=total%>"></td>
+						style="outline: none; border: none; background-color: transparent; width: 90%;"
+						value="<%=total%>" readonly></td>
 
 				</tr>
 

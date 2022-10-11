@@ -600,7 +600,7 @@ public class finacialDButill {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 
-			String sql = "insert into salaries values (0,'" + ETF + "','" + EPF + "', '" + OT + "', '" + Bonus + "', '"
+			String sql = "insert into salaries values (0,'" + Basicsalary + "','" + ETF + "','" + EPF + "', '" + OT + "', '" + Bonus + "', '"
 					+ nic + "','" + total + "')";
 
 			int rs = stmt.executeUpdate(sql);
@@ -626,21 +626,22 @@ public class finacialDButill {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 
-			String sql = "select * from salaries where Nic='" + nic + "'";
+			String sql = "select * from techscope.salaries where Nic='" + nic + "'";
 
 			rs = stmt.executeQuery(sql);
 
 			while (rs.next()) {
 
 				int SalaryID = rs.getInt(1);
-				float ETF = rs.getFloat(2);
-				float EPF = rs.getFloat(3);
-				float OT = rs.getFloat(4);
-				float Bonus = rs.getFloat(5);
-				String Nic = rs.getString(6);
-				float Total = rs.getFloat(7);
+				float Basicsalary = rs.getFloat(2);
+				float ETF = rs.getFloat(3);
+				float EPF = rs.getFloat(4);
+				float OT = rs.getFloat(5);
+				float Bonus = rs.getFloat(6);
+				String Nic = rs.getString(7);
+				float Total = rs.getFloat(8);
 
-				EmpSalaryDetails c = new EmpSalaryDetails(SalaryID, ETF, EPF, OT, Bonus, Nic, Total);
+				EmpSalaryDetails c = new EmpSalaryDetails(SalaryID, Basicsalary, ETF, EPF, OT, Bonus, Nic, Total);
 				EmpSalaryDetails.add(c);
 
 			}
@@ -670,14 +671,15 @@ public class finacialDButill {
 			while (rs.next()) {
 
 				int SalaryID = rs.getInt(1);
-				float ETF = rs.getFloat(2);
-				float EPF = rs.getFloat(3);
-				float OT = rs.getFloat(4);
-				float Bonus = rs.getFloat(5);
-				String Nic = rs.getString(6);
-				float Total = rs.getFloat(7);
+				float Basicsalary = rs.getFloat(2);
+				float ETF = rs.getFloat(3);
+				float EPF = rs.getFloat(4);
+				float OT = rs.getFloat(5);
+				float Bonus = rs.getFloat(6);
+				String Nic = rs.getString(7);
+				float Total = rs.getFloat(8);
 
-				EmpSalaryDetails c = new EmpSalaryDetails(SalaryID, ETF, EPF, OT, Bonus, Nic, Total);
+				EmpSalaryDetails c = new EmpSalaryDetails(SalaryID, Basicsalary, ETF, EPF, OT, Bonus, Nic, Total);
 				EmpSalaryDetails.add(c);
 
 			}
@@ -691,15 +693,17 @@ public class finacialDButill {
 
 	}
 
-	public static boolean updatdeliverbill(String salID, String nic, String etf, String epf, String ot, String bonus,
+	public static boolean updatdeliverbill(String salID, String nic, String basicsalary, String etf, String epf, String ot, String bonus,
 			String total) {
 
 		int SalID = Integer.parseInt(salID);
+		float Basicsalary = Float.parseFloat(basicsalary);
 		float Etf = Float.parseFloat(etf);
 		float Epf = Float.parseFloat(epf);
 		float Ot = Float.parseFloat(ot);
 		float Bonus = Float.parseFloat(bonus);
-		float Total = Float.parseFloat(total);
+//		float Total = Float.parseFloat(total);
+		float Total = Basicsalary + Ot - (Epf + Etf )+ Bonus;
 
 		try {
 			con = DBConnect.getConnection();
@@ -790,12 +794,13 @@ public class finacialDButill {
 				String deliver = rs.getString(5);
 				String spare = rs.getString(7);
 				int qty = rs.getInt(8);
-				float spareprice = rs.getFloat(9);
-				Date billdate = rs.getDate(10);
-				float serviceCharges = rs.getFloat(11);
-				float total = rs.getFloat(12);
+				float cost = rs.getFloat(9);
+				float spareprice = rs.getFloat(10);
+				Date billdate = rs.getDate(11);
+				float serviceCharges = rs.getFloat(12);
+				float total = rs.getFloat(13);
 
-				computerBillHistory c = new computerBillHistory(billID, rcID, name, Date, deliver, spare, qty,
+				computerBillHistory c = new computerBillHistory(billID, rcID, name, Date, deliver, spare, qty,cost,
 						spareprice, billdate, serviceCharges, total);
 				computerBillHistory.add(c);
 
@@ -1138,13 +1143,13 @@ public class finacialDButill {
 				int roID = rs.getInt(2);
 				String name = rs.getString(3);
 				Date Date = rs.getDate(4);
-				String spare = rs.getString(6);
-				int qty = rs.getInt(7);
-				float cost = rs.getFloat(8);
-				float spareprice = rs.getFloat(9);
-				Date billdate = rs.getDate(10);
-				float serviceCharges = rs.getFloat(11);
-				float total = rs.getFloat(12);
+				String spare = rs.getString(7);
+				int qty = rs.getInt(8);
+				float cost = rs.getFloat(9);
+				float spareprice = rs.getFloat(10);
+				Date billdate = rs.getDate(11);
+				float serviceCharges = rs.getFloat(12);
+				float total = rs.getFloat(13);
 
 				otherBillHistroy c = new otherBillHistroy(billID, roID, name, Date, spare, qty, cost, spareprice,
 						billdate, serviceCharges, total);
@@ -1165,7 +1170,7 @@ public class finacialDButill {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 
-			String sql = "select * from automart.repair_other_bills where billdate = '" + date + "'";
+			String sql = "select * from techscope.repair_other_bills where billdate = '" + date + "'";
 			rs = stmt.executeQuery(sql);
 
 			if (rs.next()) {
@@ -1179,6 +1184,64 @@ public class finacialDButill {
 		}
 
 		return isSuccess;
+	}
+	
+	public static boolean empreport(String nic) {
+		try {
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+
+			String sql = "select * from techscope.salaries where Nic = '" + nic + "'";
+			rs = stmt.executeQuery(sql);
+
+			if (rs.next()) {
+				isSuccess = true;
+			} else {
+				isSuccess = false;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return isSuccess;
+	}
+	
+	public static List<EmpSalaryDetails> getempreport(String nic) {
+
+		ArrayList<EmpSalaryDetails> EmpSalaryDetails = new ArrayList<>();
+
+		try {
+
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+
+			String sql = "select * from techscope.salaries where Nic = '" + nic + "'";
+
+			rs = stmt.executeQuery(sql);
+			while (rs.next()) {
+
+				int salID = rs.getInt(1);
+				float basicsalary = rs.getFloat(2);
+				float etf = rs.getFloat(3);
+				float epf = rs.getFloat(4);
+				float ot = rs.getFloat(5);
+				float bonus = rs.getFloat(6);
+				String Nic = rs.getString(7);
+				float total = rs.getFloat(8);
+
+				EmpSalaryDetails c = new EmpSalaryDetails(salID,basicsalary,etf,epf,ot,bonus,Nic,total);
+				EmpSalaryDetails.add(c);
+
+			}
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+
+		}
+		return EmpSalaryDetails;
+
 	}
 
 }

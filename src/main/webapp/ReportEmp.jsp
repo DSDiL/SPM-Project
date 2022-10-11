@@ -74,36 +74,38 @@
 	<div class="form mx-auto" style="margin-bottom: 100%; width: 95%;">
 
 		<form action="#" method="post">
+
 			<table class="table table-stiprd">
 				<tr>
-					<th>Bill Id</th>
-					<th>Repair Id</th>
-					<th>Company Name</th>
-					<th>Date</th>
-					<th>Sparepart Name</th>
-					<th>Qty</th>
-					<th>Estimated Cost</th>
-					<th>Sparepart Price</th>
-					<th>Bill Date</th>
-					<th>Service Charges</th>
+					<th>Sal ID</th>
+					<th>NIC</th>
+					<th>Basic Salary</th>
+					<th>ETF</th>
+					<th>EPF</th>
+					<th>Over Time</th>
+					<th>Bonus</th>
 					<th>Total</th>
+					
+
 				</tr>
-				<c:forEach var="report" items="${report}">
+				<c:forEach var="rep" items="${rep}">
 					<tr>
-						<td>${report.billID}</td>
-						<td>${report.roID}</td>
-						<td>${report.name}</td>
-						<td>${report.date}</td>
-						<td>${report.spare}</td>
-						<td>${report.qty}</td>
-						<td>${report.cost}</td>
-						<td>${report.spareprice}</td>
-						<td>${report.billdate}</td>
-						<td>${report.service}</td>
-						<td>${report.total}</td>
+						<td>${rep.salID}</td>
+						<td>${rep.nic}</td>
+						<td>${rep.basicsalary}</td>
+						<td>${rep.etf}</td>
+						<td>${rep.epf}</td>
+						<td>${rep.ot}</td>
+						<td>${rep.bonus}</td>
+						<td>${rep.total}</td>
+						
 					</tr>
 				</c:forEach>
 			</table>
+
+
+
+
 
 			<input class="btn btn-success" type="submit" id="submit"
 				name="Submit" value="Print" onclick="window.print();">

@@ -110,7 +110,7 @@
 
 	</nav>
 
-	<div class="form mx-auto">
+	<div class="form mx-auto w-auto" style="width: 85%;">
 		<h2 class="text-center">
 			<b>Employee Salary Details</b>
 		</h2>
@@ -121,6 +121,7 @@
 				<tr>
 					<th>Salary ID</th>
 					<th>NIC</th>
+					<th>Basic Salary</th>
 					<th>ETF</th>
 					<th>EPF</th>
 					<th>Over Time</th>
@@ -136,6 +137,7 @@
 
 					<c:set var="salID" value="${emp.salID}" />
 					<c:set var="nic" value="${emp.nic}" />
+					<c:set var="basicsalary" value="${emp.basicsalary}" />
 					<c:set var="etf" value="${emp.etf}" />
 					<c:set var="epf" value="${emp.epf}" />
 					<c:set var="ot" value="${emp.ot}" />
@@ -146,12 +148,16 @@
 
 
 					<tr>
+
 						<td><input
-							style="outline: none; border: none; background-color: transparent; width: 10%;"
-							type="text" name="salID" value="${emp.salID}" readonly></td>
+							style="outline: none; border: none; background-color: transparent; width:50%;"
+							type="text" name="salID" value="${emp.salID}" readonly></td>	
 						<td><input
 							style="outline: none; border: none; background-color: transparent;"
 							type="text" name="nic" value="${emp.nic}" readonly></td>
+						<td><input
+							style="outline: none; border: none; background-color: transparent;"
+							type="text" name=basicsalary value="${emp.basicsalary}" readonly></td>	
 						<td>${emp.etf}</td>
 						<td>${emp.epf}</td>
 						<td>${emp.ot}</td>
@@ -163,6 +169,7 @@
 
 							<c:param name="salID" value="${salID}" />
 							<c:param name="nic" value="${nic}" />
+							<c:param name="basicsalary" value="${basicsalary}" />
 							<c:param name="etf" value="${etf}" />
 							<c:param name="epf" value="${epf}" />
 							<c:param name="ot" value="${ot}" />
@@ -183,6 +190,17 @@
 				</c:forEach>
 
 			</table>
+
+		</form>
+		
+		<form action="EmpReportServlet" method="post">
+
+			<div class="form-group">
+				<label class="mt-5">Generate Report</label> <input type="text"
+					class="form-control" id="Nic" name="nic">
+				<button type="submit" class="btn btn-success mt-5" name="Submit"
+					value="Submit">Print Report</button>
+			</div>
 
 		</form>
 
