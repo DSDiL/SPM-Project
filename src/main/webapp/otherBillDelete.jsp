@@ -99,7 +99,7 @@
 
 	</nav>
 
-	<div class="form mx-auto w-100">
+	<div class="form mx-auto w-auto" style="width: 98%;">
 		<h2 class="text-center">
 			<b>Bill Delete</b>
 		</h2>
@@ -163,7 +163,7 @@
 						type="text" class="inputt" name="qty" value="<%=qty%>" readonly>
 					</td>
 					<td><input
-						style="outline: none; width: 30%; background-color: transparent; border: none;"
+						style="outline: none; width: 100%; background-color: transparent; border: none;"
 						type="text" class="inputt" name="cost" value="<%=cost%>" readonly>
 					</td>
 					<td><input

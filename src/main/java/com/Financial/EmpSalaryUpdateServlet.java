@@ -21,6 +21,7 @@ public class EmpSalaryUpdateServlet extends HttpServlet {
 		
 		String salID = request.getParameter("salID");
 		String nic = request.getParameter("nic");
+		String basicsalary = request.getParameter("basicsalary");
 		String etf = request.getParameter("etf");
 		String epf = request.getParameter("epf");
 		String ot = request.getParameter("ot");
@@ -33,7 +34,7 @@ public class EmpSalaryUpdateServlet extends HttpServlet {
 
 		boolean isTrue;
 
-		isTrue = finacialDButill.updatdeliverbill(salID,nic,etf,epf,ot,bonus,total);
+		isTrue = finacialDButill.updatdeliverbill(salID,nic,basicsalary,etf,epf,ot,bonus,total);
 
 		if (isTrue == true) {
 			List<EmpSalaryDetails> emp = finacialDButill.getemphistroy(nic); 

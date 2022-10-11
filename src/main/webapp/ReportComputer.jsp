@@ -71,7 +71,7 @@
 
 
 
-	<div class="form mx-auto" style="margin-bottom: 100%;">
+	<div class="form mx-auto" style="margin-bottom: 100%; width: 95%;">
 
 		<form action="#" method="post">
 
@@ -84,6 +84,7 @@
 					<th>Date</th>
 					<th>Used Spareparts</th>
 					<th>Qty</th>
+					<th>Cost</th>
 					<th>Sparepart Price</th>
 					<th>Bill Date</th>
 					<th>Service Charges</th>
@@ -99,6 +100,7 @@
 						<td>${report.date}</td>
 						<td>${report.spare}</td>
 						<td>${report.qty}</td>
+						<td>${report.cost}</td>
 						<td>${report.spareprice}</td>
 						<td>${report.billdate}</td>
 						<td>${report.service}</td>

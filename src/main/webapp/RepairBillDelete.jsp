@@ -99,7 +99,7 @@
 
 	</nav>
 
-	<div class="form mx-auto w-100">
+	<div class="form mx-auto w-auto" style="width: 95%;">
 		<h2 class="text-center">
 			<b>Bill Delete</b>
 		</h2>
@@ -150,7 +150,7 @@
 
 				<tr>
 					<td><input
-						style="outline: none; width: 15%; background-color: transparent; border: none;"
+						style="outline: none; width: 25%; background-color: transparent; border: none;"
 						type="text" class="inputt" name="billID" value="<%=billID%>"
 						readonly></td>
 					<td><input
@@ -172,7 +172,7 @@
 						type="text" class="inputt" name="qty" value="<%=qty%>" readonly>
 					</td>
 					<td><input
-						style="outline: none; width: 15%; background-color: transparent; border: none;"
+						style="outline: none; width: 100%; background-color: transparent; border: none;"
 						type="text" class="inputt" name="cost" value="<%=cost%>" readonly>
 					</td>
 					<td><input
