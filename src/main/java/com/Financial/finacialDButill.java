@@ -584,7 +584,7 @@ public class finacialDButill {
 	}
 
 	public static boolean insertdeliverybill(String nic, String epf, String etf, String ot, String bonus,
-			String basicsalary) {
+			String basicsalary, String date) {
 
 		isSuccess = false;
 
@@ -593,6 +593,7 @@ public class finacialDButill {
 		float OT = Float.parseFloat(ot);
 		float Bonus = Float.parseFloat(bonus);
 		float Basicsalary = Float.parseFloat(basicsalary);
+		
 
 		float total = Basicsalary + OT - (EPF + ETF )+ Bonus;
 
@@ -601,7 +602,7 @@ public class finacialDButill {
 			stmt = con.createStatement();
 
 			String sql = "insert into salaries values (0,'" + Basicsalary + "','" + ETF + "','" + EPF + "', '" + OT + "', '" + Bonus + "', '"
-					+ nic + "','" + total + "')";
+					+ nic + "','" + total + "','"+date+"')";
 
 			int rs = stmt.executeUpdate(sql);
 
@@ -640,8 +641,9 @@ public class finacialDButill {
 				float Bonus = rs.getFloat(6);
 				String Nic = rs.getString(7);
 				float Total = rs.getFloat(8);
+				Date Date = rs.getDate(9);
 
-				EmpSalaryDetails c = new EmpSalaryDetails(SalaryID, Basicsalary, ETF, EPF, OT, Bonus, Nic, Total);
+				EmpSalaryDetails c = new EmpSalaryDetails(SalaryID, Basicsalary, ETF, EPF, OT, Bonus, Nic, Total, Date);
 				EmpSalaryDetails.add(c);
 
 			}
@@ -678,8 +680,9 @@ public class finacialDButill {
 				float Bonus = rs.getFloat(6);
 				String Nic = rs.getString(7);
 				float Total = rs.getFloat(8);
+				Date Date = rs.getDate(9);
 
-				EmpSalaryDetails c = new EmpSalaryDetails(SalaryID, Basicsalary, ETF, EPF, OT, Bonus, Nic, Total);
+				EmpSalaryDetails c = new EmpSalaryDetails(SalaryID, Basicsalary, ETF, EPF, OT, Bonus, Nic, Total, Date);
 				EmpSalaryDetails.add(c);
 
 			}
@@ -694,7 +697,7 @@ public class finacialDButill {
 	}
 
 	public static boolean updatdeliverbill(String salID, String nic, String basicsalary, String etf, String epf, String ot, String bonus,
-			String total) {
+			String total, String date) {
 
 		int SalID = Integer.parseInt(salID);
 		float Basicsalary = Float.parseFloat(basicsalary);
@@ -710,7 +713,7 @@ public class finacialDButill {
 			stmt = con.createStatement();
 
 			String sql = "update salaries set Sal_id='" + SalID + "', Nic='" + nic + "', ETF='" + Etf + "',EPF='" + Epf
-					+ "',Over_time='" + Ot + "',Bonus='" + Bonus + "',total='" + Total + "' where Sal_id='" + salID
+					+ "',Over_time='" + Ot + "',Bonus='" + Bonus + "',total='" + Total + "',Date='"+date+"' where Sal_id='" + salID
 					+ "'";
 
 			int rs = stmt.executeUpdate(sql);
@@ -1229,8 +1232,9 @@ public class finacialDButill {
 				float bonus = rs.getFloat(6);
 				String Nic = rs.getString(7);
 				float total = rs.getFloat(8);
+				Date date = rs.getDate(9);
 
-				EmpSalaryDetails c = new EmpSalaryDetails(salID,basicsalary,etf,epf,ot,bonus,Nic,total);
+				EmpSalaryDetails c = new EmpSalaryDetails(salID,basicsalary,etf,epf,ot,bonus,Nic,total,date);
 				EmpSalaryDetails.add(c);
 
 			}

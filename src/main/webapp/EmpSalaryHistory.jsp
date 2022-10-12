@@ -110,7 +110,7 @@
 
 	</nav>
 
-	<div class="form mx-auto w-auto" style="width: 85%;">
+	<div class="form mx-auto w-auto" style="width: 95%;">
 		<h2 class="text-center">
 			<b>Employee Salary Details</b>
 		</h2>
@@ -122,6 +122,7 @@
 					<th>Salary ID</th>
 					<th>NIC</th>
 					<th>Basic Salary</th>
+					<th>Date</th>
 					<th>ETF</th>
 					<th>EPF</th>
 					<th>Over Time</th>
@@ -138,6 +139,7 @@
 					<c:set var="salID" value="${emp.salID}" />
 					<c:set var="nic" value="${emp.nic}" />
 					<c:set var="basicsalary" value="${emp.basicsalary}" />
+					<c:set var="date" value="${emp.date}" />
 					<c:set var="etf" value="${emp.etf}" />
 					<c:set var="epf" value="${emp.epf}" />
 					<c:set var="ot" value="${emp.ot}" />
@@ -158,6 +160,9 @@
 						<td><input
 							style="outline: none; border: none; background-color: transparent;"
 							type="text" name=basicsalary value="${emp.basicsalary}" readonly></td>	
+						<td><input
+							style="outline: none; border: none; background-color: transparent;"
+							type="text" name=date value="${emp.date}" readonly></td>		
 						<td>${emp.etf}</td>
 						<td>${emp.epf}</td>
 						<td>${emp.ot}</td>
@@ -170,6 +175,7 @@
 							<c:param name="salID" value="${salID}" />
 							<c:param name="nic" value="${nic}" />
 							<c:param name="basicsalary" value="${basicsalary}" />
+							<c:param name="date" value="${date}" />
 							<c:param name="etf" value="${etf}" />
 							<c:param name="epf" value="${epf}" />
 							<c:param name="ot" value="${ot}" />

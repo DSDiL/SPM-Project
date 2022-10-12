@@ -193,6 +193,11 @@
 					<td><input type="text" name="bonus" class="form-control w-50"
 						pattern="[0-9]+" required></td>
 				</tr>
+				<tr>
+					<td>Date</td>
+					<td><input type="date" name="date" class="form-control w-50"
+						 required></td>
+				</tr>
 
 
 			</table>

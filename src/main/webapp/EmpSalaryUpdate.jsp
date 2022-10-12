@@ -110,7 +110,7 @@
 
 	</nav>
 
-	<div class="form mx-auto">
+	<div class="form mx-auto w-auto" style="width: 95%;">
 		<h2 class="text-center">
 			<b>Update Employee Salary Details</b>
 		</h2>
@@ -126,6 +126,7 @@
 		String ot = request.getParameter("ot");
 		String bonus = request.getParameter("bonus");
 		String total = request.getParameter("total");
+		String date = request.getParameter("date");
 		%>
 
 
@@ -138,6 +139,7 @@
 					<th>Salary ID</th>
 					<th>NIC</th>
 					<th>Basic Salary</th>
+					<th>Date</th>
 					<th>ETF</th>
 					<th>EPF</th>
 					<th>Over Time</th>
@@ -158,6 +160,9 @@
 					<td><input type="text" name="basicsalary"
 						style="outline: none; border: none; background-color: transparent; width: 90%;"
 						value="<%=basicsalary%>" readonly></td>	
+					<td><input type="date" name="date"
+						style="border-radius: 5px; background-color: transparent; width: 100%;"
+						value="<%=date%>" ></td>		
 					<td><input type="text" name="etf"
 						style="border-radius: 5px; background-color: transparent; width: 90%;"
 						value="<%=etf%>"></td>
