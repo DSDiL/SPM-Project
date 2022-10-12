@@ -31,11 +31,12 @@ public class RepairBillUpdateServlet extends HttpServlet {
 
 			boolean isTrue;
 
-			isTrue = finacialDButill.updatecomputerrepairbill(billID,qty,spareprice,service,total);
+			isTrue = finacialDButill.updatecomputerrepairbill(billID,qty,spareprice,service,total,date);
+			String date1 = date;
 
 			if (isTrue == true) {
 				
-				List<computerBillHistory> computerBillHistory = finacialDButill.getcomputerhistory(date); 
+				List<computerBillHistory> computerBillHistory = finacialDButill.getcomputerhistory(date1); 
 				
 				
 				request.setAttribute("computerBillHistory", computerBillHistory);

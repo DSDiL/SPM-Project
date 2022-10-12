@@ -900,7 +900,7 @@ public class finacialDButill {
 		return computerBillHistory;
 	}
 
-	public static boolean updatecomputerrepairbill(String billID, String qty, String spareprice, String service, String total) {
+	public static boolean updatecomputerrepairbill(String billID, String qty, String spareprice, String service, String total, String date) {
 
 		int billid = Integer.parseInt(billID);
 		int qty1 = Integer.parseInt(qty);
@@ -913,7 +913,7 @@ public class finacialDButill {
 			stmt = con.createStatement();
 
 			String sql = "update repair_computer_bills set spare_price='" + Spare + "', service_charges='" + Service
-					+ "',total='" + Total + "' where billID='" + billid + "'";
+					+ "',total='" + Total + "',bill_date='"+date+"' where billID='" + billid + "'";
 
 			int rs = stmt.executeUpdate(sql);
 
@@ -1088,7 +1088,7 @@ public class finacialDButill {
 			stmt = con.createStatement();
 
 			String sql = "update repair_other_bills set sparepart='" + Spare + "', service='" + Service + "',total='"
-					+ Total + "' where billID='" + billid + "'";
+					+ Total + "',billdate='"+date+"' where billID='" + billid + "'";
 
 			int rs = stmt.executeUpdate(sql);
 
