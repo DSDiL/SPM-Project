@@ -7,6 +7,7 @@
 <head>
 
 <meta charset="utf-8">
+<title>Bill Update</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://kit.fontawesome.com/8da1f1e093.js"

@@ -7,7 +7,7 @@
 
 
 <meta charset="UTF-8">
-<title>Select Bill</title>
+<title>Employee Salary Report</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://kit.fontawesome.com/8da1f1e093.js"
@@ -116,6 +116,10 @@
 
 
 	<div class="form mx-auto" style="width: 95%;">
+		
+		<h2 class="text-center">
+			<b>Employee Salary History Report</b>
+		</h2>
 
 		<form action="#" method="post">
 
