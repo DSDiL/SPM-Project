@@ -29,11 +29,12 @@ public class EmpSalaryInsertServlet extends HttpServlet {
 		String ot = request.getParameter("ot");
 		String bonus = request.getParameter("bonus");
 		String basicsalary = request.getParameter("basicsalary");
+		String date = request.getParameter("date");
 	
 
 		boolean isTrue;
 
-		isTrue = finacialDButill.insertdeliverybill(nic,epf,etf,ot,bonus,basicsalary);
+		isTrue = finacialDButill.insertdeliverybill(nic,epf,etf,ot,bonus,basicsalary,date);
 
 		if (isTrue == true) {
 			List<Empdetails> emp = finacialDButill.getemp(); 

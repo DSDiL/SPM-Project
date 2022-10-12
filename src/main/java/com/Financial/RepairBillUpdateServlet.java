@@ -20,13 +20,6 @@ public class RepairBillUpdateServlet extends HttpServlet {
 		
 		
 
-
-		
-			
-	
-			
-			
-			
 			String billID = request.getParameter("billID");
 	
 			String date = request.getParameter("billdate");
@@ -35,9 +28,6 @@ public class RepairBillUpdateServlet extends HttpServlet {
 			String service = request.getParameter("service");
 			String total = request.getParameter("total");
 			
-			
-			
-		
 
 			boolean isTrue;
 

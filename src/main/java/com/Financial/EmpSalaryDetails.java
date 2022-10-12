@@ -1,5 +1,7 @@
 package com.Financial;
 
+import java.util.Date;
+
 public class EmpSalaryDetails {
 	
 	int salID;
@@ -10,7 +12,9 @@ public class EmpSalaryDetails {
 	float bonus;
 	String nic;
 	float total;
-	public EmpSalaryDetails(int salID, float basicsalary, float epf, float etf, float ot, float bonus, String nic, float total) {
+	Date date;
+	
+	public EmpSalaryDetails(int salID, float basicsalary, float epf, float etf, float ot, float bonus, String nic, float total, Date date) {
 		super();
 		this.salID = salID;
 		this.basicsalary = basicsalary;
@@ -20,6 +24,7 @@ public class EmpSalaryDetails {
 		this.bonus = bonus;
 		this.nic = nic;
 		this.total = total;
+		this.date = date;
 	}
 	public int getSalID() {
 		return salID;
@@ -44,6 +49,9 @@ public class EmpSalaryDetails {
 	}
 	public float getTotal() {
 		return total;
+	}
+	public Date getDate() {
+		return date;
 	}
 
 	
