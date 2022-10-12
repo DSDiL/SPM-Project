@@ -25,6 +25,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
 	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
 	crossorigin="anonymous">
+
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <link
@@ -58,18 +59,17 @@
 	href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
 <link rel="stylesheet" href="css/styles.css">
 
 <title>DarkShop</title>
 
 </head>
+
 <body>
 	<button type="button" class="btn btn-danger btn-floating btn-lg"
 		id="btn-back-to-top">
 		<i class="fas fa-arrow-up"></i>
 	</button>
-
 
 	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
 		<button type="button" class="navbar-toggler" data-toggle="collapse"
@@ -89,55 +89,37 @@
 				<li class="nav-item"><a href="customerLogin.jsp"
 					class="nav-link h5 mr-2" id="item"
 					style="font-family: 'Raleway', sans-serif;"> <i
-						class="bi bi-info-circle pr-2"></i></i><b>Login to your profile</b>
+						class="bi bi-info-circle pr-2"></i></i><b>Login</b>
 				</a></li>
 			</ul>
 		</div>
-
 	</nav>
 
-	<div class="form mx-auto">
-		<div class="global-container">
-			<div class="card login-form "
-				style="border: none; border-radius: 20px;">
-				<div class="card-body">
-					<h3 class="card-title text-center text-uppercase">
-						<b> DarkShop Customer login</b>
-					</h3>
-					<div class="card-text">
+	<div class="form mx-auto"  style="width:50%">
 
-						<form action="CustomeLoginServlet" method="post" name="myform1">
-
-							<div class="form-group">
-								<label>Email</label> 
-								<input type="text" name="email"
-									class="form-control form-control-sm"
-									pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-									aria-describedby="emailHelp" required>
-							</div>
-
-							<div class="form-group">
-								<label>Password</label> 
-								<input type="password"
-									class="form-control form-control-sm" id="pwd" name="pwd1"
-									required>
-							</div>
-							
-							<a href="customerEmailVerify.jsp"> 
-								Forgot password
-							</a>
-
-							<button type="submit" name="submit" value="Login" id="submit"
-								class="btn btn-primary btn-block">Login</button>
-
-							<a href="customerRegister.jsp"> 
-								<input type="button" value="Register" id="submit" class="btn btn-primary btn-block">
-							</a>
-
-						</form>
+		<h2 class="text-center text-dark">
+			<b> E-mail Verification</b>
+		</h2>
+		
+		<div class="container">
+			<form action="EmailVerifyServlet" method="post" name="myform">
+				
+				<div class="form-group row">
+					<label class="col-lg-3 col-form-label"><b>Enter your E-mail</b></label>
+					<div class="col-lg-9">
+						<input type="text" name="email" class="form-control"
+							pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+							style="width: 70%;" required />
 					</div>
 				</div>
-			</div>
+				
+				<div class="text-center">
+					<button type="submit" style="height: 50px; width: 20%;"
+						class="btn btn-success align-items-center" name="submit"
+						id="submit">Verify</button>
+				</div>
+
+			</form>
 		</div>
 	</div>
 
@@ -174,50 +156,58 @@
 		</div>
 	</footer>
 
-
-
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script>
-		AOS.init();
-	</script>
+      AOS.init();
+    </script>
 
 	<script>
-		//Get the button
-		let mybutton = document.getElementById("btn-back-to-top");
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
 
-		// When the user scrolls down 20px from the top of the document, show the button
-		window.onscroll = function() {
-			scrollFunction();
-		};
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+      scrollFunction();
+    };
 
-		function scrollFunction() {
-			if (document.body.scrollTop > 20
-					|| document.documentElement.scrollTop > 20) {
-				mybutton.style.display = "block";
-			} else {
-				mybutton.style.display = "none";
-			}
-		}
-		// When the user clicks on the button, scroll to the top of the document
-		mybutton.addEventListener("click", backToTop);
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    // When the user clicks on the button, scroll to the top of the document
+    mybutton.addEventListener("click", backToTop);
 
-		function backToTop() {
-			document.body.scrollTop = 0;
-			document.documentElement.scrollTop = 0;
-		}
-	</script>
+    function backToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    
+    function validateForm(){
 
+    	let pw1=document.getElementById("pw").value;
+    	let pw2=document.getElementById("pw2").value;
+    	console.log(pw1);
 
-	<script>
-		function myFunction() {
-			var x = document.getElementById("pwd");
-			if (x.type === "password") {
-				x.type = "text";
-			} else {
-				x.type = "password";
-			}
-		}
-	</script>
+    	if (pw1.length>5) {
+    		if (pw1 == pw2) {
+    		}
+    		else {
+    			alert("passwords doesn't match");
+    			return false;
+    		}
+    	}
+    	else {
+    		alert("password should be more than 5 characters");
+			return false;
+    	}
+    }
+    </script>
 
 </body>
 </html>
