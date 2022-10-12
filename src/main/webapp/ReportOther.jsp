@@ -7,7 +7,7 @@
 
 
 <meta charset="UTF-8">
-<title>Select Bill</title>
+<title>Other Electrics Bill Report</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://kit.fontawesome.com/8da1f1e093.js"
@@ -114,6 +114,10 @@
 
 
 	<div class="form mx-auto" style="width: 95%;">
+	
+		<h2 class="text-center">
+			<b>Other Bill History Report</b>
+		</h2>
 
 		<form action="#" method="post">
 			<table class="table table-stiprd">
@@ -122,10 +126,10 @@
 					<th>Repair Id</th>
 					<th>Company Name</th>
 					<th>Date</th>
-					<th>Sparepart Name</th>
+					<th>Spare part Name</th>
 					<th>Qty</th>
 					<th>Estimated Cost</th>
-					<th>Sparepart Price</th>
+					<th>Spare part Price</th>
 					<th>Bill Date</th>
 					<th>Service Charges</th>
 					<th>Total</th>

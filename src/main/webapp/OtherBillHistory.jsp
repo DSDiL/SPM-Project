@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Bill History</title>
+<title>Other Bill History</title>
 
 
 <meta name="viewport"

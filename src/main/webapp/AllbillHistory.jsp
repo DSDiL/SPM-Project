@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Select Bill</title>
+<title>Select Bill History</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://kit.fontawesome.com/8da1f1e093.js"
@@ -103,7 +103,7 @@
 
 	<div class="form mx-auto">
 		<h2 class="text-center">
-			<b>Bill History</b>
+			<b>Select Bill History</b>
 		</h2>
 
 

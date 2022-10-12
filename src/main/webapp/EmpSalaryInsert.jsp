@@ -8,7 +8,7 @@
 
 
 <meta charset="UTF-8">
-<title>Select Bill</title>
+<title>Employee Salary Details Insert</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://kit.fontawesome.com/8da1f1e093.js"
@@ -201,10 +201,11 @@
 
 
 			</table>
-			<center>
+			
+			<div class="text-center">
 				<input type="submit" class="btn btn-primary" id="submit"
 					name="Submit" value="Submit">
-			</center>
+			</div>
 		</form>
 
 
