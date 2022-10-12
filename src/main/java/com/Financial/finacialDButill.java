@@ -900,13 +900,14 @@ public class finacialDButill {
 		return computerBillHistory;
 	}
 
-	public static boolean updatecomputerrepairbill(String billID, String spareprice, String service, String total) {
+	public static boolean updatecomputerrepairbill(String billID, String qty, String spareprice, String service, String total) {
 
 		int billid = Integer.parseInt(billID);
+		int qty1 = Integer.parseInt(qty);
 		float Spare = Float.parseFloat(spareprice);
 		float Service = Float.parseFloat(service);
-		float Total = Float.parseFloat(total);
-
+//		float Total = Float.parseFloat(total);
+		float Total = qty1 * Spare + Service;
 		try {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
@@ -1074,11 +1075,13 @@ public class finacialDButill {
 	}
 
 	public static boolean updateotherrepairbill(String billID, String date, String spareprice, String service,
-			String total) {
+			String total, String qty) {
 		int billid = Integer.parseInt(billID);
 		float Spare = Float.parseFloat(spareprice);
 		float Service = Float.parseFloat(service);
-		float Total = Float.parseFloat(total);
+		int qty1 = Integer.parseInt(qty);
+//		float Total = Float.parseFloat(total);
+		float Total = qty1 * Spare + Service;
 
 		try {
 			con = DBConnect.getConnection();
