@@ -21,10 +21,11 @@ public class OtherBillUpdateServlet extends HttpServlet {
 		String spareprice = request.getParameter("spareprice");
 		String service = request.getParameter("service");
 		String total = request.getParameter("total");
+		String qty = request.getParameter("qty");
 		
 		boolean isTrue;
 
-		isTrue = finacialDButill.updateotherrepairbill(billID, date, spareprice,service,total);
+		isTrue = finacialDButill.updateotherrepairbill(billID, date, spareprice,service,total,qty);
 
 		if (isTrue == true) {
 			

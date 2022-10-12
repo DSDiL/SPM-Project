@@ -23,7 +23,7 @@ public class RepairBillUpdateServlet extends HttpServlet {
 			String billID = request.getParameter("billID");
 	
 			String date = request.getParameter("billdate");
-	
+			String qty = request.getParameter("qty");
 			String spareprice = request.getParameter("spareprice");
 			String service = request.getParameter("service");
 			String total = request.getParameter("total");
@@ -31,7 +31,7 @@ public class RepairBillUpdateServlet extends HttpServlet {
 
 			boolean isTrue;
 
-			isTrue = finacialDButill.updatecomputerrepairbill(billID,spareprice,service,total);
+			isTrue = finacialDButill.updatecomputerrepairbill(billID,qty,spareprice,service,total);
 
 			if (isTrue == true) {
 				

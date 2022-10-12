@@ -180,7 +180,7 @@
 						type="text" class="inputt" name="service" value="<%=service%>"></td>
 					<td><input
 						style="outline: none; width: 100%; background-color: transparent; border: none;"
-						type="text" class="inputt" name="total" value="<%=total%>"></td>
+						type="text" class="inputt" name="total" value="<%=total%>" readonly></td>
 				</tr>
 
 
