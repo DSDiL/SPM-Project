@@ -74,7 +74,5 @@ public class CustomerUpdateServlet extends HttpServlet {
 				dis1.include(request,response);
 			}
 		}
-		
-			
 	}
 }

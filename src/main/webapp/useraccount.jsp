@@ -64,17 +64,12 @@
 
 <title>DarkShop</title>
 
-
 </head>
 <body>
 	<button type="button" class="btn btn-danger btn-floating btn-lg"
 		id="btn-back-to-top">
 		<i class="fas fa-arrow-up"></i>
 	</button>
-
-
-
-
 
 	<nav class="navbar navbar-expand-md py-4 navbar-dark red  sticky-top  ">
 		<button type="button" class="navbar-toggler" data-toggle="collapse"
@@ -90,7 +85,7 @@
 				<li class="nav-item"><a href="customerLogin.jsp"
 					class="nav-link h5 mr-2" id="item"
 					style="font-family: 'Raleway', sans-serif;"> <i
-						class="bi bi-info-circle pr-2"></i></i><b>Login</b>
+						class="bi bi-info-circle pr-2"></i></i><b>Log out</b>
 				</a></li>
 			</ul>
 		</div>
@@ -101,8 +96,17 @@
 
 		<h2 class="text-center">Appointment Details</h2>
 
-
-
+	<table class="table table-striped table-bordered mt-5">
+		<tr>
+			<th>ID</th>
+			<th>Service Type</th>
+			<th>Description</th>
+			<th>Time Slot</th>
+			<th>Required Date</th>
+			<th>Change Details</th>
+			<th>Delete</th>
+		</tr>
+				
 		<c:forEach var="apo" items="${apoid}">
 			<c:set var="apoid" value="${apo.apoid}" />
 			<c:set var="servicetype" value="${apo.servicetype}" />
@@ -111,51 +115,36 @@
 			<c:set var="requireddate" value="${apo.requireddate}" />
 			<c:set var="cid" value="${apo.cid}" />
 
-			<table class="table table-striped table-bordered mt-5">
+			<tr>
+				<td>${apo.apoid}</td>
+				<td>${apo.servicetype}</td>
+				<td>${apo.description}</td>
+				<td>${apo.timeslot}</td>
+				<td>${apo.requireddate}</td>
 
-				<tr>
-					<th>ID</th>
-					<th>Service Type</th>
-					<th>Description</th>
-					<th>Time Slot</th>
-					<th>Required Date</th>
-					<th>Change Details</th>
-					<th>Delete</th>
+				<c:url value="updateAppointments.jsp" var="appointmentUpdate">
+					<c:param name="apoid" value="${apoid}" />
+					<c:param name="servicetype" value="${servicetype}" />
+					<c:param name="description" value="${description}" />
+					<c:param name="timeslot" value="${timeslot}" />
+					<c:param name="requireddate" value="${requireddate}" />
+					<c:param name="cid" value="${cid}" />
+				</c:url>
+
+				<td><a href="${appointmentUpdate}"> <input type="button"
+						name="update" class="btn btn-primary" id="update"
+						value="Change Details">
+				</a></td>
+				<td>
+					<form action="deleteappointmentServlet" method="post">
+						<input type="hidden" value="${apo.cid}" name="cid">
+						<button type="submit" value="${apo.apoid}" name="submit"
+							class="btn btn-danger" onclick="check()">Delete Details</button>
+					</form>
+				</td>
 				</tr>
-
-				<tr>
-					<td>${apo.apoid}</td>
-					<td>${apo.servicetype}</td>
-					<td>${apo.description}</td>
-					<td>${apo.timeslot}</td>
-					<td>${apo.requireddate}</td>
-
-
-					<c:url value="updateAppointments.jsp" var="appointmentUpdate">
-						<c:param name="apoid" value="${apoid}" />
-						<c:param name="servicetype" value="${servicetype}" />
-						<c:param name="description" value="${description}" />
-						<c:param name="timeslot" value="${timeslot}" />
-						<c:param name="requireddate" value="${requireddate}" />
-						<c:param name="cid" value="${cid}" />
-					</c:url>
-
-					<td><a href="${appointmentUpdate}"> <input type="button"
-							name="update" class="btn btn-primary" id="update"
-							value="Change Details">
-					</a></td>
-					<td>
-						<form action="deleteappointmentServlet" method="post">
-							<input type="hidden" value="${apo.cid}" name="cid">
-							<button type="submit" value="${apo.apoid}" name="submit"
-								class="btn btn-danger" onclick="check()">Delete Details</button>
-						</form>
-					</td>
-				</tr>
-			</table>
-
-
-		</c:forEach>
+			</c:forEach>
+		</table>
 
 		<c:url value="userAcc.jsp" var="app">
 

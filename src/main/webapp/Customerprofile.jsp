@@ -174,8 +174,6 @@
 
 	</div>
 
-
-
 	<footer class="page-footer font-small cyan darken-3 text-center blue ">
 		<div class="container">
 			<div class="row">
