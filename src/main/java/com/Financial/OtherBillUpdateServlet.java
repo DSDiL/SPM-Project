@@ -26,10 +26,12 @@ public class OtherBillUpdateServlet extends HttpServlet {
 		boolean isTrue;
 
 		isTrue = finacialDButill.updateotherrepairbill(billID, date, spareprice,service,total,qty);
+		String date1 = date;
+		 
 
 		if (isTrue == true) {
 			
-			List<otherBillHistroy> otherBill = finacialDButill.getotherbillhistory(date); 
+			List<otherBillHistroy> otherBill = finacialDButill.getotherbillhistory(date1); 
 			
 			request.setAttribute("otherBill", otherBill);
 			
