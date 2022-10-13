@@ -76,9 +76,9 @@
 
 
     <div class="list-group">
-      <button type="button" style="width:20%; height:60px;" onclick="document.location = 'RepairID.jsp'" class="btn btn-info mt-5 mx-auto">Computer Repair Bills</button>
-      
-      <button type="button" style="width:20%; height:60px;" onclick="document.location = 'OtherID.jsp'" class="btn btn-info mt-5 mx-auto">Other Electronic Bills</button>
+      <button type="button" style="width:20%; height:60px;" onclick="document.location = 'RepairID.jsp'" class="btn btn-info mt-5 mx-auto">Hardware Repair Bills</button>
+      <button type="button" style="width:20%; height:60px;" onclick="document.location = 'RepairID.jsp'" class="btn btn-info mt-5 mx-auto">Software Repair Bills</button>
+      <button type="button" style="width:20%; height:60px;" onclick="document.location = 'OtherID.jsp'" class="btn btn-info mt-5 mx-auto">Other Bills</button>
     </div>
     
 
