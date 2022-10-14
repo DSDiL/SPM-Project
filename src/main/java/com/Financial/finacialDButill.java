@@ -47,7 +47,7 @@ public class finacialDButill {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 
-			String sql = "select * from techscope.repair_computer where rcID= '" + idCust + "' ";
+			String sql = "select * from darkshop.repair_computer where rcID= '" + idCust + "' ";
 
 			rs = stmt.executeQuery(sql);
 
@@ -627,7 +627,7 @@ public class finacialDButill {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 
-			String sql = "select * from techscope.salaries where Nic='" + nic + "'";
+			String sql = "select * from darkshop.salaries where Nic='" + nic + "'";
 
 			rs = stmt.executeQuery(sql);
 
@@ -867,7 +867,7 @@ public class finacialDButill {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 
-			String sql = "select * from techscope.repair_computer_bills where bill_date = '" + date + "'";
+			String sql = "select * from darkshop.repair_computer_bills where bill_date = '" + date + "'";
 
 			rs = stmt.executeQuery(sql);
 
@@ -969,7 +969,7 @@ public class finacialDButill {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 
-			String sql = "select * from techscope.repair_other_bills where billdate = '" + otherdate + "'";
+			String sql = "select * from darkshop.repair_other_bills where billdate = '" + otherdate + "'";
 
 			rs = stmt.executeQuery(sql);
 
@@ -1139,7 +1139,7 @@ public class finacialDButill {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 
-			String sql = "select * from techscope.repair_other_bills where billdate = '" + date + "'";
+			String sql = "select * from darkshop.repair_other_bills where billdate = '" + date + "'";
 
 			rs = stmt.executeQuery(sql);
 
@@ -1176,7 +1176,7 @@ public class finacialDButill {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 
-			String sql = "select * from techscope.repair_other_bills where billdate = '" + date + "'";
+			String sql = "select * from darkshop.repair_other_bills where billdate = '" + date + "'";
 			rs = stmt.executeQuery(sql);
 
 			if (rs.next()) {
@@ -1197,7 +1197,7 @@ public class finacialDButill {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 
-			String sql = "select * from techscope.salaries where Nic = '" + nic + "'";
+			String sql = "select * from darkshop.salaries where Nic = '" + nic + "'";
 			rs = stmt.executeQuery(sql);
 
 			if (rs.next()) {
@@ -1222,7 +1222,7 @@ public class finacialDButill {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 
-			String sql = "select * from techscope.salaries where Nic = '" + nic + "'";
+			String sql = "select * from darkshop.salaries where Nic = '" + nic + "'";
 
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
